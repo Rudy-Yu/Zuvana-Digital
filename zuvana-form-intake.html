@@ -1,0 +1,1254 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Formulir Kebutuhan Aplikasi — Zuvana Digital</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #1A1208;
+  --ink-soft: #4A3728;
+  --aura: #E8651A;
+  --aura-deep: #B84D0F;
+  --aura-glow: #F59540;
+  --aura-pale: #FDE8D4;
+  --paper: #FAF3E8;
+  --paper-dark: #EDE0C8;
+  --cream: #FFFCF7;
+  --muted: #9B8878;
+  --success: #2A7A4F;
+  --success-bg: #EAF5EE;
+  --danger: #C0392B;
+  --white: #ffffff;
+  --shadow: 0 2px 16px rgba(26,18,8,0.10);
+  --shadow-lg: 0 8px 40px rgba(26,18,8,0.15);
+  --radius: 6px;
+  --radius-lg: 12px;
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'Source Sans 3', sans-serif;
+  --font-mono: 'DM Mono', monospace;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--paper);
+  color: var(--ink);
+  min-height: 100vh;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+}
+
+/* ═══ PROGRESS BAR ═══ */
+.progress-bar-wrap {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  height: 3px; background: rgba(232,101,26,0.2);
+}
+.progress-bar {
+  height: 100%; width: 0%;
+  background: linear-gradient(90deg, var(--aura), var(--aura-glow));
+  transition: width 0.4s ease;
+}
+
+/* ═══ HEADER ═══ */
+.site-header {
+  background: var(--ink);
+  padding: 0;
+  position: sticky; top: 0; z-index: 100;
+  box-shadow: 0 2px 20px rgba(26,18,8,0.4);
+}
+.header-inner {
+  max-width: 760px; margin: 0 auto;
+  display: flex; align-items: center; gap: 14px;
+  padding: 14px 20px;
+}
+.brand-mark {
+  width: 40px; height: 40px; flex-shrink: 0;
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(0,229,204,0.08);
+  box-shadow: 0 3px 14px rgba(0,229,204,0.25);
+}
+.brand-text { flex: 1; }
+.brand-name {
+  font-family: var(--font-display);
+  font-size: 17px; font-weight: 700;
+  color: var(--aura-glow);
+  letter-spacing: 0.5px;
+  line-height: 1.1;
+}
+.brand-sub {
+  font-family: var(--font-mono);
+  font-size: 9px; letter-spacing: 2px;
+  color: var(--muted); text-transform: uppercase;
+}
+.step-indicator {
+  font-family: var(--font-mono);
+  font-size: 11px; color: var(--muted);
+  text-align: right; line-height: 1.4;
+}
+.step-indicator strong { color: var(--aura-glow); }
+
+/* ═══ HERO ═══ */
+.hero {
+  background: var(--ink);
+  padding: 40px 20px 48px;
+  text-align: center;
+  position: relative; overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, transparent, var(--aura), var(--aura-glow), var(--aura), transparent);
+}
+.hero-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 10px; letter-spacing: 3px;
+  color: var(--aura); text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(24px, 5vw, 36px);
+  font-weight: 900; line-height: 1.15;
+  color: var(--white);
+  margin-bottom: 14px;
+}
+.hero-title span { color: var(--aura-glow); }
+.hero-desc {
+  font-size: 15px; line-height: 1.7;
+  color: rgba(255,255,255,0.65);
+  max-width: 500px; margin: 0 auto 24px;
+}
+.hero-badges {
+  display: flex; justify-content: center; gap: 12px; flex-wrap: wrap;
+}
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: rgba(232,101,26,0.15);
+  border: 1px solid rgba(232,101,26,0.3);
+  border-radius: 20px;
+  padding: 5px 14px;
+  font-family: var(--font-mono); font-size: 10px;
+  letter-spacing: 1px; color: var(--aura-glow);
+  text-transform: uppercase;
+}
+.hero-badge::before { content: '✓'; color: var(--aura); }
+
+/* ═══ MAIN LAYOUT ═══ */
+.main { max-width: 760px; margin: 0 auto; padding: 32px 20px 80px; }
+
+/* ═══ SECTION ═══ */
+.section {
+  background: var(--cream);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--paper-dark);
+  margin-bottom: 24px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  animation: fadeUp 0.5s ease both;
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: none; }
+}
+.section:nth-child(2) { animation-delay: 0.05s; }
+.section:nth-child(3) { animation-delay: 0.10s; }
+.section:nth-child(4) { animation-delay: 0.15s; }
+.section:nth-child(5) { animation-delay: 0.20s; }
+.section:nth-child(6) { animation-delay: 0.25s; }
+.section:nth-child(7) { animation-delay: 0.30s; }
+.section:nth-child(8) { animation-delay: 0.35s; }
+
+.section-header {
+  background: var(--ink);
+  padding: 14px 20px;
+  display: flex; align-items: center; gap: 12px;
+}
+.section-code {
+  width: 28px; height: 28px; flex-shrink: 0;
+  background: var(--aura);
+  border-radius: 4px;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 700; font-size: 13px;
+  color: var(--ink);
+}
+.section-title {
+  font-family: var(--font-display);
+  font-size: 15px; font-weight: 700;
+  color: var(--white); letter-spacing: 0.3px;
+}
+.section-title span {
+  font-family: var(--font-mono);
+  font-size: 10px; font-weight: 400;
+  color: var(--muted); letter-spacing: 1px;
+  margin-left: 8px;
+}
+.section-body { padding: 20px; }
+
+/* ═══ FORM FIELDS ═══ */
+.field { margin-bottom: 20px; }
+.field:last-child { margin-bottom: 0; }
+
+.field-label {
+  display: block;
+  font-size: 13px; font-weight: 600;
+  color: var(--ink); margin-bottom: 4px;
+}
+.field-label .req { color: var(--aura); margin-left: 3px; }
+.field-hint {
+  font-size: 12px; color: var(--muted);
+  font-style: italic; margin-bottom: 7px;
+  line-height: 1.5;
+}
+.field-hint.warning {
+  color: var(--aura-deep);
+  background: var(--aura-pale);
+  border-radius: var(--radius);
+  padding: 6px 10px; font-style: normal;
+  font-size: 11.5px;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="number"],
+textarea,
+select {
+  width: 100%;
+  background: var(--paper);
+  border: 2px solid var(--paper-dark);
+  border-radius: var(--radius);
+  padding: 10px 14px;
+  font-family: var(--font-body);
+  font-size: 14px; color: var(--ink);
+  transition: border-color 0.2s, box-shadow 0.2s;
+  appearance: none;
+  -webkit-appearance: none;
+}
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: var(--aura);
+  box-shadow: 0 0 0 3px rgba(232,101,26,0.12);
+}
+input.error, textarea.error, select.error {
+  border-color: var(--danger);
+  box-shadow: 0 0 0 3px rgba(192,57,43,0.10);
+  animation: shake 0.35s ease;
+}
+@keyframes shake {
+  0%,100% { transform: none; }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+textarea { resize: vertical; min-height: 80px; line-height: 1.6; }
+select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%239B8878' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 36px; cursor: pointer;
+}
+
+/* ═══ CHECKBOX & RADIO GRID ═══ */
+.check-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 8px;
+  margin-top: 4px;
+}
+.check-grid.cols-2 { grid-template-columns: 1fr 1fr; }
+.check-grid.cols-1 { grid-template-columns: 1fr; }
+
+.check-item {
+  position: relative;
+}
+.check-item input[type="checkbox"],
+.check-item input[type="radio"] {
+  position: absolute; opacity: 0; width: 0; height: 0;
+}
+.check-item label {
+  display: flex; align-items: center; gap: 10px;
+  padding: 10px 14px;
+  background: var(--paper);
+  border: 2px solid var(--paper-dark);
+  border-radius: var(--radius);
+  font-size: 13px; color: var(--ink);
+  cursor: pointer;
+  transition: all 0.18s;
+  user-select: none;
+  line-height: 1.4;
+}
+.check-item label::before {
+  content: '';
+  width: 16px; height: 16px; flex-shrink: 0;
+  border: 2px solid var(--paper-dark);
+  border-radius: 3px;
+  background: var(--white);
+  transition: all 0.18s;
+}
+.check-item input[type="radio"] + label::before {
+  border-radius: 50%;
+}
+.check-item input:checked + label {
+  border-color: var(--aura);
+  background: var(--aura-pale);
+  color: var(--aura-deep);
+}
+.check-item input:checked + label::before {
+  background: var(--aura);
+  border-color: var(--aura);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 10'%3E%3Cpath d='M1 5l3.5 3.5L11 1' stroke='white' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 10px;
+}
+.check-item:hover label {
+  border-color: var(--aura-glow);
+}
+
+/* ═══ ROLE TABLE ═══ */
+.role-table { width: 100%; border-collapse: collapse; margin-top: 6px; }
+.role-table th {
+  background: var(--ink);
+  color: var(--aura-glow);
+  font-family: var(--font-mono);
+  font-size: 10px; letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 10px 12px; text-align: left;
+}
+.role-table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--paper-dark);
+  font-size: 13px; vertical-align: middle;
+}
+.role-table tr:nth-child(even) td { background: var(--paper); }
+.role-table tr:nth-child(odd) td { background: var(--cream); }
+.role-table tr:last-child td { border-bottom: none; }
+.role-name {
+  font-weight: 600; font-size: 13px;
+  display: block;
+}
+.role-desc { font-size: 12px; color: var(--muted); margin-top: 2px; }
+.role-input {
+  display: flex; align-items: center; gap: 8px;
+}
+.role-toggle {
+  display: flex; gap: 6px;
+}
+.role-toggle label {
+  display: flex; align-items: center; gap: 5px;
+  padding: 4px 10px;
+  border: 1.5px solid var(--paper-dark);
+  border-radius: 20px;
+  font-size: 11.5px; cursor: pointer;
+  transition: all 0.15s;
+}
+.role-toggle input[type="radio"] {
+  position: absolute; opacity: 0; width: 0; height: 0;
+}
+.role-toggle input:checked + label {
+  background: var(--aura); border-color: var(--aura);
+  color: var(--ink); font-weight: 600;
+}
+.role-qty {
+  width: 60px !important;
+  padding: 5px 8px !important;
+  font-size: 13px !important;
+  text-align: center;
+}
+@media (max-width: 600px) {
+  .role-table, .role-table thead, .role-table tbody,
+  .role-table th, .role-table td, .role-table tr { display: block; }
+  .role-table thead { display: none; }
+  .role-table tr {
+    background: var(--cream);
+    border: 1px solid var(--paper-dark);
+    border-radius: var(--radius);
+    margin-bottom: 10px; padding: 12px;
+  }
+  .role-table td { border: none; padding: 4px 0; }
+}
+
+/* ═══ RANGE SLIDER ═══ */
+.budget-options { display: flex; flex-direction: column; gap: 8px; }
+
+/* ═══ DIVIDER ═══ */
+.field-divider {
+  border: none; border-top: 1px dashed var(--paper-dark);
+  margin: 20px 0;
+}
+
+/* ═══ INPUT ROW (2 cols) ═══ */
+.input-row {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+}
+@media (max-width: 500px) { .input-row { grid-template-columns: 1fr; } }
+
+/* ═══ KONTAK SECTION ═══ */
+.kontak-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+}
+@media (max-width: 500px) { .kontak-grid { grid-template-columns: 1fr; } }
+
+/* ═══ SUBMIT AREA ═══ */
+.submit-area {
+  background: var(--cream);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--paper-dark);
+  padding: 28px 24px;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+.submit-note {
+  font-size: 13px; color: var(--muted);
+  margin-bottom: 20px; line-height: 1.6;
+}
+.btn-submit {
+  display: inline-flex; align-items: center; justify-content: center;
+  gap: 10px;
+  background: var(--aura);
+  color: var(--ink);
+  border: none; border-radius: var(--radius);
+  padding: 15px 36px;
+  font-family: var(--font-display);
+  font-size: 17px; font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 0 var(--aura-deep);
+  transition: all 0.18s;
+  width: 100%; max-width: 380px;
+  letter-spacing: 0.3px;
+}
+.btn-submit:hover {
+  background: var(--aura-glow);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 0 var(--aura-deep);
+}
+.btn-submit:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 var(--aura-deep);
+}
+.btn-submit:disabled {
+  opacity: 0.6; cursor: not-allowed;
+  transform: none; box-shadow: 0 4px 0 var(--aura-deep);
+}
+.btn-submit .spinner {
+  display: none;
+  width: 18px; height: 18px;
+  border: 2px solid rgba(26,18,8,0.3);
+  border-top-color: var(--ink);
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ═══ SUCCESS SCREEN ═══ */
+.success-screen {
+  display: none;
+  text-align: center; padding: 48px 24px;
+  animation: popIn 0.5s cubic-bezier(0.34,1.56,0.64,1);
+}
+@keyframes popIn {
+  from { opacity: 0; transform: scale(0.85); }
+  to { opacity: 1; transform: none; }
+}
+.success-icon {
+  width: 72px; height: 72px; margin: 0 auto 20px;
+  background: var(--success-bg);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 32px;
+}
+.success-title {
+  font-family: var(--font-display);
+  font-size: 26px; font-weight: 900;
+  color: var(--ink); margin-bottom: 10px;
+}
+.success-desc {
+  font-size: 15px; color: var(--ink-soft);
+  line-height: 1.7; max-width: 420px; margin: 0 auto 28px;
+}
+.success-wa-btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: #25D366; color: white;
+  border: none; border-radius: var(--radius);
+  padding: 13px 28px;
+  font-family: var(--font-body); font-size: 15px; font-weight: 600;
+  cursor: pointer; text-decoration: none;
+  box-shadow: 0 4px 0 #1aad50;
+  transition: all 0.18s;
+}
+.success-wa-btn:hover {
+  background: #1ebe5d; transform: translateY(-2px);
+  box-shadow: 0 6px 0 #1aad50;
+}
+
+/* ═══ ERROR MESSAGE ═══ */
+.error-msg {
+  font-size: 11.5px; color: var(--danger);
+  margin-top: 4px; display: none;
+}
+.error-msg.show { display: block; }
+
+/* ═══ STICKY BOTTOM NAV (mobile) ═══ */
+.sticky-nav {
+  position: fixed; bottom: 0; left: 0; right: 0; z-index: 150;
+  background: var(--ink);
+  padding: 10px 20px;
+  display: flex; align-items: center; gap: 12px;
+  box-shadow: 0 -4px 20px rgba(26,18,8,0.3);
+}
+.nav-progress-text {
+  font-family: var(--font-mono);
+  font-size: 11px; color: var(--muted);
+  white-space: nowrap;
+}
+.nav-progress-text strong { color: var(--aura-glow); }
+.nav-bar { flex: 1; height: 4px; background: rgba(255,255,255,0.1); border-radius: 2px; }
+.nav-bar-fill {
+  height: 100%; border-radius: 2px;
+  background: linear-gradient(90deg, var(--aura), var(--aura-glow));
+  transition: width 0.4s ease;
+}
+.nav-btn {
+  background: var(--aura); color: var(--ink);
+  border: none; border-radius: 4px;
+  padding: 8px 16px;
+  font-family: var(--font-display); font-size: 13px; font-weight: 700;
+  cursor: pointer; white-space: nowrap;
+  transition: all 0.15s;
+}
+.nav-btn:hover { background: var(--aura-glow); }
+
+/* ═══ TOOLTIP ═══ */
+[data-tip] { position: relative; cursor: help; }
+[data-tip]::after {
+  content: attr(data-tip);
+  position: absolute; bottom: calc(100% + 6px); left: 50%;
+  transform: translateX(-50%);
+  background: var(--ink); color: var(--white);
+  font-size: 11px; font-family: var(--font-body);
+  padding: 5px 10px; border-radius: 4px;
+  white-space: nowrap; pointer-events: none;
+  opacity: 0; transition: opacity 0.2s;
+  z-index: 50;
+}
+[data-tip]:hover::after { opacity: 1; }
+
+/* ═══ FOOTER ═══ */
+.site-footer {
+  text-align: center; padding: 20px;
+  font-family: var(--font-mono); font-size: 10px;
+  color: var(--muted); letter-spacing: 1px;
+  padding-bottom: 70px;
+}
+</style>
+</head>
+<body>
+
+<div class="progress-bar-wrap"><div class="progress-bar" id="progressBar"></div></div>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-inner">
+    <div class="brand-mark" style="width:44px;height:44px;border-radius:10px;background:rgba(0,229,204,0.06);display:flex;align-items:center;justify-content:center;padding:4px;"><img src="data:image/png;base64,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" style="width:36px;height:36px;object-fit:contain;" alt="Zuvana Digital"></div>
+    <div class="brand-text">
+      <div class="brand-name">Zuvana Digital</div>
+      <div class="brand-sub">Formulir Kebutuhan Aplikasi</div>
+    </div>
+    <div class="step-indicator">
+      Terisi <strong id="filledCount">0</strong> / <strong id="totalCount">0</strong>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-eyebrow">Mulai dari sini</div>
+  <h1 class="hero-title">Ceritakan Kebutuhan<br><span>Bisnis Anda</span></h1>
+  <p class="hero-desc">
+    Isi formulir ini agar kami dapat merancang aplikasi yang
+    benar-benar sesuai kebutuhan bisnis Anda. Hanya butuh
+    <strong style="color:var(--aura-glow);">5–10 menit</strong>.
+  </p>
+  <div class="hero-badges">
+    <span class="hero-badge">Gratis & Tanpa Komitmen</span>
+    <span class="hero-badge">Data Anda Aman</span>
+    <span class="hero-badge">Respon 1×24 Jam</span>
+  </div>
+</div>
+
+<!-- MAIN FORM -->
+<main class="main">
+<form id="intakeForm" novalidate>
+
+  <!-- A. IDENTITAS -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-code">A</div>
+      <div class="section-title">Identitas & Bisnis <span>WAJIB DIISI</span></div>
+    </div>
+    <div class="section-body">
+      <div class="input-row">
+        <div class="field">
+          <label class="field-label" for="namaBisnis">Nama Bisnis / Usaha <span class="req">*</span></label>
+          <div class="field-hint">Nama yang akan ditampilkan di aplikasi</div>
+          <input type="text" id="namaBisnis" name="namaBisnis" placeholder="Contoh: Warung Makan Bu Sari" required>
+          <div class="error-msg" id="err-namaBisnis">Mohon isi nama bisnis Anda</div>
+        </div>
+        <div class="field">
+          <label class="field-label" for="jenisBisnis">Jenis Usaha <span class="req">*</span></label>
+          <select id="jenisBisnis" name="jenisBisnis" required>
+            <option value="">— Pilih jenis usaha —</option>
+            <option>Warung / Rumah Makan</option>
+            <option>Kedai Kopi / Minuman</option>
+            <option>Toko / Retail</option>
+            <option>Klinik / Apotek</option>
+            <option>Sekolah / Lembaga Kursus</option>
+            <option>Jasa / Bengkel / Servis</option>
+            <option>Kost / Properti</option>
+            <option>Distributor / Supplier</option>
+            <option>Lainnya</option>
+          </select>
+          <div class="error-msg" id="err-jenisBisnis">Mohon pilih jenis usaha</div>
+        </div>
+      </div>
+
+      <div class="input-row">
+        <div class="field">
+          <label class="field-label">Sudah berapa lama berjalan?</label>
+          <div class="check-grid">
+            <div class="check-item"><input type="radio" name="lamaBisnis" id="lb1" value="Kurang dari 1 tahun"><label for="lb1">Kurang dari 1 tahun</label></div>
+            <div class="check-item"><input type="radio" name="lamaBisnis" id="lb2" value="1–3 tahun"><label for="lb2">1 – 3 tahun</label></div>
+            <div class="check-item"><input type="radio" name="lamaBisnis" id="lb3" value="3–5 tahun"><label for="lb3">3 – 5 tahun</label></div>
+            <div class="check-item"><input type="radio" name="lamaBisnis" id="lb4" value="Lebih dari 5 tahun"><label for="lb4">Lebih dari 5 tahun</label></div>
+          </div>
+        </div>
+        <div class="field">
+          <label class="field-label">Jumlah cabang / outlet?</label>
+          <div class="check-grid">
+            <div class="check-item"><input type="radio" name="jumlahOutlet" id="jo1" value="1 lokasi"><label for="jo1">1 lokasi</label></div>
+            <div class="check-item"><input type="radio" name="jumlahOutlet" id="jo2" value="2–3 lokasi"><label for="jo2">2 – 3 lokasi</label></div>
+            <div class="check-item"><input type="radio" name="jumlahOutlet" id="jo3" value="4–10 lokasi"><label for="jo3">4 – 10 lokasi</label></div>
+            <div class="check-item"><input type="radio" name="jumlahOutlet" id="jo4" value="Lebih dari 10 lokasi"><label for="jo4">> 10 lokasi</label></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="field-label">Siapa yang akan pakai aplikasi ini?</label>
+        <div class="check-grid">
+          <div class="check-item"><input type="checkbox" name="penggunaUtama" id="pu1" value="Pemilik sendiri"><label for="pu1">Pemilik sendiri</label></div>
+          <div class="check-item"><input type="checkbox" name="penggunaUtama" id="pu2" value="Kasir / Staf input"><label for="pu2">Kasir / Staf input</label></div>
+          <div class="check-item"><input type="checkbox" name="penggunaUtama" id="pu3" value="Manajer / Admin"><label for="pu3">Manajer / Admin</label></div>
+          <div class="check-item"><input type="checkbox" name="penggunaUtama" id="pu4" value="Pelanggan juga"><label for="pu4">Pelanggan juga</label></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- B. KEBUTUHAN -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-code">B</div>
+      <div class="section-title">Kebutuhan Aplikasi <span>WAJIB DIISI</span></div>
+    </div>
+    <div class="section-body">
+      <div class="field">
+        <label class="field-label" for="masalahBisnis">Masalah apa yang ingin diselesaikan? <span class="req">*</span></label>
+        <div class="field-hint">Ceritakan kondisi saat ini dan apa yang ingin diperbaiki. Semakin detail semakin baik.</div>
+        <textarea id="masalahBisnis" name="masalahBisnis" rows="4"
+          placeholder="Contoh: Sekarang pencatatan masih manual di buku, sering salah hitung, owner tidak bisa pantau pemasukan harian karena tidak selalu di tempat..." required></textarea>
+        <div class="error-msg" id="err-masalahBisnis">Mohon ceritakan masalah yang ingin diselesaikan</div>
+      </div>
+
+      <div class="field">
+        <label class="field-label">Saat ini menggunakan apa?</label>
+        <div class="check-grid">
+          <div class="check-item"><input type="checkbox" name="sistemSekarang" id="ss1" value="Tulis tangan / buku"><label for="ss1">Tulis tangan / buku</label></div>
+          <div class="check-item"><input type="checkbox" name="sistemSekarang" id="ss2" value="Microsoft Excel"><label for="ss2">Microsoft Excel</label></div>
+          <div class="check-item"><input type="checkbox" name="sistemSekarang" id="ss3" value="Aplikasi lain"><label for="ss3">Aplikasi lain</label></div>
+          <div class="check-item"><input type="checkbox" name="sistemSekarang" id="ss4" value="Belum ada sistem"><label for="ss4">Belum ada sistem</label></div>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="field-label" for="fiturUtama">3 Fitur PALING PENTING yang Anda butuhkan <span class="req">*</span></label>
+        <div class="field-hint">Tulis sesuai prioritas, dari yang paling penting. Contoh: 1) Kasir / POS  2) Laporan harian  3) Stok barang</div>
+        <textarea id="fiturUtama" name="fiturUtama" rows="3"
+          placeholder="1) ...&#10;2) ...&#10;3) ..." required></textarea>
+        <div class="error-msg" id="err-fiturUtama">Mohon sebutkan minimal 1 fitur yang dibutuhkan</div>
+      </div>
+
+      <div class="field">
+        <label class="field-label">Aplikasi akan dibuka di mana?</label>
+        <div class="check-grid">
+          <div class="check-item"><input type="checkbox" name="perangkat" id="pv1" value="HP Android"><label for="pv1">HP Android</label></div>
+          <div class="check-item"><input type="checkbox" name="perangkat" id="pv2" value="iPhone / iPad"><label for="pv2">iPhone / iPad</label></div>
+          <div class="check-item"><input type="checkbox" name="perangkat" id="pv3" value="Laptop / PC"><label for="pv3">Laptop / PC</label></div>
+          <div class="check-item"><input type="checkbox" name="perangkat" id="pv4" value="Semua perangkat"><label for="pv4">Semua perangkat</label></div>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="field-label">Koneksi internet di tempat usaha</label>
+        <div class="check-grid">
+          <div class="check-item"><input type="radio" name="koneksi" id="ki1" value="Stabil — WiFi selalu ada"><label for="ki1">Stabil — WiFi selalu ada</label></div>
+          <div class="check-item"><input type="radio" name="koneksi" id="ki2" value="Kadang-kadang — pakai data HP"><label for="ki2">Kadang — pakai data HP</label></div>
+          <div class="check-item"><input type="radio" name="koneksi" id="ki3" value="Sering tidak stabil"><label for="ki3">Sering tidak stabil</label></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- C. DATA & TRANSAKSI -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-code">C</div>
+      <div class="section-title">Data & Transaksi</div>
+    </div>
+    <div class="section-body">
+      <div class="field">
+        <label class="field-label">Perkiraan transaksi per hari</label>
+        <div class="check-grid">
+          <div class="check-item"><input type="radio" name="volumeTrx" id="vt1" value="Kurang dari 20"><label for="vt1">Kurang dari 20</label></div>
+          <div class="check-item"><input type="radio" name="volumeTrx" id="vt2" value="20–100 transaksi"><label for="vt2">20 – 100</label></div>
+          <div class="check-item"><input type="radio" name="volumeTrx" id="vt3" value="100–500 transaksi"><label for="vt3">100 – 500</label></div>
+          <div class="check-item"><input type="radio" name="volumeTrx" id="vt4" value="Lebih dari 500"><label for="vt4">Lebih dari 500</label></div>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="field-label" for="dataYangDicatat">Data apa saja yang perlu dicatat per transaksi?</label>
+        <div class="field-hint">Contoh: nama pelanggan, produk, jumlah, harga, metode bayar, kasir, dll</div>
+        <textarea id="dataYangDicatat" name="dataYangDicatat" rows="2"
+          placeholder="Tulis data yang ingin dicatat..."></textarea>
+      </div>
+
+      <div class="field">
+        <label class="field-label">Laporan yang dibutuhkan</label>
+        <div class="check-grid">
+          <div class="check-item"><input type="checkbox" name="laporanDibutuhkan" id="ld1" value="Laporan harian"><label for="ld1">Laporan harian</label></div>
+          <div class="check-item"><input type="checkbox" name="laporanDibutuhkan" id="ld2" value="Laporan mingguan"><label for="ld2">Laporan mingguan</label></div>
+          <div class="check-item"><input type="checkbox" name="laporanDibutuhkan" id="ld3" value="Laporan bulanan"><label for="ld3">Laporan bulanan</label></div>
+          <div class="check-item"><input type="checkbox" name="laporanDibutuhkan" id="ld4" value="Per produk / item"><label for="ld4">Per produk / item</label></div>
+          <div class="check-item"><input type="checkbox" name="laporanDibutuhkan" id="ld5" value="Per karyawan"><label for="ld5">Per karyawan</label></div>
+          <div class="check-item"><input type="checkbox" name="laporanDibutuhkan" id="ld6" value="Grafik / chart"><label for="ld6">Grafik / chart</label></div>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="field-label">Notifikasi otomatis yang diinginkan</label>
+        <div class="check-grid">
+          <div class="check-item"><input type="checkbox" name="notifOtomatis" id="no1" value="Laporan harian via WhatsApp"><label for="no1">Laporan harian via WA</label></div>
+          <div class="check-item"><input type="checkbox" name="notifOtomatis" id="no2" value="Notif stok menipis"><label for="no2">Notif stok menipis</label></div>
+          <div class="check-item"><input type="checkbox" name="notifOtomatis" id="no3" value="Pengingat tagihan"><label for="no3">Pengingat tagihan</label></div>
+          <div class="check-item"><input type="checkbox" name="notifOtomatis" id="no4" value="Tidak perlu notifikasi otomatis"><label for="no4">Tidak perlu</label></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- D. USER & AKSES -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-code">D</div>
+      <div class="section-title">Pengguna & Hak Akses</div>
+    </div>
+    <div class="section-body">
+      <div class="field">
+        <label class="field-label">Berapa orang yang akan punya akun login?</label>
+        <div class="check-grid">
+          <div class="check-item"><input type="radio" name="jumlahUser" id="ju1" value="1–3 orang"><label for="ju1">1 – 3 orang</label></div>
+          <div class="check-item"><input type="radio" name="jumlahUser" id="ju2" value="4–10 orang"><label for="ju2">4 – 10 orang</label></div>
+          <div class="check-item"><input type="radio" name="jumlahUser" id="ju3" value="11–30 orang"><label for="ju3">11 – 30 orang</label></div>
+          <div class="check-item"><input type="radio" name="jumlahUser" id="ju4" value="Lebih dari 30 orang"><label for="ju4">> 30 orang</label></div>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="field-label">Pembagian akses yang dibutuhkan</label>
+        <div class="field-hint">Centang role yang diperlukan dan isi jumlah orangnya</div>
+        <div style="overflow-x:auto;">
+          <table class="role-table">
+            <thead>
+              <tr>
+                <th>Role</th>
+                <th>Fungsi</th>
+                <th>Perlu?</th>
+                <th>Jml</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="role-name" style="color:var(--aura-deep)">Creator</span><span class="role-desc">Akses penuh + setting sistem</span></td>
+                <td><span class="role-desc">Kelola semua fitur, tampilan, dan pengguna</span></td>
+                <td>
+                  <div class="role-toggle">
+                    <input type="radio" name="role_creator" id="rc_y" value="Ya"><label for="rc_y">Ya</label>
+                    <input type="radio" name="role_creator" id="rc_n" value="Tidak" checked><label for="rc_n">Tidak</label>
+                  </div>
+                </td>
+                <td><input type="number" class="role-qty" name="qty_creator" min="0" max="99" value="1" placeholder="0"></td>
+              </tr>
+              <tr>
+                <td><span class="role-name">Admin</span><span class="role-desc">Kelola user + konfirmasi</span></td>
+                <td><span class="role-desc">Lihat semua laporan, approval transaksi</span></td>
+                <td>
+                  <div class="role-toggle">
+                    <input type="radio" name="role_admin" id="ra_y" value="Ya"><label for="ra_y">Ya</label>
+                    <input type="radio" name="role_admin" id="ra_n" value="Tidak" checked><label for="ra_n">Tidak</label>
+                  </div>
+                </td>
+                <td><input type="number" class="role-qty" name="qty_admin" min="0" max="99" value="1" placeholder="0"></td>
+              </tr>
+              <tr>
+                <td><span class="role-name">Operator</span><span class="role-desc">Input harian saja</span></td>
+                <td><span class="role-desc">Kasir, input transaksi, operasional</span></td>
+                <td>
+                  <div class="role-toggle">
+                    <input type="radio" name="role_operator" id="ro_y" value="Ya"><label for="ro_y">Ya</label>
+                    <input type="radio" name="role_operator" id="ro_n" value="Tidak" checked><label for="ro_n">Tidak</label>
+                  </div>
+                </td>
+                <td><input type="number" class="role-qty" name="qty_operator" min="0" max="99" value="2" placeholder="0"></td>
+              </tr>
+              <tr>
+                <td><span class="role-name">Owner</span><span class="role-desc">Lihat laporan saja</span></td>
+                <td><span class="role-desc">Dashboard & laporan — tidak bisa edit</span></td>
+                <td>
+                  <div class="role-toggle">
+                    <input type="radio" name="role_owner" id="row_y" value="Ya"><label for="row_y">Ya</label>
+                    <input type="radio" name="role_owner" id="row_n" value="Tidak" checked><label for="row_n">Tidak</label>
+                  </div>
+                </td>
+                <td><input type="number" class="role-qty" name="qty_owner" min="0" max="99" value="1" placeholder="0"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- E. TAMPILAN -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-code">E</div>
+      <div class="section-title">Tampilan & Branding</div>
+    </div>
+    <div class="section-body">
+      <div class="input-row">
+        <div class="field">
+          <label class="field-label" for="warnaBrand">Warna brand / warna favorit</label>
+          <div class="field-hint">Contoh: merah dan kuning, biru tua, hijau segar</div>
+          <input type="text" id="warnaBrand" name="warnaBrand" placeholder="Contoh: oranye dan hitam">
+        </div>
+        <div class="field">
+          <label class="field-label">Ada logo bisnis?</label>
+          <div class="check-grid cols-1">
+            <div class="check-item"><input type="radio" name="adaLogo" id="al1" value="Ya — akan dikirim"><label for="al1">Ya — akan saya kirimkan</label></div>
+            <div class="check-item"><input type="radio" name="adaLogo" id="al2" value="Belum ada logo"><label for="al2">Belum ada logo</label></div>
+            <div class="check-item"><input type="radio" name="adaLogo" id="al3" value="Tidak perlu logo"><label for="al3">Tidak perlu logo</label></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="field-label">Arah tampilan yang diinginkan</label>
+        <div class="check-grid">
+          <div class="check-item"><input type="radio" name="gayaTampilan" id="gt1" value="Modern & Minimalis"><label for="gt1">Modern & Minimalis</label></div>
+          <div class="check-item"><input type="radio" name="gayaTampilan" id="gt2" value="Hangat & Ramah (F&B)"><label for="gt2">Hangat & Ramah</label></div>
+          <div class="check-item"><input type="radio" name="gayaTampilan" id="gt3" value="Formal & Profesional"><label for="gt3">Formal & Profesional</label></div>
+          <div class="check-item"><input type="radio" name="gayaTampilan" id="gt4" value="Colorful & Energik"><label for="gt4">Colorful & Energik</label></div>
+          <div class="check-item"><input type="radio" name="gayaTampilan" id="gt5" value="Gelap / Dark Mode"><label for="gt5">Gelap / Dark Mode</label></div>
+          <div class="check-item"><input type="radio" name="gayaTampilan" id="gt6" value="Sesuaikan saja"><label for="gt6">Sesuaikan saja</label></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- F. INTEGRASI -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-code">F</div>
+      <div class="section-title">Integrasi & Fitur Tambahan</div>
+    </div>
+    <div class="section-body">
+      <div class="field">
+        <label class="field-label">Perlu kirim notifikasi / struk ke WhatsApp?</label>
+        <div class="field-hint warning">⚠ Fitur ini memerlukan biaya layanan pihak ketiga ±Rp 100–300rb/bulan (di luar biaya pembuatan)</div>
+        <div class="check-grid">
+          <div class="check-item"><input type="checkbox" name="fiturWA" id="fw1" value="Struk ke pelanggan"><label for="fw1">Struk ke pelanggan</label></div>
+          <div class="check-item"><input type="checkbox" name="fiturWA" id="fw2" value="Laporan ke pemilik"><label for="fw2">Laporan ke pemilik</label></div>
+          <div class="check-item"><input type="checkbox" name="fiturWA" id="fw3" value="Konfirmasi order"><label for="fw3">Konfirmasi order</label></div>
+          <div class="check-item"><input type="checkbox" name="fiturWA" id="fw4" value="Tidak perlu WA"><label for="fw4">Tidak perlu</label></div>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="field-label">Perlu cetak struk / invoice fisik?</label>
+        <div class="check-grid">
+          <div class="check-item"><input type="radio" name="cetakStruk" id="cs1" value="Tidak perlu cetak"><label for="cs1">Tidak perlu cetak</label></div>
+          <div class="check-item"><input type="radio" name="cetakStruk" id="cs2" value="Printer thermal 58mm"><label for="cs2">Thermal 58mm</label></div>
+          <div class="check-item"><input type="radio" name="cetakStruk" id="cs3" value="Printer thermal 80mm"><label for="cs3">Thermal 80mm</label></div>
+          <div class="check-item"><input type="radio" name="cetakStruk" id="cs4" value="Printer biasa A4/A5"><label for="cs4">Printer biasa (A4/A5)</label></div>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="field-label">Integrasi platform online yang dibutuhkan</label>
+        <div class="check-grid">
+          <div class="check-item"><input type="checkbox" name="integrasiPlatform" id="ip1" value="Tokopedia"><label for="ip1">Tokopedia</label></div>
+          <div class="check-item"><input type="checkbox" name="integrasiPlatform" id="ip2" value="Shopee"><label for="ip2">Shopee</label></div>
+          <div class="check-item"><input type="checkbox" name="integrasiPlatform" id="ip3" value="GoFood / GrabFood"><label for="ip3">GoFood / GrabFood</label></div>
+          <div class="check-item"><input type="checkbox" name="integrasiPlatform" id="ip4" value="Instagram / Facebook"><label for="ip4">Instagram / Facebook</label></div>
+          <div class="check-item"><input type="checkbox" name="integrasiPlatform" id="ip5" value="Tidak perlu integrasi"><label for="ip5">Tidak perlu</label></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- G. ANGGARAN -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-code">G</div>
+      <div class="section-title">Ekspektasi & Anggaran</div>
+    </div>
+    <div class="section-body">
+      <div class="field">
+        <label class="field-label">Target waktu aplikasi selesai</label>
+        <div class="check-grid">
+          <div class="check-item"><input type="radio" name="deadline" id="dl1" value="Sesegera mungkin (kurang dari 2 minggu)"><label for="dl1">Sesegera mungkin</label></div>
+          <div class="check-item"><input type="radio" name="deadline" id="dl2" value="2–4 minggu"><label for="dl2">2 – 4 minggu</label></div>
+          <div class="check-item"><input type="radio" name="deadline" id="dl3" value="1–2 bulan"><label for="dl3">1 – 2 bulan</label></div>
+          <div class="check-item"><input type="radio" name="deadline" id="dl4" value="Fleksibel"><label for="dl4">Fleksibel</label></div>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="field-hint" style="font-style:normal;font-size:13px;color:var(--ink-soft);">
+          💡 Anggaran membantu kami menyesuaikan fitur yang paling optimal untuk Anda.
+          Tidak ada jawaban yang salah.
+        </label>
+        <label class="field-label" style="margin-top:8px;">Anggaran yang disiapkan</label>
+        <div class="check-grid">
+          <div class="check-item"><input type="radio" name="anggaran" id="ag1" value="Kurang dari Rp 2 juta"><label for="ag1">Kurang dari Rp 2 jt</label></div>
+          <div class="check-item"><input type="radio" name="anggaran" id="ag2" value="Rp 2–5 juta"><label for="ag2">Rp 2 – 5 juta</label></div>
+          <div class="check-item"><input type="radio" name="anggaran" id="ag3" value="Rp 5–15 juta"><label for="ag3">Rp 5 – 15 juta</label></div>
+          <div class="check-item"><input type="radio" name="anggaran" id="ag4" value="Rp 15–50 juta"><label for="ag4">Rp 15 – 50 juta</label></div>
+          <div class="check-item"><input type="radio" name="anggaran" id="ag5" value="Lebih dari Rp 50 juta"><label for="ag5">Lebih dari Rp 50 jt</label></div>
+          <div class="check-item"><input type="radio" name="anggaran" id="ag6" value="Belum tahu / diskusi dulu"><label for="ag6">Belum tahu — diskusi dulu</label></div>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="field-label">Setelah aplikasi jadi, kebutuhan support</label>
+        <div class="check-grid">
+          <div class="check-item"><input type="radio" name="modelSupport" id="ms1" value="Bayar per perbaikan / fitur baru"><label for="ms1">Bayar per perbaikan</label></div>
+          <div class="check-item"><input type="radio" name="modelSupport" id="ms2" value="Paket maintenance bulanan"><label for="ms2">Maintenance bulanan</label></div>
+          <div class="check-item"><input type="radio" name="modelSupport" id="ms3" value="Tidak perlu support"><label for="ms3">Tidak perlu support</label></div>
+          <div class="check-item"><input type="radio" name="modelSupport" id="ms4" value="Belum tahu"><label for="ms4">Belum tahu</label></div>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="field-label" for="catatanTambahan">Catatan atau pertanyaan tambahan</label>
+        <textarea id="catatanTambahan" name="catatanTambahan" rows="3"
+          placeholder="Ada hal lain yang ingin Anda sampaikan? Pertanyaan, kondisi khusus, referensi aplikasi yang Anda suka, dll..."></textarea>
+      </div>
+    </div>
+  </div>
+
+  <!-- H. KONTAK -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-code">H</div>
+      <div class="section-title">Data Kontak <span>WAJIB DIISI</span></div>
+    </div>
+    <div class="section-body">
+      <div class="kontak-grid">
+        <div class="field">
+          <label class="field-label" for="namaKontak">Nama Lengkap <span class="req">*</span></label>
+          <input type="text" id="namaKontak" name="namaKontak" placeholder="Nama Anda" required>
+          <div class="error-msg" id="err-namaKontak">Mohon isi nama lengkap Anda</div>
+        </div>
+        <div class="field">
+          <label class="field-label" for="nomorWA">Nomor WhatsApp <span class="req">*</span></label>
+          <input type="tel" id="nomorWA" name="nomorWA" placeholder="08xx xxxx xxxx" required>
+          <div class="error-msg" id="err-nomorWA">Mohon isi nomor WhatsApp yang aktif</div>
+        </div>
+        <div class="field">
+          <label class="field-label" for="emailKontak">Email (opsional)</label>
+          <input type="email" id="emailKontak" name="emailKontak" placeholder="nama@email.com">
+        </div>
+        <div class="field">
+          <label class="field-label" for="kotaKontak">Kota / Kabupaten <span class="req">*</span></label>
+          <input type="text" id="kotaKontak" name="kotaKontak" placeholder="Contoh: Medan, Deli Serdang" required>
+          <div class="error-msg" id="err-kotaKontak">Mohon isi kota/kabupaten Anda</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SUBMIT -->
+  <div class="submit-area">
+    <p class="submit-note">
+      Dengan mengirimkan formulir ini, Anda setuju bahwa informasi yang diberikan
+      akan digunakan oleh tim Zuvana Digital untuk keperluan konsultasi dan
+      perancangan aplikasi. Kami akan menghubungi Anda dalam <strong>1×24 jam</strong>.
+    </p>
+    <button type="submit" class="btn-submit" id="submitBtn">
+      <div class="spinner" id="spinner"></div>
+      <span id="submitText">Kirim Formulir via WhatsApp</span>
+      <span id="submitIcon">📲</span>
+    </button>
+  </div>
+
+</form>
+
+<!-- SUCCESS SCREEN -->
+<div class="success-screen" id="successScreen">
+  <div class="success-icon">✅</div>
+  <div class="success-title">Formulir Terkirim!</div>
+  <p class="success-desc">
+    Terima kasih, <strong id="successName"></strong>!<br>
+    Ringkasan formulir sudah disiapkan untuk dikirim via WhatsApp.
+    Tim kami akan menghubungi Anda segera.
+  </p>
+  <a href="#" class="success-wa-btn" id="waFinalBtn" target="_blank">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    Buka WhatsApp & Kirim
+  </a>
+</div>
+
+</main>
+
+<footer class="site-footer">
+  ZUVANA DIGITAL  •  SUMATRA UTARA  •  SOLUSI TEKNOLOGI UNTUK BISNIS ANDA
+</footer>
+
+<!-- STICKY BOTTOM NAV -->
+<div class="sticky-nav">
+  <span class="nav-progress-text">Terisi <strong id="navFilled">0</strong>%</span>
+  <div class="nav-bar"><div class="nav-bar-fill" id="navBarFill"></div></div>
+  <button type="button" class="nav-btn" onclick="document.getElementById('submitBtn').scrollIntoView({behavior:'smooth'})">Kirim →</button>
+</div>
+
+<script>
+// ═══════════════════════════════════════════
+// CONFIG — Ganti nomor WA kamu di sini
+// ═══════════════════════════════════════════
+const ZUVANA_WA = '62895341189562'; // ← GANTI dengan nomor WA Zuvana kamu
+
+// ═══ PROGRESS TRACKING ═══
+function updateProgress() {
+  const required = document.querySelectorAll('[required]');
+  const allInputs = document.querySelectorAll(
+    'input[type="text"], input[type="tel"], input[type="email"], textarea, select'
+  );
+  let filled = 0;
+  allInputs.forEach(el => {
+    if (el.value.trim()) filled++;
+  });
+  // Tambah checkboxes & radios yang sudah dipilih
+  const checkedGroups = new Set();
+  document.querySelectorAll('input[type="checkbox"]:checked, input[type="radio"]:checked').forEach(el => {
+    checkedGroups.add(el.name);
+  });
+  filled += checkedGroups.size;
+
+  const total = allInputs.length + 20; // estimasi total interaksi
+  const pct = Math.min(Math.round((filled / total) * 100), 99);
+
+  document.getElementById('progressBar').style.width = pct + '%';
+  document.getElementById('navBarFill').style.width = pct + '%';
+  document.getElementById('navFilled').textContent = pct;
+
+  // Counter wajib
+  let filledReq = 0;
+  required.forEach(el => { if (el.value.trim()) filledReq++; });
+  document.getElementById('filledCount').textContent = filledReq;
+  document.getElementById('totalCount').textContent = required.length;
+}
+
+document.addEventListener('input', updateProgress);
+document.addEventListener('change', updateProgress);
+updateProgress();
+
+// ═══ VALIDATION ═══
+function validateForm() {
+  let valid = true;
+  const requiredFields = [
+    { id: 'namaBisnis', err: 'err-namaBisnis' },
+    { id: 'jenisBisnis', err: 'err-jenisBisnis' },
+    { id: 'masalahBisnis', err: 'err-masalahBisnis' },
+    { id: 'fiturUtama', err: 'err-fiturUtama' },
+    { id: 'namaKontak', err: 'err-namaKontak' },
+    { id: 'nomorWA', err: 'err-nomorWA' },
+    { id: 'kotaKontak', err: 'err-kotaKontak' },
+  ];
+
+  requiredFields.forEach(({ id, err }) => {
+    const el = document.getElementById(id);
+    const errEl = document.getElementById(err);
+    if (!el.value.trim()) {
+      el.classList.add('error');
+      errEl.classList.add('show');
+      if (valid) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        el.focus();
+      }
+      valid = false;
+    } else {
+      el.classList.remove('error');
+      errEl.classList.remove('show');
+    }
+  });
+  return valid;
+}
+
+// Clear error on input
+document.querySelectorAll('input, textarea, select').forEach(el => {
+  el.addEventListener('input', () => {
+    el.classList.remove('error');
+    const errId = 'err-' + el.id;
+    const errEl = document.getElementById(errId);
+    if (errEl) errEl.classList.remove('show');
+  });
+});
+
+// ═══ COLLECT FORM DATA ═══
+function collectData() {
+  const g = id => (document.getElementById(id)?.value || '').trim();
+  const checked = name => [...document.querySelectorAll(`[name="${name}"]:checked`)].map(e => e.value).join(', ');
+  const radio = name => (document.querySelector(`[name="${name}"]:checked`)?.value || 'Tidak disebutkan');
+
+  // Role table
+  const roles = ['creator','admin','operator','owner'].map(r => {
+    const perlu = radio('role_' + r);
+    const qty = g('qty_' + r);
+    return perlu === 'Ya' ? `${r.charAt(0).toUpperCase()+r.slice(1)} (${qty} orang)` : null;
+  }).filter(Boolean).join(', ') || 'Belum ditentukan';
+
+  return {
+    namaBisnis: g('namaBisnis'),
+    jenisBisnis: g('jenisBisnis'),
+    lamaBisnis: radio('lamaBisnis'),
+    jumlahOutlet: radio('jumlahOutlet'),
+    penggunaUtama: checked('penggunaUtama'),
+    masalahBisnis: g('masalahBisnis'),
+    sistemSekarang: checked('sistemSekarang'),
+    fiturUtama: g('fiturUtama'),
+    perangkat: checked('perangkat'),
+    koneksi: radio('koneksi'),
+    volumeTrx: radio('volumeTrx'),
+    dataYangDicatat: g('dataYangDicatat'),
+    laporanDibutuhkan: checked('laporanDibutuhkan'),
+    notifOtomatis: checked('notifOtomatis'),
+    jumlahUser: radio('jumlahUser'),
+    roles,
+    warnaBrand: g('warnaBrand'),
+    adaLogo: radio('adaLogo'),
+    gayaTampilan: radio('gayaTampilan'),
+    fiturWA: checked('fiturWA'),
+    cetakStruk: radio('cetakStruk'),
+    integrasiPlatform: checked('integrasiPlatform'),
+    deadline: radio('deadline'),
+    anggaran: radio('anggaran'),
+    modelSupport: radio('modelSupport'),
+    catatanTambahan: g('catatanTambahan'),
+    namaKontak: g('namaKontak'),
+    nomorWA: g('nomorWA'),
+    emailKontak: g('emailKontak'),
+    kotaKontak: g('kotaKontak'),
+  };
+}
+
+// ═══ BUILD WA MESSAGE ═══
+function buildWAMessage(d) {
+  const sep = '━━━━━━━━━━━━━━━━━━━━━━';
+  const line = (label, val) => val && val !== 'Tidak disebutkan'
+    ? `▸ *${label}:* ${val}\n` : '';
+
+  return `🏢 *FORMULIR KEBUTUHAN APLIKASI*
+*Zuvana Digital — Sumatra Utara*
+${sep}
+
+*📋 IDENTITAS BISNIS*
+${line('Nama Bisnis', d.namaBisnis)}${line('Jenis Usaha', d.jenisBisnis)}${line('Lama Berjalan', d.lamaBisnis)}${line('Jumlah Outlet', d.jumlahOutlet)}${line('Pengguna', d.penggunaUtama)}
+${sep}
+
+*💡 KEBUTUHAN APLIKASI*
+${line('Masalah', d.masalahBisnis)}${line('Sistem Sekarang', d.sistemSekarang)}${line('Fitur Prioritas', d.fiturUtama)}${line('Perangkat', d.perangkat)}${line('Koneksi Internet', d.koneksi)}
+${sep}
+
+*📊 DATA & TRANSAKSI*
+${line('Volume/hari', d.volumeTrx)}${line('Data Dicatat', d.dataYangDicatat)}${line('Laporan', d.laporanDibutuhkan)}${line('Notifikasi', d.notifOtomatis)}
+${sep}
+
+*👥 USER & AKSES*
+${line('Jumlah User', d.jumlahUser)}${line('Role Dibutuhkan', d.roles)}
+${sep}
+
+*🎨 TAMPILAN*
+${line('Warna Brand', d.warnaBrand)}${line('Logo', d.adaLogo)}${line('Gaya Tampilan', d.gayaTampilan)}
+${sep}
+
+*🔗 INTEGRASI*
+${line('Fitur WhatsApp', d.fiturWA)}${line('Cetak Struk', d.cetakStruk)}${line('Platform Online', d.integrasiPlatform)}
+${sep}
+
+*💰 ANGGARAN & EKSPEKTASI*
+${line('Target Selesai', d.deadline)}${line('Anggaran', d.anggaran)}${line('Model Support', d.modelSupport)}${line('Catatan', d.catatanTambahan)}
+${sep}
+
+*📞 KONTAK*
+${line('Nama', d.namaKontak)}${line('WhatsApp', d.nomorWA)}${line('Email', d.emailKontak)}${line('Kota', d.kotaKontak)}
+${sep}
+_Dikirim via Formulir Online Zuvana Digital_`;
+}
+
+// ═══ SUBMIT ═══
+document.getElementById('intakeForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  if (!validateForm()) return;
+
+  const btn = document.getElementById('submitBtn');
+  const spinner = document.getElementById('spinner');
+  const submitText = document.getElementById('submitText');
+  const submitIcon = document.getElementById('submitIcon');
+
+  btn.disabled = true;
+  spinner.style.display = 'block';
+  submitText.textContent = 'Menyiapkan...';
+  submitIcon.textContent = '';
+
+  setTimeout(() => {
+    const data = collectData();
+    const msg = buildWAMessage(data);
+    const encoded = encodeURIComponent(msg);
+    const waUrl = `https://wa.me/${ZUVANA_WA}?text=${encoded}`;
+
+    document.getElementById('successName').textContent = data.namaKontak;
+    document.getElementById('waFinalBtn').href = waUrl;
+
+    // Tampilkan success
+    document.getElementById('intakeForm').style.display = 'none';
+    document.querySelector('.submit-area').style.display = 'none';
+    document.querySelector('.sticky-nav').style.display = 'none';
+    document.getElementById('successScreen').style.display = 'block';
+    document.getElementById('progressBar').style.width = '100%';
+
+    // Auto buka WA
+    window.open(waUrl, '_blank');
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, 1200);
+});
+</script>
+</body>
+</html>

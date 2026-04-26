@@ -1,0 +1,2575 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zuvana Digital — Solusi Teknologi untuk Bisnis</title>
+<meta name="description" content="Zuvana Digital — Solusi Digital Sesuai Kebutuhan Bisnis Anda. Aplikasi kasir, stok, laporan, dan sistem bisnis custom. Konsultasi gratis!">
+<meta name="keywords" content="aplikasi UMKM, aplikasi kasir Medan, aplikasi bisnis Sumatra Utara, pembuatan aplikasi UMKM, Zuvana Digital">
+<meta property="og:title" content="Zuvana Digital — Solusi Aplikasi untuk UMKM">
+<meta property="og:description" content="Aplikasi bisnis profesional yang terjangkau untuk UMKM Sumatra Utara. Mulai dari Rp 3 juta.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700;900&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   ZUVANA DIGITAL — DESIGN SYSTEM
+   Warm-Professional · Earthy · Trustworthy · Local-Rooted
+   ============================================================ */
+:root {
+  --cream:      #F7F3ED;
+  --warm-white: #FDFAF6;
+  --sand:       #E8DFCF;
+  --tan:        #C9B99A;
+  --brown:      #8B6F47;
+  --espresso:   #4A3728;
+  --ink:        #1E1410;
+  --gold:       #C49A3C;
+  --gold-light: #E8C76A;
+  --terracotta: #C4622D;
+  --sage:       #6B8A6F;
+  --sage-light: #9AB89F;
+
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body:    'DM Sans', system-ui, sans-serif;
+  --font-mono:    'DM Mono', monospace;
+
+  --radius-sm:  6px;
+  --radius-md:  12px;
+  --radius-lg:  20px;
+  --radius-xl:  32px;
+
+  --shadow-sm: 0 2px 8px rgba(74,55,40,0.08);
+  --shadow-md: 0 8px 32px rgba(74,55,40,0.12);
+  --shadow-lg: 0 20px 60px rgba(74,55,40,0.16);
+
+  --transition: 0.3s cubic-bezier(0.4,0,0.2,1);
+  --transition-slow: 0.6s cubic-bezier(0.4,0,0.2,1);
+
+  --wa: #25D366;
+  --wa-dark: #128C7E;
+}
+
+/* ---- Reset ---- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  font-family: var(--font-body);
+  background: var(--warm-white);
+  color: var(--ink);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+img { max-width: 100%; display: block; }
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+button { cursor: pointer; border: none; background: none; font-family: inherit; }
+
+/* ---- Scrollbar ---- */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--sand); }
+::-webkit-scrollbar-thumb { background: var(--tan); border-radius: 3px; }
+
+/* ============================================================
+   NAVBAR
+   ============================================================ */
+#navbar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  padding: 0 5%;
+  height: 68px;
+  display: flex; align-items: center; justify-content: space-between;
+  background: rgba(253,250,246,0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid transparent;
+  transition: var(--transition);
+}
+#navbar.scrolled {
+  border-bottom-color: var(--sand);
+  box-shadow: var(--shadow-sm);
+}
+.nav-logo {
+  display: flex; align-items: center; gap: 10px;
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--espresso);
+  letter-spacing: -0.01em;
+}
+.nav-logo-mark {
+  width: 36px; height: 36px;
+  background: linear-gradient(135deg, var(--gold), var(--terracotta));
+  border-radius: 9px;
+  display: flex; align-items: center; justify-content: center;
+  color: white;
+  font-size: 1rem;
+  font-weight: 900;
+  font-family: var(--font-display);
+  box-shadow: 0 4px 12px rgba(196,154,60,0.35);
+}
+.nav-links {
+  display: flex; align-items: center; gap: 2px;
+}
+.nav-links a {
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--espresso);
+  border-radius: var(--radius-sm);
+  transition: var(--transition);
+  position: relative;
+}
+.nav-links a:hover, .nav-links a.active {
+  color: #0099cc;
+  background: rgba(0,153,204,0.08);
+}
+.nav-links a.active::after {
+  content: '';
+  position: absolute; bottom: 2px; left: 50%; transform: translateX(-50%);
+  width: 4px; height: 4px;
+  background: #00b5d8;
+  border-radius: 50%;
+}
+.nav-cta {
+  display: flex; align-items: center; gap: 8px;
+  padding: 9px 20px;
+  background: var(--wa);
+  color: white !important;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 0.88rem;
+  transition: var(--transition);
+  box-shadow: 0 3px 12px rgba(37,211,102,0.3);
+}
+.nav-cta:hover {
+  background: var(--wa-dark) !important;
+  color: white !important;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(37,211,102,0.35);
+}
+.nav-cta svg { width: 16px; height: 16px; flex-shrink: 0; }
+.hamburger {
+  display: none;
+  flex-direction: column; gap: 5px;
+  padding: 6px;
+  border-radius: var(--radius-sm);
+  transition: var(--transition);
+}
+.hamburger span {
+  display: block; width: 24px; height: 2px;
+  background: var(--espresso);
+  border-radius: 2px;
+  transition: var(--transition);
+}
+.hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px,5px); }
+.hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px,-5px); }
+
+/* Mobile menu */
+#mobile-menu {
+  display: none;
+  position: fixed; top: 68px; left: 0; right: 0; z-index: 999;
+  background: var(--warm-white);
+  border-bottom: 1px solid var(--sand);
+  padding: 16px 5% 24px;
+  box-shadow: var(--shadow-md);
+  animation: slideDown 0.25s ease;
+}
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+#mobile-menu a {
+  display: block; padding: 14px 0;
+  font-size: 1rem; font-weight: 500;
+  color: var(--espresso);
+  border-bottom: 1px solid var(--sand);
+  transition: var(--transition);
+}
+#mobile-menu a:last-child { border-bottom: none; }
+#mobile-menu a:hover, #mobile-menu a.active { color: var(--gold); }
+#mobile-menu .nav-cta {
+  display: flex; margin-top: 16px; justify-content: center;
+  border-bottom: none;
+}
+
+/* ============================================================
+   PAGE SYSTEM
+   ============================================================ */
+.page { display: none; padding-top: 68px; min-height: 100vh; }
+.page.active { display: block; }
+
+/* ============================================================
+   SECTION UTILITIES
+   ============================================================ */
+.section { padding: 90px 5%; }
+.section-sm { padding: 60px 5%; }
+.container { max-width: 1160px; margin: 0 auto; }
+.section-label {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem; font-weight: 500;
+  color: var(--brown);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.section-label::before {
+  content: '';
+  width: 24px; height: 1px;
+  background: var(--gold);
+}
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  font-weight: 700;
+  color: var(--espresso);
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+.section-title span { color: var(--gold); }
+.section-sub {
+  font-size: 1.05rem;
+  color: var(--brown);
+  max-width: 580px;
+  line-height: 1.7;
+}
+.text-center { text-align: center; }
+.text-center .section-sub { margin: 0 auto; }
+.text-center .section-label { justify-content: center; }
+.text-center .section-label::before { display: none; }
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 13px 28px;
+  font-family: var(--font-body);
+  font-size: 0.95rem; font-weight: 600;
+  border-radius: var(--radius-md);
+  transition: var(--transition);
+  white-space: nowrap;
+}
+.btn-primary {
+  background: linear-gradient(135deg, var(--gold), #B8862A);
+  color: white;
+  box-shadow: 0 4px 16px rgba(196,154,60,0.35);
+}
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(196,154,60,0.45); }
+.btn-wa {
+  background: var(--wa);
+  color: white;
+  box-shadow: 0 4px 16px rgba(37,211,102,0.3);
+}
+.btn-wa:hover { background: var(--wa-dark); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(37,211,102,0.4); }
+.btn-outline {
+  background: transparent;
+  color: var(--espresso);
+  border: 1.5px solid var(--tan);
+}
+.btn-outline:hover { background: var(--sand); border-color: var(--brown); }
+.btn svg { width: 18px; height: 18px; }
+.btn-lg { padding: 16px 36px; font-size: 1.05rem; }
+
+/* ============================================================
+   CARDS
+   ============================================================ */
+.card {
+  background: white;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--sand);
+  transition: var(--transition);
+}
+.card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+  border-color: var(--tan);
+}
+
+/* ============================================================
+   BADGES / TAGS
+   ============================================================ */
+.badge {
+  display: inline-flex; align-items: center; gap: 4px;
+  padding: 4px 12px;
+  font-size: 0.75rem; font-weight: 600;
+  border-radius: 100px;
+  letter-spacing: 0.03em;
+}
+.badge-gold  { background: rgba(196,154,60,0.15); color: var(--brown); }
+.badge-sage  { background: rgba(107,138,111,0.15); color: var(--sage); }
+.badge-terra { background: rgba(196,98,45,0.12); color: var(--terracotta); }
+
+/* ============================================================
+   DIVIDERS
+   ============================================================ */
+.divider {
+  height: 1px; background: var(--sand);
+  margin: 0 5%;
+}
+
+/* ============================================================
+   PAGE: HOME
+   ============================================================ */
+
+/* Hero */
+#hero {
+  min-height: calc(100vh - 68px);
+  display: flex; align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding: 80px 5%;
+}
+.hero-bg {
+  position: absolute; inset: 0; z-index: 0;
+  background:
+    radial-gradient(ellipse 60% 80% at 80% 50%, rgba(196,154,60,0.07) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 60% at 20% 80%, rgba(196,98,45,0.05) 0%, transparent 55%),
+    var(--warm-white);
+}
+.hero-grid-pattern {
+  position: absolute; inset: 0; z-index: 0;
+  background-image:
+    linear-gradient(rgba(196,154,60,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(196,154,60,0.05) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, black 0%, transparent 75%);
+}
+.hero-content {
+  position: relative; z-index: 1;
+  max-width: 1160px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 80px; align-items: center;
+}
+.hero-tag {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(196,154,60,0.12);
+  border: 1px solid rgba(196,154,60,0.25);
+  color: var(--brown);
+  padding: 6px 14px 6px 8px;
+  border-radius: 100px;
+  font-size: 0.82rem; font-weight: 600;
+  margin-bottom: 24px;
+  letter-spacing: 0.02em;
+}
+.hero-tag-dot {
+  width: 8px; height: 8px;
+  background: #00b5d8;
+  border-radius: 50%;
+  animation: pulse-dot 2s infinite;
+}
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.3); }
+}
+.hero-headline {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 4.5vw, 3.8rem);
+  font-weight: 900;
+  color: var(--espresso);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: 20px;
+}
+.hero-headline .accent {
+  color: var(--gold);
+  position: relative;
+  display: inline-block;
+}
+.hero-headline .accent::after {
+  content: '';
+  position: absolute; left: 0; bottom: -4px; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--gold), var(--terracotta));
+  border-radius: 2px;
+}
+.hero-sub {
+  font-size: 1.1rem;
+  color: var(--brown);
+  line-height: 1.75;
+  margin-bottom: 36px;
+  max-width: 480px;
+}
+.hero-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 48px; }
+.hero-stats {
+  display: flex; gap: 32px; flex-wrap: wrap;
+}
+.hero-stat-item {}
+.hero-stat-num {
+  font-family: var(--font-display);
+  font-size: 1.7rem; font-weight: 700;
+  color: var(--espresso);
+  line-height: 1;
+}
+.hero-stat-num span { color: var(--gold); }
+.hero-stat-label {
+  font-size: 0.8rem; color: var(--brown);
+  margin-top: 2px;
+  font-weight: 500;
+}
+
+/* Hero Visual */
+.hero-visual {
+  position: relative;
+  display: flex; align-items: center; justify-content: center;
+}
+.hero-phone-frame {
+  width: 260px;
+  background: var(--espresso);
+  border-radius: 36px;
+  padding: 16px 12px;
+  box-shadow: var(--shadow-lg), 0 0 0 1px rgba(196,154,60,0.2);
+  position: relative; z-index: 2;
+}
+.phone-notch {
+  width: 80px; height: 6px;
+  background: rgba(255,255,255,0.15);
+  border-radius: 3px;
+  margin: 0 auto 14px;
+}
+.phone-screen {
+  background: var(--cream);
+  border-radius: 24px;
+  overflow: hidden;
+  padding: 16px;
+}
+.phone-app-header {
+  background: linear-gradient(135deg, var(--espresso), var(--brown));
+  border-radius: 14px;
+  padding: 14px;
+  margin-bottom: 12px;
+  color: white;
+}
+.phone-app-title {
+  font-family: var(--font-display);
+  font-size: 0.85rem; font-weight: 700;
+  margin-bottom: 4px;
+}
+.phone-app-sub { font-size: 0.7rem; opacity: 0.7; }
+.phone-app-amount {
+  font-family: var(--font-display);
+  font-size: 1.4rem; font-weight: 700;
+  margin-top: 8px;
+  color: var(--gold-light);
+}
+.phone-menu-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 8px; margin-bottom: 12px;
+}
+.phone-menu-item {
+  background: white;
+  border-radius: 10px;
+  padding: 10px 8px;
+  text-align: center;
+  border: 1px solid var(--sand);
+}
+.phone-menu-icon {
+  font-size: 1.3rem; margin-bottom: 4px;
+}
+.phone-menu-label {
+  font-size: 0.62rem; color: var(--espresso);
+  font-weight: 600;
+}
+.phone-txn-row {
+  display: flex; align-items: center; gap: 8px;
+  background: white; border-radius: 9px;
+  padding: 8px 10px; margin-bottom: 6px;
+  border: 1px solid var(--sand);
+}
+.phone-txn-icon {
+  width: 28px; height: 28px;
+  background: var(--sand);
+  border-radius: 7px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+.phone-txn-info { flex: 1; }
+.phone-txn-name { font-size: 0.65rem; font-weight: 600; color: var(--espresso); }
+.phone-txn-time { font-size: 0.58rem; color: var(--brown); }
+.phone-txn-amount { font-size: 0.65rem; font-weight: 700; color: var(--sage); }
+
+/* Floating badges on hero visual */
+.hero-float {
+  position: absolute; z-index: 3;
+  background: white;
+  border-radius: var(--radius-md);
+  padding: 10px 14px;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--sand);
+  animation: float-y 3s ease-in-out infinite;
+}
+.hero-float.f1 { top: 10%; left: -30px; animation-delay: 0s; }
+.hero-float.f2 { bottom: 20%; right: -30px; animation-delay: 1.5s; }
+@keyframes float-y {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+.hero-float-label { font-size: 0.68rem; color: var(--brown); font-weight: 500; margin-bottom: 2px; }
+.hero-float-value { font-size: 0.85rem; font-weight: 700; color: var(--espresso); font-family: var(--font-display); }
+
+/* ============================================================
+   HOME: WHY SECTION
+   ============================================================ */
+#why {
+  background: var(--cream);
+  padding: 90px 5%;
+}
+.why-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 60px; align-items: center;
+}
+.why-left .section-sub { margin-bottom: 32px; }
+.why-points { display: flex; flex-direction: column; gap: 16px; }
+.why-point {
+  display: flex; gap: 16px; align-items: flex-start;
+}
+.why-point-icon {
+  width: 44px; height: 44px; flex-shrink: 0;
+  background: white;
+  border: 1.5px solid var(--sand);
+  border-radius: var(--radius-md);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.2rem;
+  box-shadow: var(--shadow-sm);
+}
+.why-point-text h4 {
+  font-family: var(--font-display);
+  font-size: 1rem; font-weight: 600;
+  color: var(--espresso);
+  margin-bottom: 4px;
+}
+.why-point-text p { font-size: 0.88rem; color: var(--brown); line-height: 1.6; }
+.why-right {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+}
+.why-card {
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: 28px 22px;
+  border: 1px solid var(--sand);
+  transition: var(--transition);
+}
+.why-card:hover { box-shadow: var(--shadow-md); transform: translateY(-4px); }
+.why-card.featured {
+  background: linear-gradient(135deg, var(--espresso), #3A2A1C);
+  border-color: transparent;
+  color: white;
+  grid-column: span 2;
+  display: flex; align-items: center; gap: 24px;
+}
+.why-card-icon { font-size: 2rem; margin-bottom: 12px; }
+.why-card.featured .why-card-icon { font-size: 2.5rem; margin-bottom: 0; flex-shrink: 0; }
+.why-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.05rem; font-weight: 700;
+  color: var(--espresso); margin-bottom: 6px;
+}
+.why-card.featured h3 { color: var(--gold-light); }
+.why-card p { font-size: 0.85rem; color: var(--brown); line-height: 1.6; }
+.why-card.featured p { color: rgba(255,255,255,0.75); }
+
+/* ============================================================
+   HOME: PROCESS
+   ============================================================ */
+#process { padding: 90px 5%; }
+.process-steps {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 24px; margin-top: 48px; position: relative;
+}
+.process-steps::before {
+  content: '';
+  position: absolute; top: 28px; left: 12.5%; right: 12.5%;
+  height: 1px; background: linear-gradient(90deg, var(--sand), var(--tan), var(--sand));
+}
+.process-step { text-align: center; position: relative; }
+.process-num {
+  width: 56px; height: 56px;
+  background: white;
+  border: 2px solid var(--sand);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 16px;
+  font-family: var(--font-display);
+  font-size: 1.1rem; font-weight: 700;
+  color: var(--brown);
+  position: relative; z-index: 1;
+  transition: var(--transition);
+  box-shadow: var(--shadow-sm);
+}
+.process-step:hover .process-num {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: white;
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(196,154,60,0.35);
+}
+.process-step h4 {
+  font-family: var(--font-display);
+  font-size: 0.95rem; font-weight: 700;
+  color: var(--espresso); margin-bottom: 8px;
+}
+.process-step p { font-size: 0.82rem; color: var(--brown); line-height: 1.6; }
+
+/* ============================================================
+   HOME: TESTIMONIALS
+   ============================================================ */
+#testimonials { background: var(--cream); padding: 90px 5%; }
+.testi-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 24px; margin-top: 48px;
+}
+.testi-card {
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  border: 1px solid var(--sand);
+  transition: var(--transition);
+}
+.testi-card:hover { box-shadow: var(--shadow-md); transform: translateY(-4px); }
+.testi-stars { color: var(--gold); font-size: 0.85rem; margin-bottom: 14px; letter-spacing: 2px; }
+.testi-text {
+  font-size: 0.92rem; color: var(--espresso);
+  line-height: 1.7; margin-bottom: 20px;
+  font-style: italic;
+}
+.testi-author { display: flex; align-items: center; gap: 12px; }
+.testi-avatar {
+  width: 42px; height: 42px;
+  background: linear-gradient(135deg, var(--gold), var(--brown));
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: white; font-weight: 700;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+.testi-name { font-size: 0.88rem; font-weight: 600; color: var(--espresso); }
+.testi-biz { font-size: 0.78rem; color: var(--brown); }
+
+/* ============================================================
+   HOME: CTA BANNER
+   ============================================================ */
+#cta-home {
+  background: linear-gradient(135deg, var(--espresso) 0%, #2E1E12 50%, var(--espresso) 100%);
+  padding: 80px 5%;
+  text-align: center;
+  position: relative; overflow: hidden;
+}
+#cta-home::before {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(circle at 20% 50%, rgba(196,154,60,0.15) 0%, transparent 40%),
+    radial-gradient(circle at 80% 50%, rgba(196,98,45,0.10) 0%, transparent 40%);
+}
+.cta-home-inner { position: relative; z-index: 1; max-width: 640px; margin: 0 auto; }
+.cta-home-tag {
+  display: inline-block;
+  background: rgba(196,154,60,0.2);
+  border: 1px solid rgba(196,154,60,0.3);
+  color: var(--gold-light);
+  padding: 5px 16px;
+  border-radius: 100px;
+  font-size: 0.78rem; font-weight: 600;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.cta-home-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  font-weight: 700; color: white;
+  line-height: 1.2; margin-bottom: 16px;
+}
+.cta-home-title span { color: var(--gold-light); }
+.cta-home-sub {
+  font-size: 1rem; color: rgba(255,255,255,0.7);
+  margin-bottom: 36px; line-height: 1.7;
+}
+.cta-home-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+/* ============================================================
+   PAGE: LAYANAN
+   ============================================================ */
+.layanan-hero {
+  background: var(--cream);
+  padding: 60px 5% 80px;
+  text-align: center;
+}
+.layanan-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 28px; margin-top: 48px;
+  padding: 0 5%;
+}
+.layanan-card {
+  background: white;
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--sand);
+  overflow: hidden;
+  transition: var(--transition);
+}
+.layanan-card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-6px);
+}
+.layanan-card-top {
+  padding: 28px 28px 20px;
+  border-bottom: 1px solid var(--sand);
+}
+.layanan-tier {
+  font-family: var(--font-mono);
+  font-size: 0.7rem; font-weight: 500;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--brown); margin-bottom: 12px;
+  display: flex; align-items: center; gap: 8px;
+}
+.layanan-tier-dot {
+  width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0;
+}
+.layanan-name {
+  font-family: var(--font-display);
+  font-size: 1.5rem; font-weight: 700;
+  color: var(--espresso); margin-bottom: 4px;
+}
+.layanan-name span { color: var(--gold); }
+.layanan-tagline { font-size: 0.85rem; color: var(--brown); }
+.layanan-card-mid {
+  padding: 24px 28px;
+  border-bottom: 1px solid var(--sand);
+}
+.layanan-price {
+  font-family: var(--font-display);
+  font-size: 1.8rem; font-weight: 700;
+  color: var(--espresso);
+}
+.layanan-price-sub { font-size: 0.8rem; color: var(--brown); margin-top: 2px; }
+.layanan-card-features { padding: 20px 28px; }
+.layanan-feature {
+  display: flex; align-items: flex-start; gap: 10px;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--cream);
+  font-size: 0.875rem; color: var(--espresso);
+}
+.layanan-feature:last-child { border-bottom: none; }
+.layanan-feature-check {
+  color: var(--sage); font-size: 0.9rem;
+  flex-shrink: 0; margin-top: 1px;
+}
+.layanan-card-footer { padding: 20px 28px 28px; }
+.layanan-card.featured {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 1px rgba(196,154,60,0.2), var(--shadow-md);
+  position: relative;
+}
+.layanan-popular-badge {
+  position: absolute; top: -1px; right: 28px;
+  background: var(--gold);
+  color: white;
+  font-size: 0.72rem; font-weight: 700;
+  padding: 5px 14px;
+  border-radius: 0 0 10px 10px;
+  letter-spacing: 0.05em;
+}
+.layanan-full { width: 100%; justify-content: center; }
+
+/* Layanan kategori (all apps) */
+.kategori-section {
+  padding: 80px 5%;
+  background: var(--cream);
+}
+.kategori-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 16px; margin-top: 40px;
+}
+.kat-card {
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: 22px 18px;
+  border: 1px solid var(--sand);
+  transition: var(--transition);
+  cursor: default;
+}
+.kat-card:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); border-color: var(--tan); }
+.kat-icon { font-size: 1.8rem; margin-bottom: 10px; }
+.kat-name { font-size: 0.88rem; font-weight: 600; color: var(--espresso); margin-bottom: 4px; }
+.kat-desc { font-size: 0.78rem; color: var(--brown); line-height: 1.5; }
+
+/* ============================================================
+   PAGE: PORTOFOLIO
+   ============================================================ */
+.porto-hero { background: var(--cream); padding: 60px 5% 80px; text-align: center; }
+.porto-grid { padding: 60px 5%; display: grid; grid-template-columns: 1fr; gap: 60px; max-width: 1000px; margin: 0 auto; }
+.porto-item {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 48px; align-items: center;
+}
+.porto-item.reverse { direction: rtl; }
+.porto-item.reverse > * { direction: ltr; }
+.porto-img-frame {
+  background: var(--espresso);
+  border-radius: var(--radius-xl);
+  padding: 20px 16px;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+}
+.porto-screen {
+  background: var(--cream);
+  border-radius: 14px;
+  overflow: hidden;
+}
+.porto-screen-header {
+  background: linear-gradient(135deg, var(--espresso), var(--brown));
+  padding: 14px 16px;
+  color: white;
+}
+.porto-screen-title { font-family: var(--font-display); font-size: 0.9rem; font-weight: 700; }
+.porto-screen-sub { font-size: 0.7rem; opacity: 0.7; margin-top: 2px; }
+.porto-screen-body { padding: 12px; }
+.porto-metric-row { display: flex; gap: 8px; margin-bottom: 10px; }
+.porto-metric {
+  flex: 1; background: white; border-radius: 10px; padding: 10px;
+  border: 1px solid var(--sand);
+}
+.porto-metric-label { font-size: 0.6rem; color: var(--brown); font-weight: 500; margin-bottom: 4px; }
+.porto-metric-val { font-size: 1rem; font-weight: 700; color: var(--espresso); font-family: var(--font-display); }
+.porto-metric-val.positive { color: var(--sage); }
+.porto-table { width: 100%; }
+.porto-table-row {
+  display: flex; align-items: center; gap: 8px;
+  background: white; border-radius: 8px; padding: 7px 10px;
+  margin-bottom: 5px; border: 1px solid var(--sand);
+}
+.porto-table-dot { width: 6px; height: 6px; background: var(--gold); border-radius: 50%; flex-shrink: 0; }
+.porto-table-name { font-size: 0.65rem; flex: 1; color: var(--espresso); font-weight: 500; }
+.porto-table-val { font-size: 0.65rem; font-weight: 700; color: var(--sage); }
+
+.porto-info {}
+.porto-badge-row { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px; }
+.porto-title {
+  font-family: var(--font-display);
+  font-size: 1.8rem; font-weight: 700;
+  color: var(--espresso); margin-bottom: 8px; line-height: 1.2;
+}
+.porto-title span { color: var(--gold); }
+.porto-version {
+  font-family: var(--font-mono);
+  font-size: 0.78rem; color: var(--brown);
+  margin-bottom: 20px;
+}
+.porto-desc { font-size: 0.95rem; color: var(--brown); line-height: 1.75; margin-bottom: 28px; }
+.porto-features-title {
+  font-size: 0.78rem; font-weight: 700;
+  color: var(--espresso); letter-spacing: 0.05em;
+  text-transform: uppercase; margin-bottom: 14px;
+}
+.porto-features { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 28px; }
+.porto-feat {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 0.85rem; color: var(--espresso);
+}
+.porto-feat-dot { width: 6px; height: 6px; background: var(--gold); border-radius: 50%; flex-shrink: 0; }
+
+/* Coming soon cards */
+.coming-grid {
+  padding: 0 5% 80px;
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.coming-card {
+  background: white; border-radius: var(--radius-lg);
+  padding: 28px; border: 1px solid var(--sand);
+  transition: var(--transition);
+  position: relative; overflow: hidden;
+}
+.coming-card::before {
+  content: 'Segera';
+  position: absolute; top: 16px; right: 16px;
+  background: rgba(196,154,60,0.1); color: var(--brown);
+  font-size: 0.7rem; font-weight: 700;
+  padding: 3px 10px; border-radius: 100px;
+  border: 1px solid rgba(196,154,60,0.2);
+}
+.coming-card:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); }
+.coming-icon { font-size: 2rem; margin-bottom: 12px; }
+.coming-name { font-size: 0.95rem; font-weight: 700; color: var(--espresso); margin-bottom: 6px; }
+.coming-desc { font-size: 0.82rem; color: var(--brown); line-height: 1.5; }
+
+/* ============================================================
+   PAGE: HARGA
+   ============================================================ */
+.harga-hero { background: var(--cream); padding: 60px 5% 80px; text-align: center; }
+.harga-main { padding: 0 5% 80px; }
+.harga-container { max-width: 1100px; margin: 0 auto; }
+
+/* Aura versioning feature section */
+.aura-section {
+  background: linear-gradient(135deg, var(--espresso), #2E1A10);
+  border-radius: var(--radius-xl);
+  padding: 48px;
+  margin-bottom: 60px;
+  position: relative; overflow: hidden;
+  color: white;
+}
+.aura-section::before {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 40% 60% at 80% 50%, rgba(196,154,60,0.15) 0%, transparent 60%);
+}
+.aura-inner { position: relative; z-index: 1; }
+.aura-label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--gold-light); margin-bottom: 12px;
+  display: flex; align-items: center; gap: 8px;
+}
+.aura-label::before { content: ''; width: 20px; height: 1px; background: var(--gold); }
+.aura-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 2.5vw, 2.2rem);
+  font-weight: 700; margin-bottom: 12px;
+  color: white;
+}
+.aura-title span { color: var(--gold-light); }
+.aura-desc { font-size: 0.95rem; color: rgba(255,255,255,0.75); max-width: 560px; line-height: 1.7; margin-bottom: 32px; }
+.aura-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.aura-tier {
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: var(--radius-md);
+  padding: 18px 14px;
+  transition: var(--transition);
+}
+.aura-tier:hover {
+  background: rgba(255,255,255,0.12);
+  transform: translateY(-3px);
+}
+.aura-tier-dot {
+  width: 14px; height: 14px; border-radius: 50%;
+  margin-bottom: 10px;
+}
+.aura-tier-name { font-size: 0.9rem; font-weight: 700; color: white; margin-bottom: 4px; }
+.aura-tier-range { font-size: 0.75rem; color: var(--gold-light); margin-bottom: 8px; font-family: var(--font-mono); }
+.aura-tier-desc { font-size: 0.75rem; color: rgba(255,255,255,0.6); line-height: 1.5; }
+
+/* Pricing tables */
+.pricing-section-title {
+  font-family: var(--font-display);
+  font-size: 1.3rem; font-weight: 700; color: var(--espresso);
+  margin-bottom: 24px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--sand);
+  display: flex; align-items: center; gap: 10px;
+}
+.pricing-section-title .tier-dot { width: 10px; height: 10px; border-radius: 50%; }
+.pricing-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 16px; margin-bottom: 48px;
+}
+.price-item {
+  background: white; border-radius: var(--radius-lg);
+  padding: 22px; border: 1px solid var(--sand);
+  transition: var(--transition);
+}
+.price-item:hover { box-shadow: var(--shadow-md); border-color: var(--tan); transform: translateY(-3px); }
+.price-item-name { font-size: 0.9rem; font-weight: 600; color: var(--espresso); margin-bottom: 6px; }
+.price-item-price { font-family: var(--font-display); font-size: 1.2rem; font-weight: 700; color: var(--gold); }
+.price-item-maint { font-size: 0.75rem; color: var(--brown); margin-top: 2px; }
+
+/* Maintenance table */
+.maint-section {
+  background: var(--cream); border-radius: var(--radius-xl);
+  padding: 36px; margin-top: 20px;
+}
+.maint-title {
+  font-family: var(--font-display);
+  font-size: 1.2rem; font-weight: 700; color: var(--espresso);
+  margin-bottom: 20px;
+}
+.maint-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.maint-item {
+  background: white; border-radius: var(--radius-md);
+  padding: 18px; border: 1px solid var(--sand);
+}
+.maint-level { font-size: 0.75rem; font-weight: 700; color: var(--brown); margin-bottom: 8px; letter-spacing: 0.04em; text-transform: uppercase; }
+.maint-price { font-family: var(--font-display); font-size: 1.3rem; font-weight: 700; color: var(--espresso); }
+.maint-period { font-size: 0.75rem; color: var(--brown); }
+.maint-includes { margin-top: 10px; }
+.maint-include {
+  font-size: 0.78rem; color: var(--espresso);
+  padding: 3px 0;
+  display: flex; align-items: center; gap: 6px;
+}
+.maint-include::before { content: '✓'; color: var(--sage); font-weight: 700; flex-shrink: 0; }
+
+/* FAQ */
+.faq-section { padding: 80px 5%; }
+.faq-list { max-width: 720px; margin: 40px auto 0; }
+.faq-item {
+  border-bottom: 1px solid var(--sand);
+  overflow: hidden;
+}
+.faq-q {
+  width: 100%; text-align: left;
+  padding: 20px 0;
+  font-size: 0.95rem; font-weight: 600;
+  color: var(--espresso);
+  display: flex; justify-content: space-between; align-items: center;
+  gap: 16px;
+  transition: color var(--transition);
+}
+.faq-q:hover { color: var(--gold); }
+.faq-q-icon {
+  width: 24px; height: 24px; flex-shrink: 0;
+  background: var(--sand); border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1rem; color: var(--brown);
+  transition: var(--transition);
+}
+.faq-item.open .faq-q-icon { background: var(--gold); color: white; transform: rotate(45deg); }
+.faq-a {
+  font-size: 0.88rem; color: var(--brown); line-height: 1.75;
+  max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.3s ease;
+  padding-bottom: 0;
+}
+.faq-item.open .faq-a { max-height: 300px; padding-bottom: 20px; }
+
+/* ============================================================
+   PAGE: KONTAK
+   ============================================================ */
+.kontak-hero { background: var(--cream); padding: 60px 5% 80px; text-align: center; }
+.kontak-main { padding: 0 5% 80px; }
+.kontak-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.8fr; gap: 48px; }
+.kontak-left {}
+.kontak-info-cards { display: flex; flex-direction: column; gap: 16px; margin-bottom: 32px; }
+.kontak-info-card {
+  background: white; border-radius: var(--radius-lg);
+  padding: 20px; border: 1px solid var(--sand);
+  display: flex; align-items: flex-start; gap: 14px;
+  transition: var(--transition);
+}
+.kontak-info-card:hover { box-shadow: var(--shadow-sm); transform: translateX(4px); }
+.kontak-info-icon {
+  width: 40px; height: 40px; flex-shrink: 0;
+  background: var(--cream);
+  border-radius: var(--radius-md);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.1rem;
+}
+.kontak-info-label { font-size: 0.75rem; font-weight: 600; color: var(--brown); letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 4px; }
+.kontak-info-value { font-size: 0.9rem; color: var(--espresso); font-weight: 500; }
+.kontak-info-sub { font-size: 0.78rem; color: var(--brown); margin-top: 2px; }
+.kontak-wa-card {
+  background: linear-gradient(135deg, #1B5E3B, #0F3D25);
+  border-radius: var(--radius-xl);
+  padding: 28px;
+  color: white;
+  text-align: center;
+}
+.kontak-wa-icon { font-size: 2.5rem; margin-bottom: 12px; }
+.kontak-wa-title { font-family: var(--font-display); font-size: 1.2rem; font-weight: 700; margin-bottom: 8px; }
+.kontak-wa-sub { font-size: 0.85rem; opacity: 0.8; margin-bottom: 20px; line-height: 1.6; }
+.btn-wa-full {
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  background: var(--wa); color: white;
+  padding: 14px; border-radius: var(--radius-md);
+  font-weight: 700; font-size: 0.95rem;
+  transition: var(--transition);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+}
+.btn-wa-full:hover { background: #1FB855; transform: translateY(-2px); }
+.btn-wa-full svg { width: 20px; height: 20px; }
+
+.kontak-form-wrapper {
+  background: white; border-radius: var(--radius-xl);
+  border: 1px solid var(--sand);
+  overflow: hidden;
+}
+.kontak-form-header {
+  background: var(--cream); padding: 24px 28px;
+  border-bottom: 1px solid var(--sand);
+}
+.kontak-form-header h3 { font-family: var(--font-display); font-size: 1.2rem; font-weight: 700; color: var(--espresso); margin-bottom: 4px; }
+.kontak-form-header p { font-size: 0.85rem; color: var(--brown); }
+
+/* Embedded intake form area */
+.form-embed-area { padding: 28px; }
+.form-embed-note {
+  background: rgba(196,154,60,0.08); border: 1px solid rgba(196,154,60,0.2);
+  border-radius: var(--radius-md); padding: 14px 18px;
+  font-size: 0.82rem; color: var(--brown);
+  margin-bottom: 24px;
+  display: flex; align-items: flex-start; gap: 10px;
+}
+.form-embed-note::before { content: 'ℹ️'; flex-shrink: 0; }
+
+/* Quick contact form */
+.quick-form { display: flex; flex-direction: column; gap: 16px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.form-group { display: flex; flex-direction: column; gap: 6px; }
+.form-label { font-size: 0.8rem; font-weight: 600; color: var(--espresso); }
+.form-label span { color: var(--terracotta); }
+.form-input, .form-select, .form-textarea {
+  padding: 12px 14px;
+  background: var(--cream);
+  border: 1.5px solid var(--sand);
+  border-radius: var(--radius-md);
+  font-family: var(--font-body);
+  font-size: 0.9rem; color: var(--espresso);
+  transition: border-color var(--transition), box-shadow var(--transition);
+  outline: none;
+  resize: none;
+  -webkit-appearance: none;
+}
+.form-input:focus, .form-select:focus, .form-textarea:focus {
+  border-color: var(--gold);
+  background: white;
+  box-shadow: 0 0 0 3px rgba(196,154,60,0.12);
+}
+.form-input::placeholder, .form-textarea::placeholder { color: var(--tan); }
+.form-textarea { min-height: 100px; }
+.form-submit {
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  padding: 15px;
+  background: var(--wa);
+  color: white;
+  border-radius: var(--radius-md);
+  font-weight: 700; font-size: 1rem;
+  transition: var(--transition);
+  box-shadow: 0 4px 16px rgba(37,211,102,0.25);
+  border: none; cursor: pointer;
+}
+.form-submit:hover { background: var(--wa-dark); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(37,211,102,0.35); }
+.form-submit svg { width: 20px; height: 20px; }
+.form-disclaimer { font-size: 0.75rem; color: var(--brown); text-align: center; margin-top: 4px; }
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+#footer {
+  background: var(--ink);
+  padding: 60px 5% 32px;
+  color: rgba(255,255,255,0.75);
+}
+.footer-top {
+  display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 48px; margin-bottom: 48px;
+}
+.footer-brand {}
+.footer-logo {
+  display: flex; align-items: center; gap: 10px;
+  font-family: var(--font-display);
+  font-size: 1.3rem; font-weight: 700;
+  color: white; margin-bottom: 14px;
+}
+.footer-logo-mark {
+  width: 32px; height: 32px;
+  background: linear-gradient(135deg, var(--gold), var(--terracotta));
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  color: white; font-weight: 900; font-size: 0.9rem;
+  font-family: var(--font-display);
+}
+.footer-desc { font-size: 0.85rem; line-height: 1.75; max-width: 280px; color: rgba(255,255,255,0.6); }
+.footer-tagline {
+  margin-top: 12px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem; color: var(--gold);
+  letter-spacing: 0.06em;
+}
+.footer-col-title {
+  font-size: 0.8rem; font-weight: 700;
+  color: white; letter-spacing: 0.06em;
+  text-transform: uppercase; margin-bottom: 16px;
+}
+.footer-col a {
+  display: block; padding: 5px 0;
+  font-size: 0.85rem; color: rgba(255,255,255,0.55);
+  transition: color var(--transition);
+}
+.footer-col a:hover { color: var(--gold-light); }
+.footer-bottom {
+  padding-top: 28px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  display: flex; justify-content: space-between; align-items: center;
+  gap: 16px; flex-wrap: wrap;
+  font-size: 0.8rem; color: rgba(255,255,255,0.4);
+}
+.footer-bottom a { color: var(--gold); }
+.footer-bottom a:hover { color: var(--gold-light); }
+
+/* ============================================================
+   FLOATING WA BUTTON
+   ============================================================ */
+#wa-float {
+  position: fixed; bottom: 28px; right: 28px; z-index: 900;
+  display: flex; align-items: center; gap: 10px;
+  background: var(--wa);
+  color: white;
+  padding: 14px 22px 14px 16px;
+  border-radius: 100px;
+  font-weight: 700; font-size: 0.9rem;
+  box-shadow: 0 6px 24px rgba(37,211,102,0.45);
+  cursor: pointer;
+  transition: var(--transition);
+  animation: wa-entrance 0.8s 1s both;
+}
+@keyframes wa-entrance {
+  from { opacity: 0; transform: translateY(20px) scale(0.8); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+#wa-float:hover {
+  background: var(--wa-dark);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(37,211,102,0.5);
+}
+#wa-float svg { width: 22px; height: 22px; flex-shrink: 0; }
+.wa-float-pulse {
+  position: absolute; top: -4px; right: -4px;
+  width: 14px; height: 14px;
+  background: var(--terracotta);
+  border-radius: 50%; border: 2px solid white;
+  animation: pulse-badge 2s infinite;
+}
+@keyframes pulse-badge {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.3); }
+}
+
+/* ============================================================
+   ANIMATIONS (Scroll reveal)
+   ============================================================ */
+.reveal {
+  opacity: 0; transform: translateY(28px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+.reveal-delay-5 { transition-delay: 0.5s; }
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 1024px) {
+  .hero-content { grid-template-columns: 1fr; gap: 48px; }
+  .hero-visual { justify-content: center; }
+  .hero-float.f1 { left: 0; }
+  .hero-float.f2 { right: 0; }
+  .why-grid { grid-template-columns: 1fr; gap: 40px; }
+  .process-steps { grid-template-columns: repeat(2, 1fr); gap: 32px; }
+  .process-steps::before { display: none; }
+  .testi-grid { grid-template-columns: 1fr 1fr; }
+  .layanan-grid { grid-template-columns: 1fr; max-width: 480px; margin: 48px auto 0; }
+  .kategori-grid { grid-template-columns: repeat(2, 1fr); }
+  .porto-item { grid-template-columns: 1fr; }
+  .porto-item.reverse { direction: ltr; }
+  .coming-grid { grid-template-columns: 1fr 1fr; }
+  .aura-grid { grid-template-columns: 1fr 1fr; }
+  .maint-grid { grid-template-columns: 1fr; }
+  .footer-top { grid-template-columns: 1fr 1fr; gap: 32px; }
+  .kontak-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+  .nav-links, .nav-cta { display: none; }
+  .hamburger { display: flex; }
+  .section { padding: 70px 5%; }
+  .hero-headline { font-size: 2.2rem; }
+  .testi-grid { grid-template-columns: 1fr; }
+  .process-steps { grid-template-columns: 1fr; }
+  .kategori-grid { grid-template-columns: 1fr 1fr; }
+  .coming-grid { grid-template-columns: 1fr; }
+  .aura-section { padding: 28px 22px; }
+  .aura-grid { grid-template-columns: 1fr 1fr; }
+  .pricing-grid { grid-template-columns: 1fr 1fr; }
+  .porto-features { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+  .footer-top { grid-template-columns: 1fr; gap: 28px; }
+  .footer-bottom { flex-direction: column; text-align: center; }
+  #wa-float span { display: none; }
+  #wa-float { padding: 14px; border-radius: 50%; }
+  .why-right { grid-template-columns: 1fr; }
+  .why-card.featured { flex-direction: column; }
+}
+
+@media (max-width: 480px) {
+  .hero-actions { flex-direction: column; }
+  .hero-actions .btn { width: 100%; justify-content: center; }
+  .aura-grid { grid-template-columns: 1fr; }
+  .pricing-grid { grid-template-columns: 1fr; }
+  .cta-home-actions { flex-direction: column; align-items: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     NAVBAR
+     ============================================================ -->
+<nav id="navbar">
+  <a class="nav-logo" href="#" onclick="showPage('home'); return false;">
+    <div class="nav-logo-mark" style="background:none;box-shadow:none;padding:0;width:40px;height:40px;"><img src="data:image/png;base64,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" style="width:40px;height:40px;object-fit:contain;border-radius:8px;" alt="Zuvana Digital"></div>
+    Zuvana Digital
+  </a>
+  <div class="nav-links">
+    <a href="#" onclick="showPage('home'); return false;" data-page="home">Beranda</a>
+    <a href="#" onclick="showPage('layanan'); return false;" data-page="layanan">Layanan</a>
+    <a href="#" onclick="showPage('portofolio'); return false;" data-page="portofolio">Portofolio</a>
+    <a href="#" onclick="showPage('harga'); return false;" data-page="harga">Harga</a>
+    <a href="#" onclick="showPage('kontak'); return false;" data-page="kontak">Kontak</a>
+    <a href="https://wa.me/62895341189562?text=Halo%20Zuvana%20Digital%2C%20saya%20ingin%20konsultasi%20gratis%20pembuatan%20aplikasi." target="_blank" class="nav-cta" id="nav-wa-btn">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Konsultasi Gratis
+    </a>
+  </div>
+  <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Mobile menu -->
+<div id="mobile-menu">
+  <a href="#" onclick="showPage('home'); toggleMenu(); return false;" data-page="home">🏠 Beranda</a>
+  <a href="#" onclick="showPage('layanan'); toggleMenu(); return false;" data-page="layanan">⚙️ Layanan</a>
+  <a href="#" onclick="showPage('portofolio'); toggleMenu(); return false;" data-page="portofolio">🗂️ Portofolio</a>
+  <a href="#" onclick="showPage('harga'); toggleMenu(); return false;" data-page="harga">💰 Harga</a>
+  <a href="#" onclick="showPage('kontak'); toggleMenu(); return false;" data-page="kontak">📬 Kontak</a>
+  <a href="https://wa.me/62895341189562?text=Halo%20Zuvana%20Digital%2C%20saya%20ingin%20konsultasi%20gratis." target="_blank" class="nav-cta">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    Konsultasi Gratis via WA
+  </a>
+</div>
+
+<!-- ============================================================
+     PAGE: HOME
+     ============================================================ -->
+<div id="page-home" class="page active">
+
+  <!-- Hero -->
+  <section id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-grid-pattern"></div>
+    <div class="hero-content">
+      <div class="hero-left">
+        <div class="hero-tag">
+          <span class="hero-tag-dot"></span>
+          Lahir di Sumatra Utara · Siap Melayani Seluruh Indonesia
+        </div>
+        <h1 class="hero-headline">
+          Aplikasi Custom<br>
+          yang Bikin Bisnis<br>
+          <span class="accent">Lebih Efisien</span>
+        </h1>
+        <p class="hero-sub">
+          Kami membuat aplikasi custom agar operasional bisnis Anda lebih rapi, cepat, dan efisien. Dari warung hingga perusahaan — semua bisa digital bersama Zuvana.
+        </p>
+        <div class="hero-actions">
+          <a href="https://wa.me/62895341189562?text=Halo%20Zuvana%20Digital%2C%20saya%20ingin%20konsultasi%20gratis%20pembuatan%20aplikasi%20untuk%20bisnis%20saya." target="_blank" class="btn btn-wa btn-lg">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Konsultasi Gratis Sekarang
+          </a>
+          <button class="btn btn-outline btn-lg" onclick="showPage('layanan')">Lihat Layanan</button>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat-item">
+            <div class="hero-stat-num">48<span>+</span></div>
+            <div class="hero-stat-label">Jenis Aplikasi Tersedia</div>
+          </div>
+          <div class="hero-stat-item">
+            <div class="hero-stat-num">Rp 3<span>jt</span></div>
+            <div class="hero-stat-label">Mulai dari</div>
+          </div>
+          <div class="hero-stat-item">
+            <div class="hero-stat-num">3<span>+</span></div>
+            <div class="hero-stat-label">App Siap Pakai</div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <!-- Floating badge 1 -->
+        <div class="hero-float f1">
+          <div class="hero-float-label">Transaksi Hari Ini</div>
+          <div class="hero-float-value">Rp 4.250.000</div>
+        </div>
+        <!-- Phone frame -->
+        <div class="hero-phone-frame">
+          <div class="phone-notch"></div>
+          <div class="phone-screen">
+            <div class="phone-app-header">
+              <div class="phone-app-title">☕ Warung Pak Budi</div>
+              <div class="phone-app-sub">Zuvana Gerobak · Kasir</div>
+              <div class="phone-app-amount">Rp 4.250.000</div>
+            </div>
+            <div class="phone-menu-grid">
+              <div class="phone-menu-item">
+                <div class="phone-menu-icon">🛒</div>
+                <div class="phone-menu-label">Transaksi</div>
+              </div>
+              <div class="phone-menu-item">
+                <div class="phone-menu-icon">📦</div>
+                <div class="phone-menu-label">Stok</div>
+              </div>
+              <div class="phone-menu-item">
+                <div class="phone-menu-icon">📊</div>
+                <div class="phone-menu-label">Laporan</div>
+              </div>
+              <div class="phone-menu-item">
+                <div class="phone-menu-icon">💬</div>
+                <div class="phone-menu-label">Struk WA</div>
+              </div>
+            </div>
+            <div class="phone-txn-row">
+              <div class="phone-txn-icon">🍜</div>
+              <div class="phone-txn-info">
+                <div class="phone-txn-name">Mie Goreng Spesial</div>
+                <div class="phone-txn-time">10:32 WIB</div>
+              </div>
+              <div class="phone-txn-amount">+Rp 25.000</div>
+            </div>
+            <div class="phone-txn-row">
+              <div class="phone-txn-icon">☕</div>
+              <div class="phone-txn-info">
+                <div class="phone-txn-name">Kopi Susu Aren</div>
+                <div class="phone-txn-time">10:28 WIB</div>
+              </div>
+              <div class="phone-txn-amount">+Rp 18.000</div>
+            </div>
+            <div class="phone-txn-row">
+              <div class="phone-txn-icon">🥤</div>
+              <div class="phone-txn-info">
+                <div class="phone-txn-name">Es Teh Manis × 2</div>
+                <div class="phone-txn-time">10:15 WIB</div>
+              </div>
+              <div class="phone-txn-amount">+Rp 10.000</div>
+            </div>
+          </div>
+        </div>
+        <!-- Floating badge 2 -->
+        <div class="hero-float f2">
+          <div class="hero-float-label">Pemasukan Bulan Ini</div>
+          <div class="hero-float-value">+18% ↑</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Zuvana -->
+  <section id="why" class="reveal">
+    <div class="container">
+      <div class="why-grid">
+        <div class="why-left">
+          <span class="section-label">Kenapa Zuvana</span>
+          <h2 class="section-title">Bukan Sekadar Aplikasi.<br>Solusi <span>Nyata</span> untuk Bisnis Anda.</h2>
+          <p class="section-sub">Kami memahami ritme bisnis UMKM lokal — keterbatasan anggaran, kebutuhan yang spesifik, dan pentingnya sistem yang mudah dipakai siapa saja di tim Anda.</p>
+          <div class="why-points" style="margin-top: 28px;">
+            <div class="why-point reveal reveal-delay-1">
+              <div class="why-point-icon">🎯</div>
+              <div class="why-point-text">
+                <h4>Dibuat Khusus untuk Bisnis Anda</h4>
+                <p>Bukan template generik. Setiap aplikasi dirancang sesuai kebutuhan dan alur kerja bisnis Anda.</p>
+              </div>
+            </div>
+            <div class="why-point reveal reveal-delay-2">
+              <div class="why-point-icon">📱</div>
+              <div class="why-point-text">
+                <h4>Akses dari Browser, Tanpa Install</h4>
+                <p>Cukup pakai HP atau laptop dengan browser. Tidak perlu Play Store, tidak perlu konfigurasi rumit.</p>
+              </div>
+            </div>
+            <div class="why-point reveal reveal-delay-3">
+              <div class="why-point-icon">🔒</div>
+              <div class="why-point-text">
+                <h4>Data Aman di Google Anda</h4>
+                <p>Semua data tersimpan di Google Sheets milik Anda sendiri. Zuvana tidak menyimpan data bisnis Anda.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="why-right">
+          <div class="why-card reveal reveal-delay-1">
+            <div class="why-card-icon">⚡</div>
+            <h3>Cepat Jadi</h3>
+            <p>Aplikasi siap dalam 3–14 hari kerja tergantung kompleksitas.</p>
+          </div>
+          <div class="why-card reveal reveal-delay-2">
+            <div class="why-card-icon">💰</div>
+            <h3>Harga Terjangkau</h3>
+            <p>Mulai Rp 3 juta. Transparan, tidak ada biaya tersembunyi.</p>
+          </div>
+          <div class="why-card featured reveal reveal-delay-3">
+            <div class="why-card-icon">🛡️</div>
+            <div>
+              <h3>Dukungan Purna Jual</h3>
+              <p>Tersedia paket maintenance bulanan agar aplikasi Anda selalu berjalan optimal dan terus berkembang bersama bisnis Anda.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section id="process" class="reveal">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-label">Cara Kerja</span>
+        <h2 class="section-title">Dari Konsultasi ke <span>Aplikasi Jadi</span></h2>
+        <p class="section-sub">Proses kami sederhana, transparan, dan selalu melibatkan Anda di setiap langkah.</p>
+      </div>
+      <div class="process-steps">
+        <div class="process-step reveal reveal-delay-1">
+          <div class="process-num">01</div>
+          <h4>Konsultasi Gratis</h4>
+          <p>Ceritakan kebutuhan bisnis Anda via WhatsApp. Kami analisis dan rekomendasikan solusi terbaik.</p>
+        </div>
+        <div class="process-step reveal reveal-delay-2">
+          <div class="process-num">02</div>
+          <h4>Desain & Persetujuan</h4>
+          <p>Kami kirim draf tampilan dan fitur. Anda review dan setujui sebelum pengerjaan dimulai.</p>
+        </div>
+        <div class="process-step reveal reveal-delay-3">
+          <div class="process-num">03</div>
+          <h4>Pengembangan</h4>
+          <p>Tim kami membangun aplikasi sesuai spesifikasi yang telah disepakati. Update progres rutin.</p>
+        </div>
+        <div class="process-step reveal reveal-delay-4">
+          <div class="process-num">04</div>
+          <h4>Serah Terima & Onboarding</h4>
+          <p>Aplikasi diserahkan beserta pelatihan singkat. Anda siap pakai hari itu juga.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section id="testimonials" class="reveal">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-label">Kata Mereka</span>
+        <h2 class="section-title">Dipercaya <span>UMKM Lokal</span></h2>
+        <p class="section-sub">Pengalaman nyata dari pemilik bisnis yang telah menggunakan sistem dari Zuvana Digital.</p>
+      </div>
+      <div class="testi-grid">
+        <div class="testi-card reveal reveal-delay-1">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">"Dulu catat omzet manual di buku, sering salah hitung. Sekarang pakai aplikasi dari Zuvana, laporan langsung rapi otomatis. Sangat membantu!"</p>
+          <div class="testi-author">
+            <div class="testi-avatar">BM</div>
+            <div>
+              <div class="testi-name">Budi Manurung</div>
+              <div class="testi-biz">Warung Makan, Medan Timur</div>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card reveal reveal-delay-2">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">"Stok barang salon saya yang sering hilang sekarang terpantau semua. Tim Zuvana responsif, revisi cepat, dan harga sesuai budget saya."</p>
+          <div class="testi-author">
+            <div class="testi-avatar">SR</div>
+            <div>
+              <div class="testi-name">Sari Rahayu</div>
+              <div class="testi-biz">Salon & Kecantikan, Binjai</div>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card reveal reveal-delay-3">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">"Aplikasi rental mobil kami sekarang bisa diakses dari HP. Jadwal, pembayaran, dan kondisi kendaraan semua tercatat rapi. Luar biasa!"</p>
+          <div class="testi-author">
+            <div class="testi-avatar">AP</div>
+            <div>
+              <div class="testi-name">Andika Putra</div>
+              <div class="testi-biz">Rental Kendaraan, Pematangsiantar</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section id="cta-home" class="reveal">
+    <div class="cta-home-inner">
+      <div class="cta-home-tag">KONSULTASI GRATIS · TANPA KOMITMEN</div>
+      <h2 class="cta-home-title">Siap Digitalkan <span>Bisnis Anda?</span></h2>
+      <p class="cta-home-sub">Hubungi kami sekarang dan ceritakan kebutuhan bisnis Anda. Konsultasi pertama gratis, tanpa biaya, tanpa syarat.</p>
+      <div class="cta-home-actions">
+        <a href="https://wa.me/62895341189562?text=Halo%20Zuvana%20Digital!%20Saya%20ingin%20konsultasi%20gratis%20untuk%20aplikasi%20bisnis%20saya." target="_blank" class="btn btn-wa btn-lg">
+          <svg viewBox="0 0 24 24" fill="currentColor" style="width:20px;height:20px"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Chat WhatsApp Sekarang
+        </a>
+        <button class="btn btn-outline btn-lg" onclick="showPage('harga')" style="color:rgba(255,255,255,0.8);border-color:rgba(255,255,255,0.25);">Lihat Paket Harga</button>
+      </div>
+    </div>
+  </section>
+
+</div><!-- end page-home -->
+
+<!-- ============================================================
+     PAGE: LAYANAN
+     ============================================================ -->
+<div id="page-layanan" class="page">
+  <section class="layanan-hero">
+    <div class="container">
+      <span class="section-label">Layanan Kami</span>
+      <h1 class="section-title">Aplikasi untuk <span>Setiap Jenis Bisnis</span></h1>
+      <p class="section-sub">Kami membuat aplikasi custom sesuai kebutuhan bisnis Anda. Rapi, cepat, efisien, dan langsung bisa dipakai.</p>
+    </div>
+  </section>
+
+  <!-- Paket Aura -->
+  <div class="layanan-grid">
+    <div class="layanan-card reveal reveal-delay-1">
+      <div class="layanan-card-top">
+        <div class="layanan-tier">
+          <span class="layanan-tier-dot" style="background:#F97316;"></span>
+          Aura Orange
+        </div>
+        <div class="layanan-name">Paket <span>Dasar</span></div>
+        <div class="layanan-tagline">Untuk bisnis yang baru mulai digitalisasi</div>
+      </div>
+      <div class="layanan-card-mid">
+        <div class="layanan-price">Rp 3 – 7 jt</div>
+        <div class="layanan-price-sub">Harga jual putus · Maintenance tersedia</div>
+      </div>
+      <div class="layanan-card-features">
+        <div class="layanan-feature"><span class="layanan-feature-check">✓</span> Fitur inti sesuai jenis bisnis</div>
+        <div class="layanan-feature"><span class="layanan-feature-check">✓</span> 4 role: Creator, Admin, Operator, Owner</div>
+        <div class="layanan-feature"><span class="layanan-feature-check">✓</span> Akses via browser, tanpa install</div>
+        <div class="layanan-feature"><span class="layanan-feature-check">✓</span> Data di Google Sheets Anda</div>
+        <div class="layanan-feature"><span class="layanan-feature-check">✓</span> Panduan penggunaan (README)</div>
+        <div class="layanan-feature"><span class="layanan-feature-check">✓</span> Revisi 2×</div>
+      </div>
+      <div class="layanan-card-footer">
+        <a href="https://wa.me/62895341189562?text=Halo%20Zuvana%20Digital!%20Saya%20tertarik%20dengan%20Paket%20Dasar%20(Aura%20Orange).%20Bisa%20konsultasi%3F" target="_blank" class="btn btn-outline layanan-full">Tanya via WhatsApp</a>
+      </div>
+    </div>
+
+    <div class="layanan-card featured reveal reveal-delay-2">
+      <div class="layanan-popular-badge">✦ POPULER</div>
+      <div class="layanan-card-top">
+        <div class="layanan-tier">
+          <span class="layanan-tier-dot" style="background:#EAB308;"></span>
+          Aura Yellow
+        </div>
+        <div class="layanan-name">Paket <span>Standar</span></div>
+        <div class="layanan-tagline">Untuk bisnis yang ingin tumbuh lebih cepat</div>
+      </div>
+      <div class="layanan-card-mid">
+        <div class="layanan-price">Rp 6 – 12 jt</div>
+        <div class="layanan-price-sub">Harga jual putus · Maintenance tersedia</div>
+      </div>
+      <div class="layanan-card-features">
+        <div class="layanan-feature"><span class="layanan-feature-check">✓</span> Semua fitur Paket Dasar</div>
+        <div class="layanan-feature"><span class="layanan-feature-check">✓</span> Fitur lanjutan & laporan lengkap</div>
+        <div class="layanan-feature"><span class="layanan-feature-check">✓</span> Export data (CSV / cetak)</div>
+        <div class="layanan-feature"><span class="layanan-feature-check">✓</span> Notifikasi otomatis (email / WA)</div>
+        <div class="layanan-feature"><span class="layanan-feature-check">✓</span> Dashboard analitik</div>
+        <div class="layanan-feature"><span class="layanan-feature-check">✓</span> Revisi 3×</div>
+      </div>
+      <div class="layanan-card-footer">
+        <a href="https://wa.me/62895341189562?text=Halo%20Zuvana%20Digital!%20Saya%20tertarik%20dengan%20Paket%20Standar%20(Aura%20Yellow).%20Bisa%20konsultasi%3F" target="_blank" class="btn btn-primary layanan-full">Konsultasi Sekarang</a>
+      </div>
+    </div>
+
+    <div class="layanan-card reveal reveal-delay-3">
+      <div class="layanan-card-top">
+        <div class="layanan-tier">
+          <span class="layanan-tier-dot" style="background:#22C55E;"></span>
+          Aura Green
+        </div>
+        <div class="layanan-name">Paket <span>Lanjutan</span></div>
+        <div class="layanan-tagline">Untuk bisnis dengan kebutuhan kompleks</div>
+      </div>
+      <div class="layanan-card-mid">
+        <div class="layanan-price">Rp 15 – 35 jt</div>
+        <div class="layanan-price-sub">Harga jual putus · Maintenance tersedia</div>
+      </div>
+      <div class="layanan-card-features">
+        <div class="layanan-feature"><span class="layanan-feature-check">✓</span> Semua fitur Paket Standar</div>
+        <div class="layanan-feature"><span class="layanan-feature-check">✓</span> Multi-cabang / multi-outlet</div>
+        <div class="layanan-feature"><span class="layanan-feature-check">✓</span> Integrasi sistem eksternal</div>
+        <div class="layanan-feature"><span class="layanan-feature-check">✓</span> Otomasi alur kerja penuh</div>
+        <div class="layanan-feature"><span class="layanan-feature-check">✓</span> Custom fitur sesuai permintaan</div>
+        <div class="layanan-feature"><span class="layanan-feature-check">✓</span> Revisi 5× + konsultasi prioritas</div>
+      </div>
+      <div class="layanan-card-footer">
+        <a href="https://wa.me/62895341189562?text=Halo%20Zuvana%20Digital!%20Saya%20tertarik%20dengan%20Paket%20Lanjutan%20(Aura%20Green).%20Bisa%20konsultasi%3F" target="_blank" class="btn btn-outline layanan-full">Diskusikan Kebutuhan</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Kategori Aplikasi -->
+  <section class="kategori-section reveal">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-label">Kategori Aplikasi</span>
+        <h2 class="section-title">48+ Jenis Aplikasi Tersedia <span>Tersedia</span></h2>
+        <p class="section-sub">Kami memiliki template dan pengalaman untuk hampir semua jenis bisnis UMKM.</p>
+      </div>
+      <div class="kategori-grid">
+        <div class="kat-card reveal reveal-delay-1">
+          <div class="kat-icon">🛒</div>
+          <div class="kat-name">POS & Kasir</div>
+          <div class="kat-desc">Warung, restoran, cafe, toko retail, gerobak, franchise</div>
+        </div>
+        <div class="kat-card reveal reveal-delay-2">
+          <div class="kat-icon">📦</div>
+          <div class="kat-name">Stok & Inventori</div>
+          <div class="kat-desc">Gudang, toko bahan bangunan, apotek, minimarket</div>
+        </div>
+        <div class="kat-card reveal reveal-delay-3">
+          <div class="kat-icon">🏥</div>
+          <div class="kat-name">Klinik & Kesehatan</div>
+          <div class="kat-desc">Klinik umum, klinik gigi, bidan, puskesmas pembantu</div>
+        </div>
+        <div class="kat-card reveal reveal-delay-4">
+          <div class="kat-icon">🏗️</div>
+          <div class="kat-name">Kontraktor & Proyek</div>
+          <div class="kat-desc">RAB, jadwal proyek, laporan harian, material tracking</div>
+        </div>
+        <div class="kat-card reveal reveal-delay-1">
+          <div class="kat-icon">🎓</div>
+          <div class="kat-name">Pendidikan & Kursus</div>
+          <div class="kat-desc">Les privat, bimbel, daycare, TK/SD swasta</div>
+        </div>
+        <div class="kat-card reveal reveal-delay-2">
+          <div class="kat-icon">🚗</div>
+          <div class="kat-name">Otomotif & Rental</div>
+          <div class="kat-desc">Bengkel, rental mobil/motor, cuci kendaraan, spare part</div>
+        </div>
+        <div class="kat-card reveal reveal-delay-3">
+          <div class="kat-icon">💇</div>
+          <div class="kat-name">Salon & Kecantikan</div>
+          <div class="kat-desc">Booking, treatment, stok produk, komisi terapis</div>
+        </div>
+        <div class="kat-card reveal reveal-delay-4">
+          <div class="kat-icon">🏢</div>
+          <div class="kat-name">Properti & Kos</div>
+          <div class="kat-desc">Manajemen kos, kontrakan, tagihan, laporan penghuni</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="cta-home" class="reveal" style="background:linear-gradient(135deg,var(--espresso),#2E1E12);padding:70px 5%;text-align:center;position:relative;overflow:hidden;">
+    <div style="position:absolute;inset:0;background:radial-gradient(circle at 30% 50%,rgba(196,154,60,.12) 0%,transparent 50%);"></div>
+    <div style="position:relative;z-index:1;max-width:580px;margin:0 auto;">
+      <h2 style="font-family:var(--font-display);font-size:clamp(1.6rem,3vw,2.4rem);font-weight:700;color:white;margin-bottom:14px;">Bisnis Anda Belum Ada di Daftar?</h2>
+      <p style="color:rgba(255,255,255,.7);margin-bottom:28px;line-height:1.7;">Ceritakan bisnis Anda. Kami akan analisis dan rancang solusi yang benar-benar cocok untuk Anda.</p>
+      <a href="https://wa.me/62895341189562?text=Halo%20Zuvana%20Digital!%20Saya%20ingin%20mendiskusikan%20kebutuhan%20aplikasi%20untuk%20bisnis%20saya." target="_blank" class="btn btn-wa btn-lg" style="margin:0 auto;">
+        <svg viewBox="0 0 24 24" fill="currentColor" style="width:20px;height:20px"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Ceritakan Kebutuhan Anda
+      </a>
+    </div>
+  </section>
+</div><!-- end page-layanan -->
+
+<!-- ============================================================
+     PAGE: PORTOFOLIO
+     ============================================================ -->
+<div id="page-portofolio" class="page">
+  <section class="porto-hero">
+    <div class="container">
+      <span class="section-label">Portofolio</span>
+      <h1 class="section-title">Karya <span>Nyata</span> Kami</h1>
+      <p class="section-sub">Aplikasi yang telah kami bangun dan digunakan oleh UMKM sungguhan.</p>
+    </div>
+  </section>
+
+  <div class="porto-grid">
+    <!-- Zuvana Gerobak -->
+    <div class="porto-item reveal">
+      <div class="porto-img-frame">
+        <div class="porto-screen">
+          <div class="porto-screen-header">
+            <div class="porto-screen-title">☕ Zuvana Gerobak</div>
+            <div class="porto-screen-sub">Dashboard Kasir — Warung Pak Budi</div>
+          </div>
+          <div class="porto-screen-body">
+            <div class="porto-metric-row">
+              <div class="porto-metric">
+                <div class="porto-metric-label">Omzet Hari Ini</div>
+                <div class="porto-metric-val positive">Rp 4.250.000</div>
+              </div>
+              <div class="porto-metric">
+                <div class="porto-metric-label">Total Transaksi</div>
+                <div class="porto-metric-val">87 txn</div>
+              </div>
+            </div>
+            <div class="porto-metric-row">
+              <div class="porto-metric">
+                <div class="porto-metric-label">Item Terlaris</div>
+                <div class="porto-metric-val">Mie Goreng</div>
+              </div>
+              <div class="porto-metric">
+                <div class="porto-metric-label">Stok Hampir Habis</div>
+                <div class="porto-metric-val" style="color:var(--terracotta);">3 item ⚠️</div>
+              </div>
+            </div>
+            <div class="porto-table">
+              <div class="porto-table-row">
+                <div class="porto-table-dot"></div>
+                <div class="porto-table-name">Mie Goreng Spesial</div>
+                <div class="porto-table-val">156 pcs</div>
+              </div>
+              <div class="porto-table-row">
+                <div class="porto-table-dot" style="background:var(--terracotta)"></div>
+                <div class="porto-table-name">Kopi Susu Aren</div>
+                <div class="porto-table-val">98 cup</div>
+              </div>
+              <div class="porto-table-row">
+                <div class="porto-table-dot" style="background:var(--sage)"></div>
+                <div class="porto-table-name">Nasi Goreng Kampung</div>
+                <div class="porto-table-val">74 pcs</div>
+              </div>
+              <div class="porto-table-row">
+                <div class="porto-table-dot" style="background:var(--brown)"></div>
+                <div class="porto-table-name">Es Teh Manis</div>
+                <div class="porto-table-val">203 cup</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="porto-info">
+        <div class="porto-badge-row">
+          <span class="badge badge-gold">Aura Orange v2.0</span>
+          <span class="badge badge-sage">POS & Kasir</span>
+        </div>
+        <h2 class="porto-title">Zuvana <span>Gerobak</span></h2>
+        <div class="porto-version">versi: Orange Aura v2.0 · Dirilis 2025</div>
+        <p class="porto-desc">Sistem kasir multi-outlet lengkap untuk warung makan, cafe, dan gerobak. Dari transaksi harian hingga laporan bulanan, semua tersimpan rapi dan bisa diakses kapan saja dari HP.</p>
+        <div class="porto-features-title">FITUR UTAMA</div>
+        <div class="porto-features">
+          <div class="porto-feat"><span class="porto-feat-dot"></span>Kasir multi-outlet</div>
+          <div class="porto-feat"><span class="porto-feat-dot"></span>Struk otomatis via WA</div>
+          <div class="porto-feat"><span class="porto-feat-dot"></span>Manajemen stok real-time</div>
+          <div class="porto-feat"><span class="porto-feat-dot"></span>Laporan omzet harian</div>
+          <div class="porto-feat"><span class="porto-feat-dot"></span>Export laporan CSV</div>
+          <div class="porto-feat"><span class="porto-feat-dot"></span>4 role pengguna</div>
+          <div class="porto-feat"><span class="porto-feat-dot"></span>Manajemen produk & harga</div>
+          <div class="porto-feat"><span class="porto-feat-dot"></span>Akses via browser</div>
+        </div>
+        <a href="https://wa.me/62895341189562?text=Halo%20Zuvana%20Digital!%20Saya%20tertarik%20dengan%20aplikasi%20Zuvana%20Gerobak.%20Bisa%20minta%20demo%20atau%20info%20lebih%20lanjut%3F" target="_blank" class="btn btn-wa">
+          <svg viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Minta Demo via WA
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Porto 2: Presensi Orange -->
+  <div class="porto-grid" style="padding-top:0;">
+    <div class="porto-item reverse reveal">
+      <div class="porto-img-frame">
+        <div class="porto-screen">
+          <div class="porto-screen-header" style="background:linear-gradient(135deg,#1a2e1c,#2d5a32);">
+            <div class="porto-screen-title">🕐 Zuvana Presensi</div>
+            <div class="porto-screen-sub">Absensi Karyawan — Orange Aura</div>
+          </div>
+          <div class="porto-screen-body">
+            <div style="background:white;border-radius:12px;padding:14px;margin-bottom:10px;border:1px solid var(--sand);text-align:center;">
+              <div style="font-size:1.6rem;font-family:var(--font-mono);font-weight:600;color:var(--espresso);letter-spacing:-1px;">08:47:32</div>
+              <div style="font-size:0.62rem;color:var(--brown);margin-top:3px;">Selasa, 25 April 2025</div>
+              <div style="display:flex;gap:6px;justify-content:center;margin-top:10px;">
+                <div style="background:#16a34a;color:white;border-radius:8px;padding:7px 12px;font-size:0.68rem;font-weight:700;">✅ Absen Masuk</div>
+                <div style="background:#dc2626;color:white;border-radius:8px;padding:7px 12px;font-size:0.68rem;font-weight:700;">🏠 Absen Pulang</div>
+              </div>
+            </div>
+            <div class="porto-metric-row">
+              <div class="porto-metric"><div class="porto-metric-label">Hadir Hari Ini</div><div class="porto-metric-val positive">12</div></div>
+              <div class="porto-metric"><div class="porto-metric-label">Terlambat</div><div class="porto-metric-val" style="color:var(--gold);">2</div></div>
+            </div>
+            <div class="porto-table">
+              <div class="porto-table-row"><div class="porto-table-dot" style="background:#22c55e"></div><div class="porto-table-name">Budi Santoso — HADIR</div><div class="porto-table-val">08:05</div></div>
+              <div class="porto-table-row"><div class="porto-table-dot" style="background:var(--gold)"></div><div class="porto-table-name">Sari Admin — TERLAMBAT</div><div class="porto-table-val">08:22</div></div>
+              <div class="porto-table-row"><div class="porto-table-dot" style="background:#60a5fa"></div><div class="porto-table-name">Andi Staff — IZIN</div><div class="porto-table-val">—</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="porto-info">
+        <div class="porto-badge-row">
+          <span class="badge badge-gold">Aura Orange v1.0</span>
+          <span class="badge badge-sage">HR & SDM</span>
+        </div>
+        <h2 class="porto-title">Zuvana <span>Presensi</span></h2>
+        <div class="porto-version">versi: Orange Aura v1.0 · Sistem Absensi Kantor</div>
+        <p class="porto-desc">Sistem absensi digital yang mudah dipakai siapa saja. Karyawan absen masuk & pulang dari browser HP, laporan langsung rekap otomatis. Cocok untuk UMKM dengan 5–50 karyawan.</p>
+        <div class="porto-features-title">FITUR UTAMA</div>
+        <div class="porto-features">
+          <div class="porto-feat"><span class="porto-feat-dot"></span>Absen masuk & pulang real-time</div>
+          <div class="porto-feat"><span class="porto-feat-dot"></span>Deteksi keterlambatan otomatis</div>
+          <div class="porto-feat"><span class="porto-feat-dot"></span>Pengajuan izin / sakit / cuti</div>
+          <div class="porto-feat"><span class="porto-feat-dot"></span>Dashboard kehadiran harian</div>
+          <div class="porto-feat"><span class="porto-feat-dot"></span>Laporan bulanan + export CSV</div>
+          <div class="porto-feat"><span class="porto-feat-dot"></span>Kirim laporan via WhatsApp</div>
+          <div class="porto-feat"><span class="porto-feat-dot"></span>Manajemen karyawan & PIN</div>
+          <div class="porto-feat"><span class="porto-feat-dot"></span>4 role pengguna</div>
+        </div>
+        <a href="https://wa.me/62895341189562?text=Halo%20Zuvana%20Digital!%20Saya%20tertarik%20dengan%20Zuvana%20Presensi%20(Orange).%20Bisa%20minta%20demo%3F" target="_blank" class="btn btn-wa">
+          <svg viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Minta Demo via WA
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Porto 3: Presensi + Penggajian Yellow -->
+  <div class="porto-grid" style="padding-top:0;padding-bottom:60px;">
+    <div class="porto-item reveal">
+      <div class="porto-img-frame" style="background:linear-gradient(135deg,#1a1a2e,#2d2d50);">
+        <div class="porto-screen">
+          <div class="porto-screen-header" style="background:linear-gradient(135deg,#1e3a5f,#2d5a8a);">
+            <div class="porto-screen-title">💰 Zuvana Presensi + Gaji</div>
+            <div class="porto-screen-sub">Slip Gaji — Yellow Aura</div>
+          </div>
+          <div class="porto-screen-body">
+            <div style="background:white;border-radius:10px;padding:12px;margin-bottom:10px;border:1px solid var(--sand);">
+              <div style="font-size:0.62rem;font-weight:700;color:var(--brown);letter-spacing:0.05em;margin-bottom:6px;text-transform:uppercase;">Slip Gaji — April 2025</div>
+              <div style="font-size:0.65rem;color:var(--espresso);font-weight:600;margin-bottom:8px;">Budi Santoso · Staff Operasional</div>
+              <div style="display:flex;flex-direction:column;gap:3px;font-size:0.6rem;">
+                <div style="display:flex;justify-content:space-between;color:var(--brown);"><span>Gaji Pokok</span><span>Rp 3.500.000</span></div>
+                <div style="display:flex;justify-content:space-between;color:#16a34a;"><span>Uang Makan (22 hr)</span><span>Rp 440.000</span></div>
+                <div style="display:flex;justify-content:space-between;color:#16a34a;"><span>Uang Transport</span><span>Rp 330.000</span></div>
+                <div style="display:flex;justify-content:space-between;color:#dc2626;"><span>Potongan Terlambat</span><span>-Rp 45.000</span></div>
+                <div style="border-top:1px solid var(--sand);margin-top:4px;padding-top:4px;display:flex;justify-content:space-between;font-weight:700;color:var(--espresso);"><span>Take Home Pay</span><span style="color:var(--gold)">Rp 4.225.000</span></div>
+              </div>
+            </div>
+            <div class="porto-metric-row">
+              <div class="porto-metric"><div class="porto-metric-label">Total Gaji/Bln</div><div class="porto-metric-val positive" style="font-size:0.8rem;">Rp 42jt</div></div>
+              <div class="porto-metric"><div class="porto-metric-label">Karyawan</div><div class="porto-metric-val">12 org</div></div>
+            </div>
+            <div class="porto-table-row" style="background:white;"><div class="porto-table-dot" style="background:#22c55e"></div><div class="porto-table-name">8 sudah dibayar</div><div class="porto-table-val">✅</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="porto-info">
+        <div class="porto-badge-row">
+          <span class="badge badge-gold">Aura Yellow v1.0</span>
+          <span class="badge badge-sage">HR & Penggajian</span>
+        </div>
+        <h2 class="porto-title">Zuvana Presensi <span>+ Penggajian</span></h2>
+        <div class="porto-version">versi: Yellow Aura v1.0 · Absensi + Slip Gaji Otomatis</div>
+        <p class="porto-desc">Upgrade dari Presensi Orange — ditambah modul penggajian otomatis lengkap. Hitung gaji, tunjangan, lembur, dan potongan otomatis berdasarkan data absensi. Slip gaji langsung kirim via WhatsApp.</p>
+        <div class="porto-features-title">FITUR TAMBAHAN vs ORANGE</div>
+        <div class="porto-features">
+          <div class="porto-feat"><span class="porto-feat-dot"></span>Hitung gaji otomatis dari absensi</div>
+          <div class="porto-feat"><span class="porto-feat-dot"></span>Slip gaji digital per karyawan</div>
+          <div class="porto-feat"><span class="porto-feat-dot"></span>Tunjangan makan & transport/hari</div>
+          <div class="porto-feat"><span class="porto-feat-dot"></span>Pencatatan & hitung lembur</div>
+          <div class="porto-feat"><span class="porto-feat-dot"></span>Potongan otomatis (alpha, terlambat)</div>
+          <div class="porto-feat"><span class="porto-feat-dot"></span>Kirim slip gaji via WhatsApp</div>
+          <div class="porto-feat"><span class="porto-feat-dot"></span>Export rekap gaji CSV</div>
+          <div class="porto-feat"><span class="porto-feat-dot"></span>Status bayar per karyawan</div>
+        </div>
+        <a href="https://wa.me/62895341189562?text=Halo%20Zuvana%20Digital!%20Saya%20tertarik%20dengan%20Zuvana%20Presensi%20%2B%20Penggajian%20(Yellow).%20Bisa%20minta%20demo%3F" target="_blank" class="btn btn-wa">
+          <svg viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Minta Demo via WA
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Porto 4: Es Krim Pokat Au -->
+  <div class="porto-grid" style="padding-top:0;padding-bottom:20px;">
+    <div class="porto-item reverse reveal">
+      <div class="porto-img-frame" style="background:linear-gradient(135deg,#0d1f1a,#1a3d30);">
+        <div class="porto-screen">
+          <div class="porto-screen-header" style="background:linear-gradient(135deg,#0d3320,#1a6640);">
+            <div class="porto-screen-title">🍦 Es Krim Pokat Au</div>
+            <div class="porto-screen-sub">Dashboard Admin — Multi-Outlet</div>
+          </div>
+          <div class="porto-screen-body">
+            <div class="porto-metric-row">
+              <div class="porto-metric">
+                <div class="porto-metric-label">Total Cup Hari Ini</div>
+                <div class="porto-metric-val positive">247 cup</div>
+              </div>
+              <div class="porto-metric">
+                <div class="porto-metric-label">Total Setoran</div>
+                <div class="porto-metric-val" style="color:var(--gold);">Rp 2,1jt</div>
+              </div>
+            </div>
+            <div class="porto-table">
+              <div class="porto-table-row">
+                <div class="porto-table-dot" style="background:#22c55e"></div>
+                <div class="porto-table-name">Outlet Jl. Sudirman</div>
+                <div class="porto-table-val">84 cup ✅</div>
+              </div>
+              <div class="porto-table-row">
+                <div class="porto-table-dot" style="background:#22c55e"></div>
+                <div class="porto-table-name">Outlet Pasar Gambir</div>
+                <div class="porto-table-val">91 cup ✅</div>
+              </div>
+              <div class="porto-table-row">
+                <div class="porto-table-dot" style="background:var(--gold)"></div>
+                <div class="porto-table-name">Outlet Jl. Ahmad Yani</div>
+                <div class="porto-table-val">72 cup ✅</div>
+              </div>
+              <div class="porto-table-row">
+                <div class="porto-table-dot" style="background:var(--terracotta)"></div>
+                <div class="porto-table-name">Outlet Baru — Belum Lapor</div>
+                <div class="porto-table-val">⚠️</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="porto-info">
+        <div class="porto-badge-row">
+          <span class="badge badge-gold">Aura Green v1.0</span>
+          <span class="badge badge-terra">F&B Multi-Outlet</span>
+          <span class="badge badge-sage">Custom</span>
+        </div>
+        <h2 class="porto-title">Gerobak <span>Pro</span> — Es Krim Pokat Au</h2>
+        <div class="porto-version">versi: Green Aura v1.0 · Tebing Tinggi, Sumatra Utara</div>
+        <p class="porto-desc">Sistem manajemen gerobak es krim multi-outlet khusus untuk Es Krim Pokat Au. Setiap operator lapor stok harian dari HP, admin pantau semua outlet secara real-time dari satu dashboard. Dilengkapi POS, analisis waste bahan, dan tren penjualan 7 hari.</p>
+        <div class="porto-features-title">FITUR UNGGULAN</div>
+        <div class="porto-features">
+          <div class="porto-feat"><span class="porto-feat-dot"></span>Dashboard multi-outlet real-time</div>
+          <div class="porto-feat"><span class="porto-feat-dot"></span>Laporan harian per operator</div>
+          <div class="porto-feat"><span class="porto-feat-dot"></span>POS kasir + QRIS per outlet</div>
+          <div class="porto-feat"><span class="porto-feat-dot"></span>Kontrol waste bahan (pokat, milo, gula aren)</div>
+          <div class="porto-feat"><span class="porto-feat-dot"></span>Target & realisasi porsi per cup</div>
+          <div class="porto-feat"><span class="porto-feat-dot"></span>Tren 7 hari — cup & setoran</div>
+          <div class="porto-feat"><span class="porto-feat-dot"></span>Alert outlet belum lapor</div>
+          <div class="porto-feat"><span class="porto-feat-dot"></span>Export CSV + kirim laporan WA</div>
+        </div>
+        <a href="https://wa.me/62895341189562?text=Halo%20Zuvana%20Digital!%20Saya%20tertarik%20dengan%20sistem%20manajemen%20gerobak%20multi-outlet%20seperti%20Es%20Krim%20Pokat%20Au.%20Bisa%20konsultasi%3F" target="_blank" class="btn btn-wa">
+          <svg viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Sistem Serupa untuk Bisnis Anda
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Coming soon -->
+  <section style="padding:0 5% 80px;">
+    <div class="container">
+      <span class="section-label">Segera Hadir</span>
+      <h2 class="section-title" style="margin-bottom:8px;">Dalam <span>Pengerjaan</span></h2>
+      <p class="section-sub" style="margin-bottom:40px;">Aplikasi berikutnya yang sedang kami kembangkan untuk Anda.</p>
+    </div>
+    <div class="coming-grid">
+      <div class="coming-card reveal reveal-delay-1">
+        <div class="coming-icon">🏥</div>
+        <div class="coming-name">Zuvana Klinik</div>
+        <div class="coming-desc">Rekam medis, jadwal dokter, antrian pasien, billing klinik umum & gigi.</div>
+      </div>
+      <div class="coming-card reveal reveal-delay-2">
+        <div class="coming-icon">🏗️</div>
+        <div class="coming-name">Zuvana Proyek</div>
+        <div class="coming-desc">RAB otomatis, progress harian, laporan material, dan penggajian pekerja.</div>
+      </div>
+      <div class="coming-card reveal reveal-delay-3">
+        <div class="coming-icon">🏢</div>
+        <div class="coming-name">Zuvana Kos</div>
+        <div class="coming-desc">Tagihan otomatis, histori penghuni, laporan pemasukan kos dan kontrakan.</div>
+      </div>
+      <div class="coming-card reveal reveal-delay-1">
+        <div class="coming-icon">💇</div>
+        <div class="coming-name">Zuvana Salon</div>
+        <div class="coming-desc">Booking online, treatment history, komisi terapis, stok produk salon.</div>
+      </div>
+      <div class="coming-card reveal reveal-delay-2">
+        <div class="coming-icon">🎓</div>
+        <div class="coming-name">Zuvana Bimbel</div>
+        <div class="coming-desc">Jadwal les, absensi siswa, tagihan SPP, laporan progres belajar.</div>
+      </div>
+      <div class="coming-card reveal reveal-delay-3">
+        <div class="coming-icon">🚗</div>
+        <div class="coming-name">Zuvana Rental</div>
+        <div class="coming-desc">Jadwal kendaraan, status unit, pembayaran sewa, laporan pendapatan.</div>
+      </div>
+    </div>
+  </section>
+</div><!-- end page-portofolio -->
+
+<!-- ============================================================
+     PAGE: HARGA
+     ============================================================ -->
+<div id="page-harga" class="page">
+  <section class="harga-hero">
+    <div class="container">
+      <span class="section-label">Transparansi Harga</span>
+      <h1 class="section-title">Harga <span>Jelas</span>, Nilai <span>Nyata</span></h1>
+      <p class="section-sub">Semua harga transparan, jual putus, tanpa biaya tersembunyi. Maintenance tersedia opsional sesuai kebutuhan Anda.</p>
+    </div>
+  </section>
+
+  <div class="harga-main">
+    <div class="harga-container">
+
+      <!-- Aura Versioning -->
+      <div class="aura-section reveal">
+        <div class="aura-inner">
+          <div class="aura-label">Sistem Paket Layanan Zuvana</div>
+          <h2 class="aura-title">Aura <span>Versioning</span> System</h2>
+          <p class="aura-desc">Setiap aplikasi Zuvana hadir dalam versi yang disesuaikan dengan skala dan kebutuhan bisnis Anda. Mulai dari yang esensial, berkembang seiring bisnis Anda.</p>
+          <div class="aura-grid">
+            <div class="aura-tier reveal reveal-delay-1">
+              <div class="aura-tier-dot" style="background:#F97316;box-shadow:0 0 12px rgba(249,115,22,.4)"></div>
+              <div class="aura-tier-name">🟠 Orange</div>
+              <div class="aura-tier-range">Rp 3 – 7 jt</div>
+              <div class="aura-tier-desc">Fitur inti, cocok untuk bisnis yang baru mulai digitalisasi.</div>
+            </div>
+            <div class="aura-tier reveal reveal-delay-2">
+              <div class="aura-tier-dot" style="background:#EAB308;box-shadow:0 0 12px rgba(234,179,8,.4)"></div>
+              <div class="aura-tier-name">🟡 Yellow</div>
+              <div class="aura-tier-range">Rp 6 – 12 jt</div>
+              <div class="aura-tier-desc">Fitur lengkap dengan laporan dan notifikasi otomatis.</div>
+            </div>
+            <div class="aura-tier reveal reveal-delay-3">
+              <div class="aura-tier-dot" style="background:#22C55E;box-shadow:0 0 12px rgba(34,197,94,.4)"></div>
+              <div class="aura-tier-name">🟢 Green</div>
+              <div class="aura-tier-range">Rp 15 – 35 jt</div>
+              <div class="aura-tier-desc">Multi-cabang, integrasi penuh, cocok untuk bisnis berkembang.</div>
+            </div>
+            <div class="aura-tier reveal reveal-delay-4">
+              <div class="aura-tier-dot" style="background:#a855f7;box-shadow:0 0 12px rgba(168,85,247,.4)"></div>
+              <div class="aura-tier-name">💎 Diamond</div>
+              <div class="aura-tier-range">Harga Custom</div>
+              <div class="aura-tier-desc">Enterprise. Sistem berskala besar dengan kebutuhan unik.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Orange apps -->
+      <div class="reveal" style="margin-top:48px;">
+        <div class="pricing-section-title">
+          <span class="tier-dot" style="background:#F97316;"></span>
+          Aura Orange — Rp 3.000.000 s/d Rp 7.000.000
+        </div>
+        <div class="pricing-grid">
+          <div class="price-item"><div class="price-item-name">Kasir Warung / Gerobak</div><div class="price-item-price">Rp 3.500.000</div><div class="price-item-maint">Maintenance ab Rp 250rb/bln</div></div>
+          <div class="price-item"><div class="price-item-name">Stok Toko Kelontong</div><div class="price-item-price">Rp 3.500.000</div><div class="price-item-maint">Maintenance ab Rp 250rb/bln</div></div>
+          <div class="price-item"><div class="price-item-name">Absensi Karyawan</div><div class="price-item-price">Rp 3.000.000</div><div class="price-item-maint">Maintenance ab Rp 200rb/bln</div></div>
+          <div class="price-item"><div class="price-item-name">Catatan Hutang Piutang</div><div class="price-item-price">Rp 3.000.000</div><div class="price-item-maint">Maintenance ab Rp 200rb/bln</div></div>
+          <div class="price-item"><div class="price-item-name">Order & Pesanan Sederhana</div><div class="price-item-price">Rp 4.000.000</div><div class="price-item-maint">Maintenance ab Rp 250rb/bln</div></div>
+          <div class="price-item"><div class="price-item-name">Antrian Digital</div><div class="price-item-price">Rp 4.500.000</div><div class="price-item-maint">Maintenance ab Rp 300rb/bln</div></div>
+          <div class="price-item"><div class="price-item-name">Booking Jadwal Sederhana</div><div class="price-item-price">Rp 5.000.000</div><div class="price-item-maint">Maintenance ab Rp 300rb/bln</div></div>
+          <div class="price-item"><div class="price-item-name">Penggajian Karyawan Dasar</div><div class="price-item-price">Rp 5.500.000</div><div class="price-item-maint">Maintenance ab Rp 350rb/bln</div></div>
+        </div>
+      </div>
+
+      <!-- Yellow apps -->
+      <div class="reveal">
+        <div class="pricing-section-title">
+          <span class="tier-dot" style="background:#EAB308;"></span>
+          Aura Yellow — Rp 6.000.000 s/d Rp 12.000.000
+        </div>
+        <div class="pricing-grid">
+          <div class="price-item"><div class="price-item-name">POS Multi-Outlet Lengkap</div><div class="price-item-price">Rp 7.500.000</div><div class="price-item-maint">Maintenance ab Rp 450rb/bln</div></div>
+          <div class="price-item"><div class="price-item-name">Manajemen Klinik Dasar</div><div class="price-item-price">Rp 8.000.000</div><div class="price-item-maint">Maintenance ab Rp 500rb/bln</div></div>
+          <div class="price-item"><div class="price-item-name">Sistem Bengkel Otomotif</div><div class="price-item-price">Rp 8.500.000</div><div class="price-item-maint">Maintenance ab Rp 500rb/bln</div></div>
+          <div class="price-item"><div class="price-item-name">Manajemen Kos & Kontrakan</div><div class="price-item-price">Rp 7.000.000</div><div class="price-item-maint">Maintenance ab Rp 400rb/bln</div></div>
+          <div class="price-item"><div class="price-item-name">Sistem Bimbel / Les Privat</div><div class="price-item-price">Rp 7.500.000</div><div class="price-item-maint">Maintenance ab Rp 450rb/bln</div></div>
+          <div class="price-item"><div class="price-item-name">Manajemen Salon Lengkap</div><div class="price-item-price">Rp 9.000.000</div><div class="price-item-maint">Maintenance ab Rp 550rb/bln</div></div>
+          <div class="price-item"><div class="price-item-name">Rental Kendaraan</div><div class="price-item-price">Rp 9.500.000</div><div class="price-item-maint">Maintenance ab Rp 600rb/bln</div></div>
+          <div class="price-item"><div class="price-item-name">Sistem Kontraktor / Proyek</div><div class="price-item-price">Rp 11.000.000</div><div class="price-item-maint">Maintenance ab Rp 650rb/bln</div></div>
+        </div>
+      </div>
+
+      <!-- Green apps -->
+      <div class="reveal">
+        <div class="pricing-section-title">
+          <span class="tier-dot" style="background:#22C55E;"></span>
+          Aura Green — Rp 15.000.000 s/d Rp 35.000.000
+        </div>
+        <div class="pricing-grid">
+          <div class="price-item"><div class="price-item-name">Sistem ERP UMKM Lengkap</div><div class="price-item-price">Rp 20.000.000</div><div class="price-item-maint">Maintenance ab Rp 1.200rb/bln</div></div>
+          <div class="price-item"><div class="price-item-name">Manajemen Klinik Multi-Dokter</div><div class="price-item-price">Rp 18.000.000</div><div class="price-item-maint">Maintenance ab Rp 1.000rb/bln</div></div>
+          <div class="price-item"><div class="price-item-name">Sistem Franchise Multi-Cabang</div><div class="price-item-price">Rp 25.000.000</div><div class="price-item-maint">Maintenance ab Rp 1.500rb/bln</div></div>
+          <div class="price-item"><div class="price-item-name">Supply Chain & Distribusi</div><div class="price-item-price">Rp 30.000.000</div><div class="price-item-maint">Maintenance ab Rp 2.000rb/bln</div></div>
+        </div>
+      </div>
+
+      <!-- Maintenance plans -->
+      <div class="maint-section reveal">
+        <div class="maint-title">📋 Paket Maintenance Bulanan</div>
+        <p style="font-size:.875rem;color:var(--brown);margin-bottom:24px;line-height:1.7;">Maintenance bersifat opsional. Tanpa maintenance, aplikasi tetap bisa digunakan — Anda hanya menghubungi kami jika ada perubahan atau perbaikan yang diperlukan.</p>
+        <div class="maint-grid">
+          <div class="maint-item">
+            <div class="maint-level">🔧 Basic Care</div>
+            <div class="maint-price">Rp 200rb – 500rb</div>
+            <div class="maint-period">per bulan</div>
+            <div class="maint-includes">
+              <div class="maint-include">Perbaikan bug kritis</div>
+              <div class="maint-include">Backup data berkala</div>
+              <div class="maint-include">Respons 1×3 hari kerja</div>
+            </div>
+          </div>
+          <div class="maint-item">
+            <div class="maint-level">⚙️ Standard Care</div>
+            <div class="maint-price">Rp 500rb – 1.200rb</div>
+            <div class="maint-period">per bulan</div>
+            <div class="maint-includes">
+              <div class="maint-include">Semua layanan Basic</div>
+              <div class="maint-include">Update & penyesuaian minor</div>
+              <div class="maint-include">1× penambahan fitur kecil/bln</div>
+              <div class="maint-include">Respons 1×2 hari kerja</div>
+            </div>
+          </div>
+          <div class="maint-item">
+            <div class="maint-level">🌟 Priority Care</div>
+            <div class="maint-price">Rp 1.200rb – 2.500rb</div>
+            <div class="maint-period">per bulan</div>
+            <div class="maint-includes">
+              <div class="maint-include">Semua layanan Standard</div>
+              <div class="maint-include">Konsultasi prioritas via WA</div>
+              <div class="maint-include">Pengembangan fitur reguler</div>
+              <div class="maint-include">Respons hari yang sama</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <section class="faq-section reveal">
+    <div class="container text-center">
+      <span class="section-label">FAQ</span>
+      <h2 class="section-title">Pertanyaan yang <span>Sering Ditanya</span></h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Apakah ada biaya tambahan setelah aplikasi jadi?
+          <span class="faq-q-icon">+</span>
+        </button>
+        <div class="faq-a">Tidak ada biaya wajib setelah aplikasi diserahkan. Harga yang disepakati adalah harga final (jual putus). Biaya maintenance bersifat opsional — Anda bisa mengambil paket maintenance jika ingin dukungan rutin, atau tidak sama sekali. Anda tetap bisa menghubungi kami untuk perbaikan atau perubahan dengan biaya per-item.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Apakah perlu akun Google untuk memakai aplikasi?
+          <span class="faq-q-icon">+</span>
+        </button>
+        <div class="faq-a">Ya, diperlukan satu akun Google (Gmail) sebagai "rumah" aplikasi Anda. Akun ini bisa akun yang sudah Anda miliki atau akun baru yang kami bantu buat. Semua data bisnis Anda tersimpan di Google Sheets dalam akun tersebut — data sepenuhnya milik Anda.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Berapa lama waktu pengerjaan aplikasi?
+          <span class="faq-q-icon">+</span>
+        </button>
+        <div class="faq-a">Paket Orange: 3–7 hari kerja. Paket Yellow: 7–14 hari kerja. Paket Green: 14–30 hari kerja. Waktu ini terhitung setelah semua kebutuhan diklarifikasi dan DP diterima. Anda akan mendapat update progres secara berkala.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Apakah bisa request fitur khusus yang tidak ada di daftar?
+          <span class="faq-q-icon">+</span>
+        </button>
+        <div class="faq-a">Tentu bisa. Kami menerima request fitur custom di semua paket. Fitur tambahan akan dihitung secara terpisah sesuai kompleksitasnya. Konsultasikan kebutuhan spesifik Anda via WhatsApp dan kami akan berikan estimasi biaya dan waktu.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Bagaimana sistem pembayaran yang berlaku?
+          <span class="faq-q-icon">+</span>
+        </button>
+        <div class="faq-a">Pembayaran dilakukan dalam 2 tahap: 50% DP di awal sebagai tanda jadi dan untuk memulai pengerjaan, dan 50% pelunasan saat aplikasi selesai dan siap diserahkan. Metode pembayaran: transfer bank atau dompet digital (OVO/GoPay/Dana).</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Apakah ada garansi jika aplikasi bermasalah setelah serah terima?
+          <span class="faq-q-icon">+</span>
+        </button>
+        <div class="faq-a">Ya. Kami memberikan garansi bug selama 30 hari setelah serah terima. Jika ditemukan bug atau kesalahan teknis yang bukan disebabkan oleh perubahan dari pihak Anda, kami akan memperbaiki tanpa biaya tambahan. Garansi ini berlaku untuk semua paket.</div>
+      </div>
+    </div>
+  </section>
+</div><!-- end page-harga -->
+
+<!-- ============================================================
+     PAGE: KONTAK
+     ============================================================ -->
+<div id="page-kontak" class="page">
+  <section class="kontak-hero">
+    <div class="container">
+      <span class="section-label">Hubungi Kami</span>
+      <h1 class="section-title">Mulai <span>Perjalanan Digital</span> Anda</h1>
+      <p class="section-sub">Ceritakan bisnis Anda. Tim Zuvana Digital siap membantu menemukan solusi yang paling tepat, dalam jangkauan anggaran Anda.</p>
+    </div>
+  </section>
+
+  <div class="kontak-main">
+    <div class="kontak-grid">
+      <!-- Left: Info -->
+      <div class="kontak-left">
+        <div class="kontak-info-cards">
+          <div class="kontak-info-card reveal reveal-delay-1">
+            <div class="kontak-info-icon">📍</div>
+            <div>
+              <div class="kontak-info-label">Lokasi</div>
+              <div class="kontak-info-value">Sumatra Utara</div>
+              <div class="kontak-info-sub">Melayani seluruh Indonesia secara online</div>
+            </div>
+          </div>
+          <div class="kontak-info-card reveal reveal-delay-2">
+            <div class="kontak-info-icon">⏰</div>
+            <div>
+              <div class="kontak-info-label">Jam Kerja</div>
+              <div class="kontak-info-value">Sen–Jum 17.30–22.00 · Sab 17.30–22.00 · Min 09.00–17.00 WIB</div>
+              <div class="kontak-info-sub">WIB · Respons WA biasanya &lt; 1 jam</div>
+            </div>
+          </div>
+          <div class="kontak-info-card reveal reveal-delay-3">
+            <div class="kontak-info-icon">🌐</div>
+            <div>
+              <div class="kontak-info-label">Website</div>
+              <div class="kontak-info-value">zuvana.id</div>
+              <div class="kontak-info-sub">Domain aktif segera</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- WA card -->
+        <div class="kontak-wa-card reveal reveal-delay-4">
+          <div class="kontak-wa-icon">💬</div>
+          <div class="kontak-wa-title">Konsultasi via WhatsApp</div>
+          <div class="kontak-wa-sub">Cara tercepat untuk memulai. Gratis, tanpa komitmen. Ceritakan bisnis Anda dan kami bantu analisis kebutuhannya.</div>
+          <a href="https://wa.me/62895341189562?text=Halo%20Tim%20Zuvana%20Digital!%20Saya%20ingin%20berkonsultasi%20tentang%20kebutuhan%20aplikasi%20untuk%20bisnis%20saya." target="_blank" class="btn-wa-full">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Chat WhatsApp Sekarang
+          </a>
+        </div>
+      </div>
+
+      <!-- Right: Form -->
+      <div class="kontak-form-wrapper reveal">
+        <div class="kontak-form-header">
+          <h3>Form Brief Proyek</h3>
+          <p>Isi detail kebutuhan Anda. Kami akan hubungi Anda dalam 1×24 jam kerja.</p>
+        </div>
+        <div class="form-embed-area">
+          <div class="form-embed-note">
+            Form ini mengirimkan ringkasan langsung ke WhatsApp Tim Zuvana Digital. Pastikan nomor WA Anda aktif agar kami bisa menindaklanjuti.
+          </div>
+          <!-- Quick intake form -->
+          <div class="quick-form" id="contact-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Nama Anda <span>*</span></label>
+                <input type="text" class="form-input" id="f-nama" placeholder="Nama lengkap Anda" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Nomor WhatsApp <span>*</span></label>
+                <input type="tel" class="form-input" id="f-wa" placeholder="08xxxxxxxxxx" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Nama Bisnis <span>*</span></label>
+              <input type="text" class="form-input" id="f-bisnis" placeholder="Nama usaha atau bisnis Anda">
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Jenis Bisnis <span>*</span></label>
+                <select class="form-select" id="f-jenis">
+                  <option value="">-- Pilih kategori --</option>
+                  <option>Warung / Kuliner</option>
+                  <option>Toko Retail</option>
+                  <option>Klinik / Kesehatan</option>
+                  <option>Salon / Kecantikan</option>
+                  <option>Otomotif / Bengkel</option>
+                  <option>Pendidikan / Kursus</option>
+                  <option>Properti / Kos</option>
+                  <option>Kontraktor / Proyek</option>
+                  <option>Rental</option>
+                  <option>Lainnya</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Budget yang Direncanakan</label>
+                <select class="form-select" id="f-budget">
+                  <option value="">-- Estimasi budget --</option>
+                  <option>Rp 3 – 7 juta (Orange)</option>
+                  <option>Rp 6 – 12 juta (Yellow)</option>
+                  <option>Rp 15 – 35 juta (Green)</option>
+                  <option>Belum tahu, perlu konsultasi</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Kebutuhan / Masalah yang Ingin Diselesaikan</label>
+              <textarea class="form-textarea" id="f-kebutuhan" placeholder="Ceritakan bisnis Anda dan masalah yang ingin Anda selesaikan dengan aplikasi ini..."></textarea>
+            </div>
+            <button type="button" class="form-submit" onclick="kirimFormWA()">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              Kirim Brief via WhatsApp
+            </button>
+            <div class="form-disclaimer">Klik tombol di atas akan membuka WhatsApp dengan pesan yang sudah terisi otomatis.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div><!-- end page-kontak -->
+
+<!-- ============================================================
+     FOOTER (Global)
+     ============================================================ -->
+<footer id="footer">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="footer-logo">
+        <div class="footer-logo-mark" style="background:none;box-shadow:none;padding:0;width:36px;height:36px;"><img src="data:image/png;base64,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" style="width:36px;height:36px;object-fit:contain;border-radius:7px;" alt="Zuvana Digital"></div>
+        Zuvana Digital
+      </div>
+      <p class="footer-desc">Solusi teknologi terpercaya untuk UMKM Sumatra Utara. Lahir dari pemahaman mendalam tentang kebutuhan bisnis lokal.</p>
+      <div class="footer-tagline">zuvana.id — Solusi Digital Sesuai Kebutuhan Bisnis Anda</div>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Navigasi</div>
+      <a href="#" onclick="showPage('home'); return false;">Beranda</a>
+      <a href="#" onclick="showPage('layanan'); return false;">Layanan</a>
+      <a href="#" onclick="showPage('portofolio'); return false;">Portofolio</a>
+      <a href="#" onclick="showPage('harga'); return false;">Harga</a>
+      <a href="#" onclick="showPage('kontak'); return false;">Kontak</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Layanan</div>
+      <a href="#">Aura Orange</a>
+      <a href="#">Aura Yellow</a>
+      <a href="#">Aura Green</a>
+      <a href="#">Maintenance</a>
+      <a href="#">Konsultasi Gratis</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Kontak</div>
+      <a href="https://wa.me/62895341189562" target="_blank">WhatsApp: 0895-3411-89562</a>
+      <a href="#">Sumatra Utara, Indonesia</a>
+      <a href="#">Sen–Jum 17.30–22.00 · Min 09.00–17.00 WIB</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Zuvana Digital. Hak cipta dilindungi undang-undang.</span>
+    <span>Dibuat dengan ❤️ di Sumatra Utara · <a href="https://wa.me/62895341189562" target="_blank">Hubungi Kami</a></span>
+  </div>
+</footer>
+
+<!-- Floating WA Button -->
+<a id="wa-float" href="https://wa.me/62895341189562?text=Halo%20Zuvana%20Digital!%20Saya%20ingin%20tanya%20tentang%20layanan%20aplikasi." target="_blank">
+  <div class="wa-float-pulse"></div>
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  <span>Chat Sekarang</span>
+</a>
+
+<!-- ============================================================
+     JAVASCRIPT
+     ============================================================ -->
+<script>
+// ---- Page Navigation ----
+function showPage(id) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  const target = document.getElementById('page-' + id);
+  if (target) {
+    target.classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+  // Update nav active state
+  document.querySelectorAll('[data-page]').forEach(a => {
+    a.classList.toggle('active', a.getAttribute('data-page') === id);
+  });
+  // Trigger reveal for new page
+  setTimeout(initReveal, 100);
+  // Close mobile menu if open
+  const mm = document.getElementById('mobile-menu');
+  if (mm.style.display === 'block') toggleMenu();
+}
+
+// ---- Mobile Menu ----
+function toggleMenu() {
+  const burger = document.getElementById('hamburger');
+  const menu = document.getElementById('mobile-menu');
+  const open = burger.classList.toggle('open');
+  menu.style.display = open ? 'block' : 'none';
+}
+
+// ---- Navbar scroll effect ----
+window.addEventListener('scroll', () => {
+  document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 20);
+});
+
+// ---- Scroll reveal ----
+function initReveal() {
+  const activePage = document.querySelector('.page.active');
+  if (!activePage) return;
+  const elements = activePage.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+  elements.forEach(el => {
+    if (!el.classList.contains('visible')) observer.observe(el);
+    else el.classList.add('visible');
+  });
+}
+
+// ---- FAQ toggle ----
+function toggleFaq(btn) {
+  const item = btn.parentElement;
+  const wasOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+  if (!wasOpen) item.classList.add('open');
+}
+
+// ---- Contact form -> WhatsApp ----
+function kirimFormWA() {
+  const nama     = document.getElementById('f-nama').value.trim();
+  const wa       = document.getElementById('f-wa').value.trim();
+  const bisnis   = document.getElementById('f-bisnis').value.trim();
+  const jenis    = document.getElementById('f-jenis').value;
+  const budget   = document.getElementById('f-budget').value;
+  const kebutuhan = document.getElementById('f-kebutuhan').value.trim();
+
+  if (!nama || !wa) {
+    alert('Mohon isi Nama dan Nomor WhatsApp terlebih dahulu.');
+    return;
+  }
+
+  const waNumber = '62895341189562'; // Ganti dengan nomor WA Rudy
+
+  const msg = `🌟 *BRIEF PROYEK — ZUVANA DIGITAL*
+
+👤 *Nama:* ${nama}
+📱 *WhatsApp:* ${wa}
+🏪 *Nama Bisnis:* ${bisnis || '(belum diisi)'}
+🏷️ *Jenis Bisnis:* ${jenis || '(belum dipilih)'}
+💰 *Budget:* ${budget || '(belum ditentukan)'}
+
+📋 *Kebutuhan / Masalah:*
+${kebutuhan || '(tidak ada keterangan tambahan)'}
+
+---
+_Dikirim dari website zuvana.id_`;
+
+  const url = `https://wa.me/${waNumber}?text=${encodeURIComponent(msg)}`;
+  window.open(url, '_blank');
+}
+
+// ---- Init on load ----
+document.addEventListener('DOMContentLoaded', () => {
+  initReveal();
+  // Trigger hero reveal immediately
+  document.querySelectorAll('#page-home .reveal').forEach(el => {
+    setTimeout(() => el.classList.add('visible'), 200);
+  });
+});
+</script>
+</body>
+</html>
