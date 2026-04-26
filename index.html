@@ -2409,6 +2409,13 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
               Kirim Brief via WhatsApp
             </button>
             <div class="form-disclaimer">Klik tombol di atas akan membuka WhatsApp dengan pesan yang sudah terisi otomatis.</div>
+         
+           <div style="margin-top: 15px; text-align: center;">
+            <p style="font-size: 0.9em; color: #666; margin-bottom: 8px;">Atau, isi form lengkap kami di:</p>
+            <a href="https://bit.ly/zd-intake" style="display: inline-block; padding: 10px 20px; background-color: #007bff; color: white; text-decoration: none; border-radius: 5px; font-weight: bold;">
+            Isi Form Intake Lengkap
+            </a>
+          </div>
           </div>
         </div>
       </div>
@@ -2556,7 +2563,7 @@ function kirimFormWA() {
 ${kebutuhan || '(tidak ada keterangan tambahan)'}
 
 ---
-_Dikirim dari website zuvana.id_`;
+_Dikirim dari website https://bit.ly/ZuvanaDigital`;
 
   const url = `https://wa.me/${waNumber}?text=${encodeURIComponent(msg)}`;
   window.open(url, '_blank');
