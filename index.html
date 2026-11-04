@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>ZUVANA Digital — Custom Business Applications & Ready Templates</title>
-<meta name="description" content="ZUVANA Digital membuat aplikasi bisnis custom dan menyediakan template akuntansi/bisnis siap pakai untuk usaha Anda. Built Around Your Business Needs.">
-<meta property="og:title" content="ZUVANA Digital — Custom Business Applications & Ready Templates">
-<meta property="og:description" content="Bukan Anda yang mengikuti aplikasi. Aplikasi yang mengikuti Anda. Solusi kustom & template bisnis siap pakai.">
+<meta name="description" content="ZUVANA Digital membuat aplikasi bisnis custom yang dirancang mengikuti kebutuhan dan alur kerja usaha Anda. Built Around Your Business Needs.">
+<meta property="og:title" content="ZUVANA Digital — Custom Business Applications">
+<meta property="og:description" content="Bukan Anda yang mengikuti aplikasi. Aplikasi yang mengikuti Anda.">
 <link rel="icon" type="image/png" href="assets/zuvana-logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,8 +23,12 @@ a{color:inherit;text-decoration:none}
 .btn-p:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(31,107,255,.5)}
 .btn-g{border:1.5px solid rgba(255,255,255,.35);color:#fff}
 .btn-g:hover{background:rgba(255,255,255,.1)}
-.btn-s{background:#10b981;color:#fff;box-shadow:0 8px 20px rgba(16,185,129,.3)}
-.btn-s:hover{transform:translateY(-3px);box-shadow:0 12px 26px rgba(16,185,129,.45)}
+.btn-s{background:#10b981;color:#fff;box-shadow:0 10px 25px rgba(16,185,129,.35);font-size:15px;padding:14px 28px}
+.btn-s:hover{transform:translateY(-3px);box-shadow:0 14px 32px rgba(16,185,129,.5);background:#059669}
+
+/* Announcement Top Bar */
+.top-bar{background:linear-gradient(90deg,#0b1f4b,#1F6BFF);color:#fff;text-align:center;padding:10px 16px;font-size:13px;font-weight:600}
+.top-bar a{color:#34E3CB;margin-left:8px;text-decoration:underline;font-weight:700}
 
 /* hero */
 .hw{background:var(--blue);clip-path:polygon(0 0,100% 0,100% calc(100% - 44px),0 100%)}
@@ -58,292 +62,16 @@ section{padding:84px 0}
 .h2{font-size:clamp(26px,3.4vw,38px);font-weight:700;line-height:1.2}
 .h2:after{content:"";display:block;width:56px;height:5px;border-radius:3px;background:var(--blue);margin-top:14px}
 .lead{color:var(--gray);margin-top:18px;max-width:600px}
-.ba{display:grid;grid-template-columns:1fr 60px 1fr;gap:12px;align-items:center;margin-top:44px}
-.pn{border-radius:24px;padding:28px;min-height:250px;position:relative}
-.p1{background:var(--pale)}.p2{background:var(--navy);color:#fff}
-.pn small{font-size:12px;font-weight:600;letter-spacing:.18em;color:var(--gray)}.p2 small{color:var(--lb)}
-.chips{position:relative;height:170px;margin-top:10px}
-.chip{position:absolute;background:#fff;border:1px solid #c9d3ea;border-radius:10px;padding:8px 14px;font-size:13px;font-weight:500;box-shadow:0 6px 14px rgba(11,31,75,.07)}
-.p1 p{color:var(--gray);font-size:14px}
-.stack{display:grid;gap:12px;margin:16px 0}
-.stack div{background:#fff;color:var(--navy);border-radius:12px;padding:12px 16px;font-weight:600;font-size:14px;display:flex;justify-content:space-between}
-.stack div:after{content:"✓";color:var(--blue)}
-.arrow{font-size:40px;color:var(--blue);text-align:center;font-weight:700}
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:44px}
-.card{background:#fff;border:1px solid #e1e8f7;border-radius:24px;padding:32px 28px;transition:transform .25s,box-shadow .25s,border-color .25s;position:relative;overflow:hidden}
-.card:hover{transform:translateY(-8px);box-shadow:0 24px 50px rgba(11,31,75,.12);border-color:var(--blue)}
-.card .n{font-size:64px;font-weight:700;line-height:1;color:var(--num)}
-.card h3{font-size:18px;line-height:1.35;margin:10px 0 12px}
-.card p{color:var(--gray);font-size:14.5px}
-.card:before{content:"";position:absolute;left:0;top:0;height:5px;width:0;background:var(--blue);transition:width .35s}
-.card:hover:before{width:100%}
 
-/* Product Showcase Styling */
-.prod-card{background:#fff;border:1.5px solid #dbe5f7;border-radius:26px;padding:34px;margin-top:36px;display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center;box-shadow:0 18px 45px rgba(11,31,75,.06);position:relative;overflow:hidden}
-.prod-card:before{content:"PRODUK UNGGULAN";position:absolute;top:20px;right:-35px;background:#f59e0b;color:#fff;font-size:11px;font-weight:700;letter-spacing:.12em;padding:4px 40px;transform:rotate(45deg);box-shadow:0 4px 10px rgba(0,0,0,.1)}
-.prod-badge{display:inline-block;background:var(--pale);color:var(--blue);font-size:12px;font-weight:700;letter-spacing:.14em;padding:6px 14px;border-radius:999px;margin-bottom:12px}
-.prod-title{font-size:24px;font-weight:700;line-height:1.3;margin-bottom:12px;color:var(--navy)}
+/* Ready Template Section */
+.ready-sec{background:linear-gradient(180deg,#fff 0%,#f1f5ff 100%);padding:80px 0;border-bottom:1px solid #e1e8f7}
+.prod-box{background:#fff;border:2px solid #1F6BFF;border-radius:26px;padding:36px;margin-top:36px;display:grid;grid-template-columns:1.1fr .9fr;gap:36px;align-items:center;box-shadow:0 20px 50px rgba(11,31,75,.08);position:relative;overflow:hidden}
+.prod-tag{position:absolute;top:18px;right:-35px;background:#10b981;color:#fff;font-size:11px;font-weight:700;letter-spacing:.12em;padding:5px 40px;transform:rotate(45deg)}
+.prod-badge{display:inline-block;background:#e0e7ff;color:#3730a3;font-size:12px;font-weight:700;letter-spacing:.12em;padding:5px 14px;border-radius:999px;margin-bottom:14px}
+.prod-title{font-size:26px;font-weight:700;line-height:1.25;color:var(--navy);margin-bottom:12px}
 .prod-desc{color:var(--gray);font-size:14.5px;margin-bottom:20px}
-.prod-feats{list-style:none;display:grid;gap:10px;font-size:14px;margin-bottom:26px}
-.prod-feats li{display:flex;align-items:center;gap:8px}
-.prod-feats li:before{content:"✓";color:#10b981;font-weight:700}
-.prod-price{display:flex;align-items:baseline;gap:12px;margin-bottom:24px}
-.prod-price .p-now{font-size:32px;font-weight:700;color:var(--navy)}
-.prod-price .p-was{font-size:16px;color:#94a3b8;text-decoration:line-through}
-.prod-price .p-save{background:#dcfce7;color:#15803d;font-size:12px;font-weight:700;padding:3px 10px;border-radius:999px}
-.prod-img{background:linear-gradient(135deg,#091936,#1e293b);border-radius:20px;padding:24px;color:#fff;box-shadow:0 20px 40px rgba(0,0,0,.2);position:relative}
-.prod-img-title{font-size:13px;font-weight:600;color:var(--lb);margin-bottom:14px;letter-spacing:.1em;text-transform:uppercase}
-.mock-dash{background:#fff;border-radius:14px;padding:16px;color:var(--navy);font-size:12px}
-.mock-dash .dash-kpi{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:12px}
-.mock-dash .kpi-box{background:var(--pale);padding:10px;border-radius:8px;text-align:center}
-.mock-dash .kpi-box small{font-size:10px;color:var(--gray);display:block}
-.mock-dash .kpi-box b{font-size:13px;color:var(--blue)}
-.mock-dash .dash-chart{height:90px;background:#e2e8f0;border-radius:8px;display:flex;align-items:flex-end;justify-content:space-around;padding:10px}
-.mock-dash .bar{width:18%;background:var(--blue);border-radius:4px 4px 0 0}
-
-.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:48px;position:relative}
-.steps:before{content:"";position:absolute;top:27px;left:6%;right:6%;height:3px;background:var(--num)}
-.st{position:relative;text-align:left}
-.st b{display:grid;place-items:center;width:56px;height:56px;border-radius:50%;background:var(--navy);color:#fff;font-size:20px;margin-bottom:18px;box-shadow:0 0 0 8px #fff;position:relative}
-.st:last-child b{background:var(--blue)}
-.st h4{font-size:16px;margin-bottom:6px}.st p{font-size:14px;color:var(--gray)}
-.band{background:var(--navy);color:#fff;position:relative;overflow:hidden;clip-path:polygon(0 56px,100% 0,100% 100%,0 100%);padding:130px 0 90px;margin-top:30px}
-.band .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center}
-.band h2{font-size:clamp(28px,4vw,44px);line-height:1.15}.band h2 em{font-style:normal;color:var(--lb)}
-.band p{color:#cfdcf7;margin:18px 0 30px;max-width:480px}
-.wa{background:#fff;color:var(--navy);border-radius:24px;padding:30px;text-align:center}
-.wa small{font-size:12px;letter-spacing:.18em;font-weight:600;color:var(--blue)}
-.wa .no{font-size:30px;font-weight:700;margin:6px 0 4px}.wa span{font-size:13px;color:var(--gray);display:block;margin-bottom:20px}
-footer{background:#07173a;color:#aebbd8;padding:34px 0;font-size:13px}
-footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center}
-.fab{position:fixed;right:20px;bottom:20px;z-index:9;background:var(--blue);color:#fff;border-radius:999px;padding:13px 22px;font-weight:600;font-size:14px;box-shadow:0 12px 30px rgba(31,107,255,.5)}
-.js .rv{opacity:0;transform:translateY(28px);transition:opacity .7s,transform .7s}.js .rv.in{opacity:1;transform:none}
-@media(max-width:860px){
-.nav ul{display:none}.hg,.band .wrap{grid-template-columns:1fr}.hg{margin-top:44px}.hero{padding-bottom:110px}
-.ba{grid-template-columns:1fr}.arrow{transform:rotate(90deg);height:40px}
-.cards,.steps{grid-template-columns:1fr}.steps:before{display:none}
-.mock{margin-right:14px}.prod-card{grid-template-columns:1fr}}
-
-.faq{max-width:780px;margin-top:40px;display:grid;gap:12px}
-.faq details{background:#fff;border:1px solid #e1e8f7;border-radius:16px;padding:18px 22px;transition:border-color .2s}
-.faq details[open]{border-color:var(--blue)}
-.faq summary{cursor:pointer;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:16px}
-.faq summary::-webkit-details-marker{display:none}.faq summary:after{content:"+";color:var(--blue);font-size:22px;line-height:1}
-.faq details[open] summary:after{content:"–"}.faq p{color:var(--gray);margin-top:12px;font-size:14.5px}
-.fm{background:#fff;border-radius:24px;padding:36px;box-shadow:0 24px 60px rgba(11,31,75,.1);margin-top:40px;display:grid;grid-template-columns:1fr 1fr;gap:18px}
-.fm label{font-size:13px;font-weight:600;display:grid;gap:6px}.fm .w{grid-column:1/-1}
-.fm input,.fm select,.fm textarea{font:inherit;font-size:15px;padding:13px 15px;border:1.5px solid #d5def2;border-radius:12px;background:#fff;color:var(--navy);width:100%}
-.fm input:focus,.fm select:focus,.fm textarea:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 4px rgba(31,107,255,.15)}
-.fm textarea{min-height:110px;resize:vertical}.fm .btn{border:0;cursor:pointer;justify-content:center}
-.fm .nt{font-size:13px;color:var(--gray)}.fm .nt a{color:var(--blue);font-weight:600}
-@media(max-width:860px){.fm{grid-template-columns:1fr;padding:24px}}
-
-.eyebrow{font-size:12px;font-weight:600;letter-spacing:.22em;color:var(--blue);margin-bottom:10px}
-.trust{display:flex;gap:10px 22px;flex-wrap:wrap;margin-top:28px;list-style:none;font-size:13px;color:#cfdcf7}.trust li:before{content:"✓ ";color:#34E3CB;font-weight:700}
-.tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:44px;align-items:stretch}
-.tier{background:#fff;border:1px solid #e1e8f7;border-radius:26px;padding:34px 28px;display:flex;flex-direction:column;position:relative;transition:transform .25s,box-shadow .25s}
-.tier:hover{transform:translateY(-8px);box-shadow:0 26px 56px rgba(11,31,75,.13)}
-.tier.star{background:var(--navy);color:#fff;border-color:var(--navy);box-shadow:0 26px 56px rgba(11,31,75,.28)}
-.tier .bd{position:absolute;top:-13px;left:28px;background:var(--blue);color:#fff;font-size:11px;font-weight:600;letter-spacing:.12em;padding:4px 14px;border-radius:999px}
-.tier h3{font-size:15px;letter-spacing:.14em;font-weight:600;color:var(--blue)}.tier.star h3{color:var(--lb)}
-.tier .pr small{display:block;font-size:12px;color:var(--gray);margin-top:14px}.tier.star .pr small{color:#cfdcf7}
-.tier .pr b{font-size:34px;line-height:1.15;letter-spacing:-.01em}
-.tier .ds{font-size:14px;color:var(--gray);margin:12px 0 18px}.tier.star .ds{color:#cfdcf7}
-.tier ul{list-style:none;display:grid;gap:9px;font-size:14px;margin-bottom:22px}.tier li:before{content:"✓ ";color:var(--blue);font-weight:700}.tier.star li:before{color:#34E3CB}
-.tier .tm{margin-top:auto;font-size:12.5px;color:var(--gray);padding-top:16px;border-top:1px dashed #cdd7ee}.tier.star .tm{color:#8DB8FF;border-color:rgba(255,255,255,.25)}
-.fine{font-size:13px;color:var(--gray);margin-top:26px;max-width:760px}
-@media(max-width:860px){.tiers{grid-template-columns:1fr}}
-
-/* ZUVANA refinement */
-:root{--navy:#091936;--navy2:#132d59;--blue:#2868f5;--lb:#a8c6ff;--pale:#f3f6fc;--gray:#66738c;--mint:#54e0c1}
-body{overflow-x:hidden} .hero{background:radial-gradient(circle at 78% 24%,rgba(40,104,245,.28),transparent 34%),linear-gradient(135deg,#08152e 0%,#102953 60%,#091936 100%)}
-.logo-symbol{width:66px;height:66px;display:block;object-fit:contain;flex:0 0 66px;background:#fff;padding:3px;border:1px solid rgba(255,255,255,.8);border-radius:17px;box-shadow:0 7px 20px rgba(0,0,0,.28)}
-.logo{gap:12px}.wm b{letter-spacing:.22em}.wm i{letter-spacing:.58em}
-.nav{gap:20px}.nav ul{gap:22px}.nav ul a{transition:color .2s}.nav-cta{white-space:nowrap}.menu-toggle{display:none;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:#fff;border-radius:12px;padding:9px 12px;font-size:20px}
-.hero:after{content:"";position:absolute;width:360px;height:360px;border:1px solid rgba(141,184,255,.12);border-radius:50%;right:-150px;top:160px;box-shadow:0 0 0 38px rgba(141,184,255,.025),0 0 0 76px rgba(141,184,255,.02);pointer-events:none}
-.mock{border:1px solid #e8efff}.node{transition:transform .2s}.node:hover{transform:translateX(5px)}
-.card,.tier,.exp-card{box-shadow:0 12px 35px rgba(11,31,75,.045)}
-.experience{background:linear-gradient(135deg,#f4f7ff,#fff)}.exp-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:60px;align-items:center}.exp-copy .h2{max-width:520px}.exp-grid-cards{display:grid;grid-template-columns:1fr 1fr;gap:14px}.exp-card{background:#fff;border:1px solid #e4eaf5;border-radius:20px;padding:22px;min-height:150px;display:flex;flex-direction:column;gap:10px;transition:.25s}.exp-card:hover{transform:translateY(-5px);border-color:#9bbaff;box-shadow:0 18px 40px rgba(11,31,75,.09)}.exp-icon{font-size:12px;letter-spacing:.15em;color:var(--blue);font-weight:700}.exp-card b{font-size:15px}.exp-card small{font-size:13px;color:var(--gray);line-height:1.55}.text-link{display:inline-flex;gap:12px;color:var(--blue);font-weight:600;margin-top:20px}.text-link span{font-size:20px;line-height:1}
-.price-notes{margin-top:28px;padding:24px 28px;background:#f5f8ff;border:1px solid #e0e9fb;border-radius:18px;color:var(--gray);font-size:13px}.price-notes b{color:var(--navy);font-size:14px}.price-notes ul{padding-left:18px;margin-top:12px;display:grid;gap:7px}.tier.star{background:linear-gradient(145deg,#0b1f4b,#173b7a)}.tier .pr b{font-size:clamp(25px,3vw,34px)}.tier h3{min-height:42px}.tier .bd{font-size:10px;white-space:nowrap}
-.band{background:radial-gradient(circle at 85% 20%,rgba(40,104,245,.3),transparent 35%),#091936}.wa{box-shadow:0 20px 50px rgba(0,0,0,.18)}.fab{display:flex;align-items:center;gap:8px}.fab:before{content:"◉";font-size:16px}
-.btn:focus-visible,a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid #70a0ff;outline-offset:3px}
-@media(max-width:1050px){.nav ul{gap:13px;font-size:12px}.nav .btn{padding:10px 14px}.hg{gap:28px}}
-@media(max-width:860px){.menu-toggle{display:block;margin-left:auto}.nav-cta{display:none!important}.nav ul{display:none;position:absolute;top:68px;left:0;right:0;background:#102750;border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:16px;z-index:20;box-shadow:0 18px 40px rgba(0,0,0,.25)}.nav ul.open{display:grid;gap:0}.nav ul li a{display:block;padding:12px 8px}.exp-grid{grid-template-columns:1fr;gap:30px}.hg{grid-template-columns:1fr}.hero{padding-bottom:115px}}
-@media(max-width:560px){.wrap{padding:0 19px}section{padding:65px 0}.logo-symbol{width:56px;height:56px;flex-basis:56px}.wm b{font-size:18px}.hg{margin-top:38px}.sub{font-size:15px}.cta .btn{width:100%;justify-content:center}.mock{padding:18px}.exp-grid-cards{grid-template-columns:1fr 1fr;gap:10px}.exp-card{padding:16px;min-height:145px}.price-notes{padding:20px}.tier{padding:28px 23px}.wa .no{font-size:25px}.fab{right:14px;bottom:14px;padding:12px 17px}}
-@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
-
-</style>
-</head>
-<body>
-<div class="hw"><header class="hero">
-<div class="wrap">
-<nav class="nav">
-<a class="logo" href="#top" aria-label="ZUVANA Digital"><img class="logo-symbol" src="assets/zuvana-logo.png" alt="Logo ZUVANA Digital"><span class="wm"><b>ZUVANA</b><i>DIGITAL</i></span></a>
-<ul id="mainNav"><li><a href="#layanan">Layanan</a></li><li><a href="#produk">Produk Siap Pakai</a></li><li><a href="#pengalaman">Pengalaman</a></li><li><a href="#harga">Estimasi Biaya</a></li><li><a href="#cara-kerja">Cara Kerja</a></li><li><a href="#brief">Brief Proyek</a></li><li><a href="#kontak">Kontak</a></li></ul>
-<button class="menu-toggle" id="menuToggle" type="button" aria-label="Buka menu" aria-expanded="false">☰</button>
-<a class="btn btn-p nav-cta" href="https://wa.me/62895341189562?text=Halo%20Zuvana%20Digital%2C%20saya%20ingin%20bercerita%20tentang%20kebutuhan%20aplikasi%20untuk%20usaha%20saya.">Chat WhatsApp</a>
-</nav>
-<div class="hg" id="top">
-<div>
-<div class="tag">CUSTOM BUSINESS APPLICATIONS & READY TEMPLATES</div>
-<h1>Bukan Anda yang mengikuti aplikasi. <em>Aplikasi yang mengikuti Anda.</em></h1>
-<p class="sub">Aplikasi bisnis yang dirancang mengikuti cara usaha Anda bekerja — dari pencatatan, operasional, hingga laporan yang lebih mudah dipantau.</p>
-<div class="cta"><a class="btn btn-p" href="https://wa.me/62895341189562?text=Halo%20Zuvana%20Digital%2C%20saya%20ingin%20bercerita%20tentang%20kebutuhan%20aplikasi%20untuk%20usaha%20saya.">Ceritakan Kebutuhan Anda →</a><a class="btn btn-g" href="#produk">Lihat Produk Siap Pakai</a></div>
-<ul class="trust"><li>Konsultasi awal tanpa biaya</li><li>Ruang lingkup jelas sebelum mulai</li><li>Online untuk berbagai wilayah</li></ul>
-</div>
-<div class="mock" aria-hidden="true">
-<div class="dots"><i></i><i></i><i></i></div>
-<h4>Alur kerja usaha Anda</h4>
-<div class="flow"><div class="node"><b>1</b>Input sekali</div><div class="line"></div><div class="node"><b>2</b>Data terhubung</div><div class="line"></div><div class="node"><b>3</b>Sesuai cara kerja Anda</div></div>
-<div class="pill">Dirancang custom & siap pakai</div>
-</div>
-</div>
-</div>
-</header></div>
-
-<section id="familiar"><div class="wrap">
-<h2 class="h2 rv">Terasa familiar?</h2>
-<p class="lead rv">Banyak usaha berjalan dengan catatan yang tersebar dan aplikasi yang tidak saling terhubung. Aplikasi custom dibuat untuk merapikannya, sesuai cara Anda bekerja.</p>
-<div class="ba rv">
-<div class="pn p1"><small>SEKARANG</small>
-<div class="chips"><span class="chip" style="left:0;top:12px;transform:rotate(-5deg)">Catatan manual</span><span class="chip" style="right:6px;top:2px;transform:rotate(4deg)">File Excel 1</span><span class="chip" style="left:30px;top:74px;transform:rotate(3deg)">File Excel 2</span><span class="chip" style="right:0;top:104px;transform:rotate(-6deg)">Chat &amp; nota</span></div>
-<p>Data tersebar, input berulang.</p></div>
-<div class="arrow">»</div>
-<div class="pn p2"><small>DENGAN APLIKASI CUSTOM & READY TEMPLATES</small>
-<div class="stack"><div>Input sekali</div><div>Data terhubung</div><div>Alur sesuai usaha Anda</div></div>
-<p style="color:#cfdcf7;font-size:14px">Satu alur kerja yang lebih teratur dan efisien.</p></div>
-</div></div></section>
-
-<section id="layanan" style="background:var(--pale)"><div class="wrap">
-<h2 class="h2 rv">Yang bisa kami bantu</h2>
-<div class="cards">
-<div class="card rv"><div class="n">01</div><h3>Custom Business Application Development</h3><p>Pengembangan aplikasi berdasarkan kebutuhan dan proses kerja bisnis Anda.</p></div>
-<div class="card rv"><div class="n">02</div><h3>Business Workflow &amp; System Integration</h3><p>Penataan alur kerja dan integrasi sistem agar pekerjaan lebih teratur dan efisien.</p></div>
-<div class="card rv"><div class="n">03</div><h3>Existing Application Improvement</h3><p>Perbaikan, pengembangan, dan penataan ulang aplikasi yang sudah Anda miliki.</p></div>
-</div></div></section>
-
-<section id="produk"><div class="wrap">
-<div class="eyebrow rv">PRODUK DIGITAL SIAP PAKAI</div>
-<h2 class="h2 rv">Template Siap Pakai Zuvana</h2>
-<p class="lead rv">Ingin solusi cepat tanpa menunggu proses pembuatan custom? Kami menyediakan template bisnis siap pakai berbasis Google Sheets & Apps Script yang otomatis, ringan, dan bebas biaya berlangganan.</p>
-
-<div class="prod-card rv">
-<div>
-<span class="prod-badge">AUTOMATED GOOGLE SHEETS TEMPLATE</span>
-<h3 class="prod-title">Zuvana Akuntansi — Solusi Pembukuan UMKM</h3>
-<p class="prod-desc">Template akuntansi otomatis tanpa rumus dan koding. Cukup catat transaksi sehari-hari seperti dompet biasa, sistem di belakang layar akan membuatkan Jurnal Berpasangan, Laporan Laba Rugi, Arus Kas, Neraca, hingga Dashboard Grafik secara real-time.</p>
-<ul class="prod-feats">
-<li><b>Single-Input Entry:</b> Catat transaksi praktis tanpa pusing akuntansi.</li>
-<li><b>Dashboard Visual & Grafik:</b> Pantau posisi keuangan & 5 dompet utama (Tunai, Bank, ShopeePay, OVO, DANA).</li>
-<li><b>Laporan Otomatis:</b> Laba Rugi (Bulan Berjalan), Arus Kas & Neraca Seimbang.</li>
-<li><b>Fast Engine (Anti-Lag):</b> Performa tetap cepat meski data makin bertambah.</li>
-<li><b>Sekali Bayar Selamanya:</b> 100% Bebas biaya berlangganan bulanan.</li>
-</ul>
-<div class="prod-price">
-<span class="p-now">Rp 99.000</span>
-<span class="p-was">Rp 199.000</span>
-<span class="p-save">Hemat 50%</span>
-</div>
-<a class="btn btn-s" href="https://wa.me/62895341189562?text=Halo%20Zuvana%20Digital%2C%20saya%20ingin%20membeli%20Template%20Zuvana%20Akuntansi%20UMKM%20seharga%20Rp%2099.000.">Beli via WhatsApp →</a>
-</div>
-
-<div class="prod-img">
-<div class="prod-img-title">PREVIEW DASHBOARD AKUNTANSI</div>
-<div class="mock-dash">
-<div class="dash-kpi">
-<div class="kpi-box"><small>TOTAL KAS & BANK</small><b>Rp 15.450.000</b></div>
-<div class="kpi-box"><small>LABA BERSIH (BLN INI)</small><b style="color:#10b981">Rp 4.280.000</b></div>
-</div>
-<div class="dash-chart">
-<div class="bar" style="height:40%"></div>
-<div class="bar" style="height:70%"></div>
-<div class="bar" style="height:55%"></div>
-<div class="bar" style="height:90%"></div>
-<div class="bar" style="height:65%"></div>
-</div>
-</div>
-</div>
-</div>
-</div></section>
-
-<section id="pengalaman" class="experience"><div class="wrap exp-grid">
-<div class="exp-copy rv"><div class="eyebrow">PENGALAMAN & PENDEKATAN</div><h2 class="h2">Dibangun dari masalah kerja yang nyata.</h2><p class="lead">ZUVANA berangkat dari pengalaman mengembangkan alat bantu digital untuk merapikan pekerjaan, pencatatan, dan pemantauan operasional di lingkungan kerja maupun komunitas.</p><p class="lead">Kami tidak mengklaim semua solusi cocok untuk semua bisnis. Kami mulai dengan memahami proses Anda, lalu menyusun solusi yang realistis dan sesuai prioritas.</p><a class="text-link" href="#brief">Diskusikan kebutuhan Anda <span>↗</span></a></div>
-<div class="exp-grid-cards rv"><article class="exp-card"><span class="exp-icon">01</span><b>Pencatatan & administrasi</b><small>Input data lebih tertata dan mudah ditelusuri.</small></article><article class="exp-card"><span class="exp-icon">02</span><b>Stok & operasional</b><small>Pemantauan aktivitas dan pergerakan barang.</small></article><article class="exp-card"><span class="exp-icon">03</span><b>Laporan & kontrol</b><small>Ringkasan data untuk membantu pengambilan keputusan.</small></article><article class="exp-card"><span class="exp-icon">04</span><b>Perbaikan sistem lama</b><small>Evaluasi dan pengembangan aplikasi yang sudah digunakan.</small></article></div>
-</div></section>
-
-<section id="harga"><div class="wrap">
-<div class="eyebrow rv">ESTIMASI BIAYA CUSTOM</div>
-<h2 class="h2 rv">Harga wajar, dijelaskan sejak awal</h2>
-<p class="lead rv">Setiap kebutuhan berbeda. Angka berikut hanya estimasi awal agar Anda punya gambaran; biaya final ditentukan setelah ruang lingkup, alur kerja, dan tingkat kesulitan dibahas.</p>
-<div class="tiers" id="tiers"></div>
-<div class="price-notes rv"><b>Supaya tidak ada biaya yang mengejutkan:</b><ul><li>Penawaran tertulis berisi fitur, batas pekerjaan, estimasi waktu, dan biaya.</li><li>Pembayaran bertahap: 50% saat mulai, 30% setelah fungsi utama diuji, dan 20% sebelum serah terima.</li><li>Dua putaran revisi tampilan/alur sesuai kesepakatan termasuk dalam proyek.</li><li>Fitur baru atau perubahan di luar kesepakatan dihitung terpisah setelah disetujui.</li><li>Biaya hosting, domain, API, dan layanan pihak ketiga diinformasikan terlebih dahulu.</li><li>Garansi 30 hari untuk bug dari pekerjaan ZUVANA yang tidak sesuai spesifikasi. Maintenance dan pengembangan lanjutan terpisah.</li></ul></div>
-</div></section>
-
-<section id="cara-kerja"><div class="wrap">
-<h2 class="h2 rv">Dari cerita Anda menjadi aplikasi</h2>
-<p class="lead rv">Prosesnya sederhana dan Anda dilibatkan di setiap langkah.</p>
-<div class="steps">
-<div class="st rv"><b>1</b><h4>Konsultasi</h4><p>Ceritakan kebutuhan usaha Anda lewat WhatsApp. Kami diskusikan dulu agar solusinya realistis.</p></div>
-<div class="st rv"><b>2</b><h4>Desain &amp; Persetujuan</h4><p>Draf tampilan dan fitur Anda tinjau dan setujui sebelum pengerjaan dimulai.</p></div>
-<div class="st rv"><b>3</b><h4>Pengembangan</h4><p>Aplikasi dibangun sesuai spesifikasi yang disepakati, dengan kabar perkembangan.</p></div>
-<div class="st rv"><b>4</b><h4>Serah Terima</h4><p>Aplikasi diserahkan bersama pengenalan penggunaan agar siap dipakai.</p></div>
-</div></div></section>
-
-<section id="faq"><div class="wrap">
-<h2 class="h2 rv">Pertanyaan yang sering ditanya</h2>
-<div class="faq rv">
-<details><summary>Berapa biaya pembuatan aplikasi?</summary><p>Perbaikan kecil mulai Rp500 ribu, sedangkan aplikasi sederhana mulai Rp2,5 juta. Estimasi tersebut bukan harga otomatis untuk semua kebutuhan. Kami akan memeriksa ruang lingkup dan memberikan penawaran tertulis sebelum pekerjaan dimulai.</p></details>
-<details><summary>Apakah tersedia template siap pakai?</summary><p>Ya, kami menyediakan produk digital siap pakai seperti Zuvana Akuntansi UMKM yang dapat dibeli sekali bayar seharga Rp 99.000 tanpa biaya langganan bulanan.</p></details>
-<details><summary>Apakah bisa mulai dari anggaran terbatas?</summary><p>Bisa. Kita dapat memprioritaskan satu masalah paling penting terlebih dahulu, lalu mengembangkan fitur lain secara bertahap. Kami tidak akan menjanjikan semua fitur jika anggaran dan waktunya belum memungkinkan.</p></details>
-<details><summary>Bagaimana sistem pembayarannya?</summary><p>Umumnya 50% uang muka untuk memulai, 30% setelah fungsi utama selesai dan diuji, serta 20% sebelum serah terima akhir. Skema dan tahapnya dicantumkan dalam penawaran.</p></details>
-<details><summary>Berapa lama pengerjaannya?</summary><p>Waktu ditentukan setelah kebutuhan dan ruang lingkup jelas. Estimasi jadwal akan dicantumkan dalam penawaran dan dapat berubah jika ada perubahan kebutuhan, keterlambatan materi, atau ketergantungan layanan pihak ketiga.</p></details>
-<details><summary>Apakah revisi dan perbaikan sudah termasuk?</summary><p>Dua putaran revisi terhadap hasil yang masih berada dalam ruang lingkup disepakati. Bug yang berasal dari pekerjaan ZUVANA dan tidak sesuai spesifikasi mendapat garansi 30 hari sejak serah terima. Fitur baru, perubahan kebutuhan, dan gangguan layanan pihak ketiga tidak termasuk garansi.</p></details>
-<details><summary>Apakah harus menggunakan Google Sheets?</summary><p>Tidak selalu. Platform dan penyimpanan dipilih berdasarkan kebutuhan, skala penggunaan, keamanan, dan anggaran. Jika memungkinkan, akun serta infrastruktur ditempatkan atas nama klien agar kendali data tetap berada pada pemilik usaha.</p></details>
-<details><summary>Apakah source code dan data menjadi milik klien?</summary><p>Hak penggunaan, penyerahan source code, dokumentasi, akun, dan akses akan dijelaskan di awal serta ditulis dalam kesepakatan proyek. Detailnya mengikuti jenis pekerjaan dan penawaran yang disetujui.</p></details>
-<details><summary>Apakah konsultasi awal berbayar?</summary><p>Konsultasi awal untuk memahami kebutuhan dan menentukan apakah proyek sesuai dengan layanan ZUVANA tidak dipungut biaya dan tidak mewajibkan Anda melanjutkan proyek.</p></details>
-</div></div></section>
-
-<section id="brief" style="background:var(--pale)"><div class="wrap">
-<h2 class="h2 rv">Form brief proyek</h2>
-<p class="lead rv">Ceritakan kebutuhan awal Anda. Informasi ini akan membantu kami memahami masalah sebelum berdiskusi lebih lanjut.</p>
-<form class="fm rv" id="bf">
-<label>Nama Anda *<input name="n" required autocomplete="name"></label>
-<label>Nomor WhatsApp *<input name="w" required inputmode="tel" autocomplete="tel"></label>
-<label>Nama Bisnis *<input name="b" required></label>
-<label>Jenis Bisnis *<select name="j" required><option value="">Pilih kategori</option><option>Warung / Kuliner</option><option>Toko Retail</option><option>Klinik / Kesehatan</option><option>Salon / Kecantikan</option><option>Otomotif / Bengkel</option><option>Pendidikan / Kursus</option><option>Properti / Kos</option><option>Kontraktor / Proyek</option><option>Rental</option><option>Lainnya</option></select></label>
-<label class="w">Apa yang Anda cari? *<select name="c" required><option value="">Pilih salah satu</option><option>Template siap pakai (Zuvana Akuntansi Rp 99rb)</option><option>Aplikasi baru sesuai kebutuhan usaha</option><option>Merapikan alur kerja / menghubungkan sistem</option><option>Memperbaiki atau mengembangkan aplikasi yang sudah ada</option><option>Belum tahu, ingin diskusi dulu</option></select></label>
-<label class="w">Budget yang direncanakan<select name="g"><option value="">Pilih estimasi budget</option><option>Di bawah Rp 1 juta</option><option>Rp 1 – 2,5 juta</option><option>Rp 2,5 – 5 juta</option><option>Rp 5 – 10 juta</option><option>Rp 10 – 25 juta</option><option>Di atas Rp 25 juta</option><option>Belum tahu, perlu konsultasi</option></select></label>
-<label class="w">Kebutuhan / masalah yang ingin diselesaikan<textarea name="k" placeholder="Contoh: pencatatan masih manual dan data tersebar di banyak file"></textarea></label>
-<button class="btn btn-p w" type="submit">Kirim Brief via WhatsApp →</button>
-<p class="nt w">Tombol ini membuka WhatsApp dengan pesan yang sudah terisi. Ingin mengisi lebih lengkap? <a href="form.html">Isi form intake lengkap</a>.</p>
-</form></div></section>
-
-<div class="band" id="kontak"><div class="wrap">
-<div class="rv"><h2>Punya satu hal yang paling <em>merepotkan di usaha Anda?</em></h2>
-<p>Ceritakan lewat WhatsApp, lalu kita lihat bersama apakah bisa dibuatkan aplikasinya. Konsultasi pertama gratis, tanpa komitmen.</p></div>
-<div class="wa rv"><small>WHATSAPP BUSINESS</small><div class="no">0895 3411 89562</div><span>Rudy · Founder</span><span style="margin:-12px 0 20px">Senin–Sabtu · 10.00–18.00 WIB</span>
-<a class="btn btn-p" href="https://wa.me/62895341189562?text=Halo%20Zuvana%20Digital%2C%20saya%20ingin%20bercerita%20tentang%20kebutuhan%20aplikasi%20untuk%20usaha%20saya.">Chat Sekarang →</a></div>
-</div></div>
-
-<footer><div class="wrap"><div><b style="color:#fff;letter-spacing:.08em">ZUVANA DIGITAL</b><br>Custom business applications & ready templates · Sumatra Utara, melayani secara online<br>Jam kerja: Senin–Sabtu · 10.00–18.00 WIB</div><div>© 2026 ZUVANA Digital</div></div></footer>
-<a class="fab" href="https://wa.me/62895341189562?text=Halo%20Zuvana%20Digital%2C%20saya%20ingin%20bercerita%20tentang%20kebutuhan%20aplikasi%20untuk%20usaha%20saya.">WhatsApp</a>
-<script>
-/* Estimasi harga awal. Nilai final wajib melalui analisis dan penawaran tertulis. */
-var TIERS=[
-{n:'PERBAIKAN & PENYESUAIAN',p:'Rp 500 ribu',d:'Untuk aplikasi yang sudah ada dan membutuhkan perbaikan terbatas.',l:['Audit masalah awal','Perbaikan sesuai daftar pekerjaan','Pengujian hasil perbaikan','Batas pekerjaan tertulis'],t:'Harga awal · tergantung kondisi aplikasi'},
-{n:'APLIKASI SEDERHANA',p:'Rp 2,5 juta',star:1,d:'Mulai dari satu proses utama yang ingin dibuat lebih tertata.',l:['Ruang lingkup sederhana','Fitur inti sesuai kesepakatan','Tampilan responsif','Pengujian dan panduan dasar'],t:'Harga awal · estimasi setelah analisis'},
-{n:'CUSTOM & TERINTEGRASI',p:'Penawaran khusus',d:'Untuk beberapa proses, banyak pengguna, integrasi, atau kebutuhan khusus.',l:['Analisis kebutuhan','Rancangan modul dan hak akses','Integrasi dan laporan sesuai kebutuhan','Tahapan pengerjaan disepakati'],t:'Dihitung berdasarkan kompleksitas'}];
-document.getElementById('tiers').innerHTML=TIERS.map(function(x){return'<div class="tier rv'+(x.star?' star':'')+'">'+(x.star?'<span class="bd">PALING SERING DIPILIH</span>':'')+'<h3>'+x.n+'</h3><div class="pr"><small>'+(x.p.indexOf('Rp')==0?'mulai dari':'harga')+'</small><b>'+x.p+'</b></div><p class="ds">'+x.d+'</p><ul>'+x.l.map(function(i){return'<li>'+i+'</li>'}).join('')+'</ul><div class="tm">'+x.t+'</div></div>'}).join('');
-</script>
-<script>
-(function(){var d=document.documentElement;d.classList.add('js');var r=document.querySelectorAll('.rv');
-if(!('IntersectionObserver' in window)){r.forEach(function(e){e.classList.add('in')});return}
-var o=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');o.unobserve(e.target)}})},{threshold:.12});
-r.forEach(function(e,i){e.style.transitionDelay=(i%4)*90+'ms';o.observe(e)})})();
-var mt=document.getElementById('menuToggle'),mn=document.getElementById('mainNav');if(mt&&mn){mt.addEventListener('click',function(){var open=mn.classList.toggle('open');mt.setAttribute('aria-expanded',open?'true':'false');mt.textContent=open?'×':'☰'});mn.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){mn.classList.remove('open');mt.setAttribute('aria-expanded','false');mt.textContent='☰'})})}
-document.getElementById('bf').addEventListener('submit',function(e){e.preventDefault();var f=e.target,v=function(k){return f.elements[k].value.trim()||'-'};
-var m='Halo Zuvana Digital, saya ingin mengirim brief proyek.\n\nNama: '+v('n')+'\nWhatsApp: '+v('w')+'\nNama bisnis: '+v('b')+'\nJenis bisnis: '+v('j')+'\nYang dicari: '+v('c')+'\nBudget: '+v('g')+'\nKebutuhan: '+v('k');
-window.open('https://wa.me/62895341189562?text='+encodeURIComponent(m),'_blank')});
-</script>
-</body>
-</html>
+.prod-list{list-style:none;display:grid;gap:10px;font-size:14px;margin-bottom:24px}
+.prod-list li{display:flex;align-items:center;gap:8px}
+.prod-list li:before{content:"✓";color:#10b981;font-weight:700}
+.price-row{display:flex;align-items:baseline;gap:14px;margin-bottom:24px;background:#f8fafc;padding:12px 18px;border-radius:14px;width:fit-content}
+.price-row .now{font-size:32px;font-weight:800;color:var
