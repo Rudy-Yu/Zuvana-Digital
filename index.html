@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>ZUVANA Digital — Custom Business Applications & Ready Templates</title>
-<meta name="description" content="ZUVANA Digital membuat aplikasi bisnis custom yang dirancang mengikuti kebutuhan dan alur kerja usaha Anda. Built Around Your Business Needs.">
-<meta property="og:title" content="ZUVANA Digital — Custom Business Applications">
-<meta property="og:description" content="Bukan Anda yang mengikuti aplikasi. Aplikasi yang mengikuti Anda.">
+<meta name="description" content="ZUVANA Digital membuat aplikasi bisnis custom dan menyediakan template bisnis siap pakai (Akuntansi & Smart Inventory) untuk usaha Anda.">
+<meta property="og:title" content="ZUVANA Digital — Custom Business Applications & Ready Templates">
+<meta property="og:description" content="Bukan Anda yang mengikuti aplikasi. Aplikasi yang mengikuti Anda. Solusi kustom & template bisnis siap pakai.">
 <link rel="icon" type="image/png" href="assets/zuvana-logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -65,35 +65,37 @@ section{padding:84px 0}
 
 /* Ready Template Section */
 .ready-sec{background:linear-gradient(180deg,#fff 0%,#f1f5ff 100%);padding:80px 0;border-bottom:1px solid #e1e8f7}
-.prod-box{background:#fff;border:2px solid #1F6BFF;border-radius:26px;padding:36px;margin-top:36px;display:grid;grid-template-columns:1.1fr .9fr;gap:36px;align-items:center;box-shadow:0 20px 50px rgba(11,31,75,.08);position:relative;overflow:hidden}
+.prod-grid-2{display:grid;grid-template-columns:1fr 1fr;gap:30px;margin-top:40px}
+.prod-box{background:#fff;border:2px solid #1F6BFF;border-radius:26px;padding:30px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 20px 50px rgba(11,31,75,.08);position:relative;overflow:hidden}
+.prod-box.inv{border-color:#10b981}
 .prod-tag{position:absolute;top:18px;right:-35px;background:#10b981;color:#fff;font-size:11px;font-weight:700;letter-spacing:.12em;padding:5px 40px;transform:rotate(45deg)}
-.prod-badge{display:inline-block;background:#e0e7ff;color:#3730a3;font-size:12px;font-weight:700;letter-spacing:.12em;padding:5px 14px;border-radius:999px;margin-bottom:14px}
-.prod-title{font-size:26px;font-weight:700;line-height:1.25;color:var(--navy);margin-bottom:12px}
-.prod-desc{color:var(--gray);font-size:14.5px;margin-bottom:20px}
-.prod-list{list-style:none;display:grid;gap:10px;font-size:14px;margin-bottom:24px}
+.prod-tag.blue{background:#1F6BFF}
+.prod-badge{display:inline-block;background:#e0e7ff;color:#3730a3;font-size:11.5px;font-weight:700;letter-spacing:.12em;padding:4px 12px;border-radius:999px;margin-bottom:12px;width:fit-content}
+.prod-badge.green{background:#dcfce7;color:#15803d}
+.prod-title{font-size:22px;font-weight:700;line-height:1.3;color:var(--navy);margin-bottom:10px}
+.prod-desc{color:var(--gray);font-size:13.5px;margin-bottom:18px}
+.prod-list{list-style:none;display:grid;gap:8px;font-size:13px;margin-bottom:20px}
 .prod-list li{display:flex;align-items:center;gap:8px}
 .prod-list li:before{content:"✓";color:#10b981;font-weight:700}
-.price-row{display:flex;align-items:baseline;gap:14px;margin-bottom:24px;background:#f8fafc;padding:12px 18px;border-radius:14px;width:fit-content}
-.price-row .now{font-size:32px;font-weight:800;color:var(--navy)}
-.price-row .was{font-size:16px;color:#94a3b8;text-decoration:line-through}
-.price-row .save{background:#dcfce7;color:#15803d;font-size:12px;font-weight:700;padding:3px 10px;border-radius:999px}
+.price-row{display:flex;align-items:baseline;gap:12px;margin-bottom:20px;background:#f8fafc;padding:10px 16px;border-radius:14px;width:fit-content}
+.price-row .now{font-size:28px;font-weight:800;color:var(--navy)}
+.price-row .was{font-size:14px;color:#94a3b8;text-decoration:line-through}
+.price-row .save{background:#dcfce7;color:#15803d;font-size:11px;font-weight:700;padding:2px 8px;border-radius:999px}
 
-/* Styled Dashboard Sheet Display (Presisi Berdasarkan Screenshot Real) */
-.sheet-preview{background:#0b1f4b;border-radius:20px;padding:20px;color:#fff;box-shadow:0 20px 40px rgba(0,0,0,.25);border:1px solid rgba(255,255,255,.1)}
-.sheet-header{display:flex;justify-content:space-between;align-items:center;font-size:11px;color:#8DB8FF;margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid rgba(255,255,255,.1)}
-.sheet-kpi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-bottom:16px;background:#fff;color:var(--navy);padding:10px;border-radius:10px;text-align:center}
-.sheet-kpi-grid small{font-size:8.5px;color:var(--gray);display:block;font-weight:600}
-.sheet-kpi-grid b{font-size:11px;color:var(--navy)}
-.sheet-kpi-grid div:last-child b{color:#10b981}
-.sheet-wallet-mini{background:rgba(255,255,255,.05);border-radius:10px;padding:10px;font-size:11px;margin-bottom:14px}
-.sheet-wallet-row{display:flex;justify-content:space-between;padding:3px 0;border-bottom:1px dashed rgba(255,255,255,.1)}
-.sheet-wallet-row:last-child{border:none}
-.sheet-charts-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.chart-card{background:#fff;color:var(--navy);border-radius:10px;padding:10px;font-size:9.5px}
-.chart-bars{height:60px;display:flex;align-items:flex-end;justify-content:space-around;margin-top:8px;padding-bottom:4px;border-bottom:1px solid #cbd5e1}
+/* Styled Dashboard Sheet Displays */
+.sheet-preview{background:#0b1f4b;border-radius:16px;padding:16px;color:#fff;box-shadow:0 15px 35px rgba(0,0,0,.2);border:1px solid rgba(255,255,255,.1);margin-bottom:20px}
+.sheet-header{display:flex;justify-content:space-between;align-items:center;font-size:10px;color:#8DB8FF;margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.1)}
+.sheet-kpi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:12px;background:#fff;color:var(--navy);padding:8px;border-radius:8px;text-align:center}
+.sheet-kpi-grid small{font-size:8px;color:var(--gray);display:block;font-weight:600}
+.sheet-kpi-grid b{font-size:10.5px;color:var(--navy)}
+.sheet-kpi-grid div.alert b{color:#ef4444}
+.sheet-charts-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.chart-card{background:#fff;color:var(--navy);border-radius:8px;padding:8px;font-size:9px}
+.chart-bars{height:50px;display:flex;align-items:flex-end;justify-content:space-around;margin-top:6px;padding-bottom:2px;border-bottom:1px solid #cbd5e1}
 .chart-bar-blue{width:14%;background:#1F6BFF;border-radius:3px 3px 0 0}
 .chart-bar-red{width:14%;background:#ef4444;border-radius:3px 3px 0 0}
-.pie-mock{width:46px;height:46px;border-radius:50%;background:conic-gradient(#ef4444 0% 22%,#eab308 22% 87%,#10b981 87% 100%);margin:8px auto 0}
+.pie-mock{width:38px;height:38px;border-radius:50%;background:conic-gradient(#ef4444 0% 22%,#eab308 22% 87%,#10b981 87% 100%);margin:6px auto 0}
+.pie-mock-inv{width:38px;height:38px;border-radius:50%;background:conic-gradient(#10b981 0% 40%,#1F6BFF 40% 75%,#f59e0b 75% 100%);margin:6px auto 0}
 
 .ba{display:grid;grid-template-columns:1fr 60px 1fr;gap:12px;align-items:center;margin-top:44px}
 .pn{border-radius:24px;padding:28px;min-height:250px;position:relative}
@@ -134,8 +136,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
 @media(max-width:860px){
 .nav ul{display:none}.hg,.band .wrap{grid-template-columns:1fr}.hg{margin-top:44px}.hero{padding-bottom:110px}
 .ba{grid-template-columns:1fr}.arrow{transform:rotate(90deg);height:40px}
-.cards,.steps{grid-template-columns:1fr}.steps:before{display:none}
-.mock{margin-right:14px}.prod-box{grid-template-columns:1fr}}
+.cards,.steps,.prod-grid-2{grid-template-columns:1fr}.steps:before{display:none}
+.mock{margin-right:14px}}
 
 .faq{max-width:780px;margin-top:40px;display:grid;gap:12px}
 .faq details{background:#fff;border:1px solid #e1e8f7;border-radius:16px;padding:18px 22px;transition:border-color .2s}
@@ -190,7 +192,7 @@ body{overflow-x:hidden} .hero{background:radial-gradient(circle at 78% 24%,rgba(
 <body>
 
 <div class="top-bar">
-🚀 PROMO LAUNCHING: Template Zuvana Akuntansi UMKM Diskon 50%! <a href="#produk">Beli Rp 99.000 →</a>
+🚀 PROMO LAUNCHING: Template Zuvana Akuntansi & Smart Inventory Diskon 50%! <a href="#produk">Beli Rp 99.000 →</a>
 </div>
 
 <div class="hw"><header class="hero">
@@ -215,7 +217,7 @@ body{overflow-x:hidden} .hero{background:radial-gradient(circle at 78% 24%,rgba(
 <h1>Bukan Anda yang mengikuti aplikasi. <em>Aplikasi yang mengikuti Anda.</em></h1>
 <p class="sub">Aplikasi bisnis yang dirancang mengikuti cara usaha Anda bekerja — dari pencatatan, operasional, hingga laporan yang lebih mudah dipantau.</p>
 <div class="cta">
-<a class="btn btn-s" href="#produk">Beli Template Akuntansi (Rp 99rb) →</a>
+<a class="btn btn-s" href="#produk">Lihat Produk Siap Pakai (Rp 99rb) →</a>
 <a class="btn btn-g" href="#layanan">Lihat Layanan Custom</a>
 </div>
 <ul class="trust"><li>Konsultasi awal tanpa biaya</li><li>Ruang lingkup jelas sebelum mulai</li><li>Online untuk berbagai wilayah</li></ul>
@@ -230,73 +232,123 @@ body{overflow-x:hidden} .hero{background:radial-gradient(circle at 78% 24%,rgba(
 </div>
 </header></div>
 
-<!-- FEATURED READY TEMPLATE SECTION -->
+<!-- FEATURED READY TEMPLATE SECTION (2 KATALOG SIAP PAKAI) -->
 <section id="produk" class="ready-sec">
 <div class="wrap">
 <div class="eyebrow rv">PRODUK DIGITAL SIAP PAKAI</div>
-<h2 class="h2 rv">Zuvana Akuntansi UMKM</h2>
-<p class="lead rv">Solusi pembukuan instan berbasis Google Sheets & Apps Script. Tanpa rumus, tanpa koding, dan 100% bebas dari biaya berlangganan bulanan.</p>
+<h2 class="h2 rv">Solusi Instan Operasional UMKM</h2>
+<p class="lead rv">Solusi pembukuan & stok gudang berbasis Google Sheets & Apps Script. Tanpa rumus, tanpa koding, dan 100% bebas dari biaya berlangganan bulanan.</p>
 
+<div class="prod-grid-2">
+
+<!-- KATALOG 1: ZUVANA AKUNTANSI -->
 <div class="prod-box rv">
-<div class="prod-tag">BEST SELLER</div>
+<div class="prod-tag blue">BEST SELLER</div>
 <div>
-<span class="prod-badge">AUTOMATED GOOGLE SHEETS TEMPLATE</span>
-<h3 class="prod-title">Zuvana Akuntansi v6.6 — Auto Journal & Real-Time Dashboard</h3>
-<p class="prod-desc">Cukup catat transaksi seperti dompet biasa di <code>Input_Transaksi</code>. Engine otomatis di belakang layar langsung memproses Jurnal Berpasangan, Laporan Laba Rugi (Bulan Berjalan), Buku Saldo 5 Dompet, Neraca Seimbang, dan Grafik Dashboard secara real-time.</p>
+<span class="prod-badge">PEMBUKUAN & KEUANGAN</span>
+<h3 class="prod-title">Zuvana Akuntansi v6.6</h3>
+<p class="prod-desc">Single-input otomatisasi jurnal berpasangan, laporan laba rugi MTD, neraca, arus kas, dan pengawasan 5 dompet kas/bank secara real-time.</p>
+
+<div class="sheet-preview">
+<div class="sheet-header">
+<span>ZUVANA FINANCIAL DASHBOARD</span>
+<span style="color:#10b981;font-weight:600">● LIVE DATA</span>
+</div>
+<div class="sheet-kpi-grid">
+<div><small>KAS/BANK</small><b>Rp 9,2M</b></div>
+<div><small>PENDAPATAN</small><b>Rp 12,7M</b></div>
+<div><small>LABA BERSIH</small><b>Rp 9,2M</b></div>
+</div>
+<div class="sheet-charts-grid">
+<div class="chart-card">
+<div>Masuk vs Keluar</div>
+<div class="chart-bars">
+<div class="chart-bar-blue" style="height:70%"></div>
+<div class="chart-bar-red" style="height:30%"></div>
+<div class="chart-bar-blue" style="height:90%"></div>
+</div>
+</div>
+<div class="chart-card" style="text-align:center">
+<div>Komposisi Saldo</div>
+<div class="pie-mock"></div>
+</div>
+</div>
+</div>
 
 <ul class="prod-list">
-<li><b>Single-Input Entry:</b> Pengisian praktis tanpa perlu paham rumus akuntansi.</li>
-<li><b>Monitoring 5 Dompet:</b> TUNAI, BANK, SHOPEEPAY, OVO, dan DANA.</li>
-<li><b>Laporan Real-Time:</b> Laba Rugi MTD, Arus Kas, dan Neraca Otomatis.</li>
-<li><b>Fast Engine (Anti-Lag):</b> Koding dioptimasi agar pemrosesan data tetap secepat kilat.</li>
-<li><b>Sekali Bayar Selamanya:</b> 100% Bebas biaya langganan bulanan.</li>
+<li><b>Single Input:</b> Tanpa rumus akuntansi rumit.</li>
+<li><b>5 Dompet:</b> Tunai, Bank, ShopeePay, OVO, Dana.</li>
+<li><b>Fast Engine:</b> Anti-lagging meski data bertambah.</li>
 </ul>
+</div>
 
+<div>
 <div class="price-row">
 <div>
-<div style="font-size:11px;color:#166534;font-weight:700">HARGA PROMO LAUNCHING:</div>
+<div style="font-size:10px;color:#166534;font-weight:700">HARGA PROMO:</div>
 <span class="now">Rp 99.000</span>
 </div>
 <span class="was">Rp 199.000</span>
 <span class="save">Diskon 50%</span>
 </div>
-
-<a class="btn btn-s" href="https://wa.me/62895341189562?text=Halo%20Zuvana%20Digital%2C%20saya%20ingin%20membeli%20Template%20Zuvana%20Akuntansi%20UMKM%20seharga%20Rp%2099.000.">Beli Sekarang via WhatsApp →</a>
+<a class="btn btn-s" style="width:100%;justify-content:center" href="https://wa.me/62895341189562?text=Halo%20Zuvana%20Digital%2C%20saya%20ingin%20membeli%20Template%20Zuvana%20Akuntansi%20v6.6%20seharga%20Rp%2099.000.">Beli Akuntansi →</a>
+</div>
 </div>
 
-<div class="sheet-preview">
+<!-- KATALOG 2: ZUVANA SMART INVENTORY -->
+<div class="prod-box inv rv">
+<div class="prod-tag">NEW RELEASE</div>
+<div>
+<span class="prod-badge green">STOK GUDANG & RESTOCK</span>
+<h3 class="prod-title">Zuvana Smart Inventory</h3>
+<p class="prod-desc">Sistem kontrol persediaan barang, valuas modal gudang, estimasi omzet, grafik distribusi aset, serta peringatan otomatis barang yang harus di-restock.</p>
+
+<div class="sheet-preview" style="background:#092e20">
 <div class="sheet-header">
-<span>ZUVANA DIGITAL - FINANCIAL DASHBOARD</span>
-<span style="color:#10b981;font-weight:600">● REAL DATA LIVE</span>
+<span style="color:#a7f3d0">ZUVANA SMART INVENTORY</span>
+<span style="color:#f87171;font-weight:600">● 3 RESTOCK ALERT</span>
 </div>
 <div class="sheet-kpi-grid">
-<div><small>KAS / BANK</small><b>Rp 9,200,000</b></div>
-<div><small>PENDAPATAN</small><b>Rp 12,700,000</b></div>
-<div><small>BEBAN</small><b>Rp 1,500,000</b></div>
-<div><small>LABA BERSIH</small><b>Rp 9,200,000</b></div>
-</div>
-<div class="sheet-wallet-mini">
-<div class="sheet-wallet-row"><span>TUNAI</span><span>Rp 2,000,000</span></div>
-<div class="sheet-wallet-row"><span>BANK</span><span>Rp 6,000,000</span></div>
-<div class="sheet-wallet-row"><span>SHOPEEPAY</span><span>Rp 1,200,000</span></div>
+<div><small>STOK FISIK</small><b>79 Unit</b></div>
+<div><small>VALUASI MODAL</small><b>Rp 5.7M</b></div>
+<div><small>POTENSI OMZET</small><b style="color:#10b981">Rp 11.9M</b></div>
 </div>
 <div class="sheet-charts-grid">
 <div class="chart-card">
-<div>Perbandingan Uang Masuk vs Keluar</div>
+<div>Sisa Stok (Unit)</div>
 <div class="chart-bars">
-<div class="chart-bar-blue" style="height:45%"></div>
-<div class="chart-bar-red" style="height:20%"></div>
-<div class="chart-bar-blue" style="height:90%"></div>
-<div class="chart-bar-red" style="height:25%"></div>
-<div class="chart-bar-blue" style="height:18%"></div>
+<div class="chart-bar-blue" style="height:30%;background:#10b981"></div>
+<div class="chart-bar-blue" style="height:85%;background:#10b981"></div>
+<div class="chart-bar-blue" style="height:15%;background:#ef4444"></div>
 </div>
 </div>
 <div class="chart-card" style="text-align:center">
-<div>Komposisi Saldo Kas</div>
-<div class="pie-mock"></div>
+<div>Distribusi Aset</div>
+<div class="pie-mock-inv"></div>
 </div>
 </div>
 </div>
+
+<ul class="prod-list">
+<li><b>Valuasi Gudang:</b> Modal Aset & Potensi Omzet.</li>
+<li><b>Restock Alert:</b> Notifikasi stok menipis otomatis.</li>
+<li><b>Grafik Aset:</b> Distribusi sisa stok & nilai barang.</li>
+</ul>
+</div>
+
+<div>
+<div class="price-row">
+<div>
+<div style="font-size:10px;color:#166534;font-weight:700">HARGA PROMO:</div>
+<span class="now">Rp 99.000</span>
+</div>
+<span class="was">Rp 199.000</span>
+<span class="save">Diskon 50%</span>
+</div>
+<a class="btn btn-s" style="width:100%;justify-content:center;background:#059669" href="https://wa.me/62895341189562?text=Halo%20Zuvana%20Digital%2C%20saya%20ingin%20membeli%20Template%20Zuvana%20Smart%20Inventory%20seharga%20Rp%2099.000.">Beli Smart Inventory →</a>
+</div>
+</div>
+
 </div>
 
 </div>
@@ -350,7 +402,7 @@ body{overflow-x:hidden} .hero{background:radial-gradient(circle at 78% 24%,rgba(
 <h2 class="h2 rv">Pertanyaan yang sering ditanya</h2>
 <div class="faq rv">
 <details><summary>Berapa biaya pembuatan aplikasi?</summary><p>Perbaikan kecil mulai Rp500 ribu, sedangkan aplikasi sederhana mulai Rp2,5 juta. Estimasi tersebut bukan harga otomatis untuk semua kebutuhan. Kami akan memeriksa ruang lingkup dan memberikan penawaran tertulis sebelum pekerjaan dimulai.</p></details>
-<details><summary>Apakah tersedia template siap pakai?</summary><p>Ya, Zuvana Akuntansi UMKM tersedia sebagai template siap pakai seharga Rp 99.000 sekali bayar selamanya, tanpa biaya langganan bulanan.</p></details>
+<details><summary>Apakah tersedia template siap pakai?</summary><p>Ya, kami menyediakan template Zuvana Akuntansi UMKM dan Zuvana Smart Inventory seharga Rp 99.000 (sekali bayar selamanya), tanpa biaya langganan bulanan.</p></details>
 <details><summary>Apakah bisa mulai dari anggaran terbatas?</summary><p>Bisa. Kita dapat memprioritaskan satu masalah paling penting terlebih dahulu, lalu mengembangkan fitur lain secara bertahap. Kami tidak akan menjanjikan semua fitur jika anggaran dan waktunya belum memungkinkan.</p></details>
 <details><summary>Bagaimana sistem pembayarannya?</summary><p>Umumnya 50% uang muka untuk memulai, 30% setelah fungsi utama selesai dan diuji, serta 20% sebelum serah terima akhir. Skema dan tahapnya dicantumkan dalam penawaran.</p></details>
 <details><summary>Berapa lama pengerjaannya?</summary><p>Waktu ditentukan setelah kebutuhan dan ruang lingkup jelas. Estimasi jadwal akan dicantumkan dalam penawaran dan dapat berubah jika ada perubahan kebutuhan, keterlambatan materi, atau ketergantungan layanan pihak ketiga.</p></details>
@@ -361,16 +413,16 @@ body{overflow-x:hidden} .hero{background:radial-gradient(circle at 78% 24%,rgba(
 </div></div></section>
 
 <section id="brief" style="background:var(--pale)"><div class="wrap">
-<h2 class="h2 rv">Form brief proyek</h2>
+<h2 class="h2 rv">Form brief proyek & pemesanan</h2>
 <p class="lead rv">Ceritakan kebutuhan awal Anda. Informasi ini akan membantu kami memahami masalah sebelum berdiskusi lebih lanjut.</p>
 <form class="fm rv" id="bf">
 <label>Nama Anda *<input name="n" required autocomplete="name"></label>
 <label>Nomor WhatsApp *<input name="w" required inputmode="tel" autocomplete="tel"></label>
 <label>Nama Bisnis *<input name="b" required></label>
 <label>Jenis Bisnis *<select name="j" required><option value="">Pilih kategori</option><option>Warung / Kuliner</option><option>Toko Retail</option><option>Klinik / Kesehatan</option><option>Salon / Kecantikan</option><option>Otomotif / Bengkel</option><option>Pendidikan / Kursus</option><option>Properti / Kos</option><option>Kontraktor / Proyek</option><option>Rental</option><option>Lainnya</option></select></label>
-<label class="w">Apa yang Anda cari? *<select name="c" required><option value="">Pilih salah satu</option><option>Beli Template Zuvana Akuntansi (Rp 99rb)</option><option>Aplikasi baru sesuai kebutuhan usaha</option><option>Merapikan alur kerja / menghubungkan sistem</option><option>Memperbaiki atau mengembangkan aplikasi yang sudah ada</option><option>Belum tahu, ingin diskusi dulu</option></select></label>
-<label class="w">Budget yang direncanakan<select name="g"><option value="">Pilih estimasi budget</option><option>Rp 99.000 (Beli Template)</option><option>Di bawah Rp 1 juta</option><option>Rp 1 – 2,5 juta</option><option>Rp 2,5 – 5 juta</option><option>Rp 5 – 10 juta</option><option>Rp 10 – 25 juta</option><option>Di atas Rp 25 juta</option><option>Belum tahu, perlu konsultasi</option></select></label>
-<label class="w">Kebutuhan / masalah yang ingin diselesaikan<textarea name="k" placeholder="Contoh: pencatatan masih manual dan data tersebar di banyak file"></textarea></label>
+<label class="w">Apa yang Anda cari? *<select name="c" required><option value="">Pilih salah satu</option><option>Beli Zuvana Akuntansi (Rp 99.000)</option><option>Beli Zuvana Smart Inventory (Rp 99.000)</option><option>Beli Paket Bundle (Akuntansi + Inventory Rp 179.000)</option><option>Aplikasi custom baru sesuai kebutuhan usaha</option><option>Merapikan alur kerja / menghubungkan sistem</option><option>Memperbaiki atau mengembangkan aplikasi yang sudah ada</option><option>Belum tahu, ingin diskusi dulu</option></select></label>
+<label class="w">Budget yang direncanakan<select name="g"><option value="">Pilih estimasi budget</option><option>Rp 99.000 (Beli 1 Template)</option><option>Rp 179.000 (Beli Paket Bundle)</option><option>Di bawah Rp 1 juta</option><option>Rp 1 – 2,5 juta</option><option>Rp 2,5 – 5 juta</option><option>Rp 5 – 10 juta</option><option>Di atas Rp 10 juta</option></select></label>
+<label class="w">Kebutuhan / masalah yang ingin diselesaikan<textarea name="k" placeholder="Contoh: Ingin membeli template akuntansi & inventory atau butuh aplikasi custom"></textarea></label>
 <button class="btn btn-s w" type="submit">Kirim via WhatsApp →</button>
 <p class="nt w">Tombol ini membuka WhatsApp dengan pesan yang sudah terisi. Ingin mengisi lebih lengkap? <a href="form.html">Isi form intake lengkap</a>.</p>
 </form></div></section>
@@ -384,7 +436,7 @@ body{overflow-x:hidden} .hero{background:radial-gradient(circle at 78% 24%,rgba(
 
 <footer><div class="wrap"><div><b style="color:#fff;letter-spacing:.08em">ZUVANA DIGITAL</b><br>Custom business applications & ready templates · Sumatra Utara, melayani secara online<br>Jam kerja: Senin–Sabtu · 10.00–18.00 WIB</div><div>© 2026 ZUVANA Digital</div></div></footer>
 
-<a class="fab" href="https://wa.me/62895341189562?text=Halo%20Zuvana%20Digital%2C%20saya%20ingin%20membeli%20Template%20Zuvana%20Akuntansi%20UMKM.">Beli Template Rp 99rb</a>
+<a class="fab" href="https://wa.me/62895341189562?text=Halo%20Zuvana%20Digital%2C%20saya%20ingin%20membeli%20Template%20Zuvana.">Beli Template Rp 99rb</a>
 
 <script>
 /* Estimasi harga awal. Nilai final wajib melalui analisis dan penawaran tertulis. */
