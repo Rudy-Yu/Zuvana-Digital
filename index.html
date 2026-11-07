@@ -82,6 +82,15 @@ section{padding:84px 0}
 .price-row .was{font-size:14px;color:#94a3b8;text-decoration:line-through}
 .price-row .save{background:#dcfce7;color:#15803d;font-size:11px;font-weight:700;padding:2px 8px;border-radius:999px}
 
+/* Video Embed Wrapper Styles (Ukuran Seragam & Playable) */
+.video-catalog-wrap{margin:18px 0;background:#0b1f4b;border-radius:16px;padding:12px;border:1px solid rgba(255,255,255,.1);box-shadow:0 10px 25px rgba(0,0,0,.15)}
+.video-catalog-wrap h4{color:#8DB8FF;font-size:12px;margin-bottom:8px;font-weight:600;letter-spacing:.05em}
+.video-container{position:relative;width:100%;padding-bottom:56.25%;height:0;border-radius:10px;overflow:hidden;background:#000}
+.video-container iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
+.video-sub-links{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+.video-sub-links a{background:rgba(255,255,255,.1);color:#fff;font-size:11.5px;padding:6px 12px;border-radius:8px;transition:background .2s}
+.video-sub-links a:hover{background:var(--blue)}
+
 /* Styled Dashboard Sheet Displays */
 .sheet-preview{background:#0b1f4b;border-radius:16px;padding:16px;color:#fff;box-shadow:0 15px 35px rgba(0,0,0,.2);border:1px solid rgba(255,255,255,.1);margin-bottom:20px}
 .sheet-header{display:flex;justify-content:space-between;align-items:center;font-size:10px;color:#8DB8FF;margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.1)}
@@ -205,6 +214,7 @@ body{overflow-x:hidden} .hero{background:radial-gradient(circle at 78% 24%,rgba(
 <li><a href="#pengalaman">Pengalaman</a></li>
 <li><a href="#harga">Estimasi Biaya</a></li>
 <li><a href="#cara-kerja">Cara Kerja</a></li>
+<li><a href="testimonial.html" style="color:#34E3CB">Testimonial</a></li>
 <li><a href="#brief">Brief Proyek</a></li>
 <li><a href="#kontak">Kontak</a></li>
 </ul>
@@ -232,7 +242,7 @@ body{overflow-x:hidden} .hero{background:radial-gradient(circle at 78% 24%,rgba(
 </div>
 </header></div>
 
-<!-- FEATURED READY TEMPLATE SECTION (2 KATALOG SIAP PAKAI) -->
+<!-- FEATURED READY TEMPLATE SECTION (2 KATALOG ASLI + VIDEO PEMUTAR SERAGAM) -->
 <section id="produk" class="ready-sec">
 <div class="wrap">
 <div class="eyebrow rv">PRODUK DIGITAL SIAP PAKAI</div>
@@ -273,6 +283,18 @@ body{overflow-x:hidden} .hero{background:radial-gradient(circle at 78% 24%,rgba(
 <div class="pie-mock"></div>
 </div>
 </div>
+</div>
+
+<!-- EMBEDDED VIDEO: DEMO & TUTORIAL ZUVANA AKUNTANSI (UKURAN SERAGAM) -->
+<div class="video-catalog-wrap">
+  <h4>▶ Demo Zuvana Akuntansi</h4>
+  <div class="video-container">
+    <iframe src="https://drive.google.com/file/d/1oiiTABjFyuJZfxQvWHK5VsmK0qYamTKM/preview" allow="autoplay" allowfullscreen></iframe>
+  </div>
+  <div class="video-sub-links">
+    <a href="https://drive.google.com/file/d/1RcRJPV-zQi_NlJW2thuJqiF0PpX-oMrz/view?usp=sharing" target="_blank">📋 Penjelasan Akuntansi ↗</a>
+    <a href="https://drive.google.com/file/d/1Qhh8FVZERiQBxPV5JELxdxDmHNqsHUXX/view?usp=sharing" target="_blank">📖 Tutorial Akuntansi ↗</a>
+  </div>
 </div>
 
 <ul class="prod-list">
@@ -327,6 +349,18 @@ body{overflow-x:hidden} .hero{background:radial-gradient(circle at 78% 24%,rgba(
 <div class="pie-mock-inv"></div>
 </div>
 </div>
+</div>
+
+<!-- EMBEDDED VIDEO: DEMO & TUTORIAL SMART INVENTORY (UKURAN SERAGAM) -->
+<div class="video-catalog-wrap">
+  <h4>▶ Demo Smart Inventory</h4>
+  <div class="video-container">
+    <iframe src="https://drive.google.com/file/d/1A1CcSf8v9oI52TkcRSjBLWFP1VsBRBpW/preview" allow="autoplay" allowfullscreen></iframe>
+  </div>
+  <div class="video-sub-links">
+    <a href="https://drive.google.com/file/d/1T9yhgNmS5mNdM3mpl80czROnq9EBj_ca/view?usp=sharing" target="_blank">📖 Tutorial Inventory ↗</a>
+    <a href="https://drive.google.com/file/d/1xQR-z3-UjiErmTZ-2kWWs5CDI663FnEh/view?usp=sharing" target="_blank">📋 Penjelasan Inventory ↗</a>
+  </div>
 </div>
 
 <ul class="prod-list">
@@ -398,6 +432,16 @@ body{overflow-x:hidden} .hero{background:radial-gradient(circle at 78% 24%,rgba(
 <div class="st rv"><b>4</b><h4>Serah Terima</h4><p>Aplikasi diserahkan bersama pengenalan penggunaan agar siap dipakai.</p></div>
 </div></div></section>
 
+<!-- SECTION TESTIMONIAL (HALAMAN KHUSUS TESTIMONI / KOMENTAR KLIEN) -->
+<section id="testimonial-section" style="background:#f8fafd;border-top:1px solid #e1e8f7;border-bottom:1px solid #e1e8f7">
+<div class="wrap" style="text-align:center;max-width:700px">
+<div class="eyebrow rv">TESTIMONIAL & ULASAN KLIEN</div>
+<h2 class="h2 rv" style="margin:0 auto">Apa Kata Mereka yang Telah Menggunakan Zuvana?</h2>
+<p class="lead rv" style="margin:16px auto 30px">Jelajahi pengalaman klien kami atau bagikan ulasan serta komentar Anda mengenai penggunaan aplikasi dan template Zuvana.</p>
+<a class="btn btn-p rv" href="testimonial.html" style="font-size:16px;padding:16px 36px">Buka Halaman Testimonial & Kirim Komentar →</a>
+</div>
+</section>
+
 <section id="faq"><div class="wrap">
 <h2 class="h2 rv">Pertanyaan yang sering ditanya</h2>
 <div class="faq rv">
@@ -434,7 +478,7 @@ body{overflow-x:hidden} .hero{background:radial-gradient(circle at 78% 24%,rgba(
 <a class="btn btn-s" href="https://wa.me/62895341189562?text=Halo%20Zuvana%20Digital%2C%20saya%20ingin%20bercerita%20tentang%20kebutuhan%20aplikasi%20untuk%20usaha%20saya.">Chat Sekarang →</a></div>
 </div></div>
 
-<footer><div class="wrap"><div><b style="color:#fff;letter-spacing:.08em">ZUVANA DIGITAL</b><br>Custom business applications & ready templates · Sumatra Utara, melayani secara online<br>Jam kerja: Senin–Sabtu · 10.00–18.00 WIB</div><div>© 2026 ZUVANA Digital</div></div></footer>
+<footer><div class="wrap"><div><b style="color:#fff;letter-spacing:.08em">ZUVANA DIGITAL</b><br>Custom business applications & ready templates · Sumatra Utara, melayani secara online<br>Jam kerja: Senin–Sabtu · 10.00–18.00 WIB</div><div><a href="testimonial.html" style="color:#34E3CB;text-decoration:underline">Halaman Testimonial</a> | © 2026 ZUVANA Digital</div></div></footer>
 
 <a class="fab" href="https://wa.me/62895341189562?text=Halo%20Zuvana%20Digital%2C%20saya%20ingin%20membeli%20Template%20Zuvana.">Beli Template Rp 99rb</a>
 
