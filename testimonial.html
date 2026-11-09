@@ -32,7 +32,7 @@ a{color:inherit;text-decoration:none}
 .back-link{color:#34E3CB;font-weight:600;font-size:13.5px;display:flex;align-items:center;gap:6px;transition:opacity .2s}
 .back-link:hover{opacity:.8}
 
-/* Hero Section Modern */
+/* Hero Section */
 .hero-sec{background:radial-gradient(circle at 80% 20%,rgba(40,104,245,.35),transparent 40%),linear-gradient(135deg,#08152e 0%,#102953 60%,#091936 100%);color:#fff;padding:64px 0;text-align:center;position:relative}
 .hero-sec h1{font-size:clamp(30px,4vw,46px);font-weight:700;margin-bottom:14px;letter-spacing:-.02em}
 .hero-sec p{color:#cfdcf7;max-width:600px;margin:0 auto;font-size:16px}
@@ -54,7 +54,7 @@ a{color:inherit;text-decoration:none}
 .testi-meta{display:flex;justify-content:space-between;align-items:center;font-size:12px;color:#64748b;border-top:1px dashed #f1f5f9;padding-top:12px}
 .prod-badge-sm{background:#eff6ff;color:#1d4ed8;font-weight:600;padding:4px 12px;border-radius:999px;font-size:11.5px}
 
-/* Loading & Empty state */
+/* State Box */
 .loading-box, .empty-box{text-align:center;padding:40px;color:var(--gray);font-size:14px;background:var(--pale);border-radius:16px}
 
 /* Interactive Form Box */
@@ -94,23 +94,23 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
 </section>
 
 <div class="wrap testi-layout">
-  <!-- Sisi Kiri: Daftar Ulasan Real-Time dari Google Sheets -->
+  <!-- Daftar Ulasan Real-Time -->
   <div>
     <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px">
       <h2 style="font-size:22px;color:var(--navy)">Ulasan Terbaru Klien</h2>
-      <button onclick="fetchReviews()" style="background:none;border:none;color:var(--blue);font-weight:600;cursor:pointer;font-size:13px">🔄 Muat Ulang</button>
+      <button onclick="loadData()" style="background:none;border:none;color:var(--blue);font-weight:600;cursor:pointer;font-size:13px">🔄 Muat Ulang</button>
     </div>
     
     <div class="testi-grid" id="testiGrid">
-      <div class="loading-box">Memuat ulasan dari server...</div>
+      <div class="loading-box">Memuat data dari server...</div>
     </div>
   </div>
 
-  <!-- Sisi Kanan: Form Kirim Ulasan -->
+  <!-- Form Kirim Ulasan -->
   <div>
     <div class="form-box">
       <h3>Bagikan Pengalaman Anda</h3>
-      <p>Punya cerita sukses atau masukan setelah menggunakan produk Zuvana? Tuliskan ulasan Anda di sini.</p>
+      <p>Punya cerita sukses setelah menggunakan produk Zuvana? Tuliskan ulasan Anda di sini.</p>
       
       <form class="testi-form" id="testimonialForm">
         <label>Nama Lengkap *
@@ -123,12 +123,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
         
         <label>Produk / Layanan Digunakan *
           <select id="userProd" required>
-            <option value="">Pilih Produk Zuvana</option>
-            <option value="Zuvana Akuntansi v6.6">Zuvana Akuntansi v6.6</option>
-            <option value="Zuvana Smart Inventory">Zuvana Smart Inventory</option>
-            <option value="Zuvana POS Web App">Zuvana POS Web App</option>
-            <option value="MEGA BUNDLE UMKM (3-in-1)">MEGA BUNDLE UMKM (3-in-1)</option>
-            <option value="Aplikasi Custom / Workflow">Aplikasi Custom / Workflow</option>
+            <option value="">Memuat daftar produk...</option>
           </select>
         </label>
 
@@ -183,13 +178,28 @@ function updateStars() {
   });
 }
 
-// Fungsi Mengambil Ulasan dari Google Sheets
-async function fetchReviews() {
+// Fungsi Mengambil Data Ulasan & Produk Otomatis dari Google Sheets
+async function loadData() {
   const container = document.getElementById('testiGrid');
+  const prodSelect = document.getElementById('userProd');
 
   try {
     const response = await fetch(SCRIPT_URL);
-    const reviews = await response.json();
+    const result = await response.json();
+
+    // 1. Render Dropdown Produk Otomatis
+    if (result.products && Array.isArray(result.products) && result.products.length > 0) {
+      prodSelect.innerHTML = `<option value="">Pilih Produk Zuvana</option>` + 
+        result.products.map(prod => `<option value="${escapeHtml(prod)}">${escapeHtml(prod)}</option>`).join('');
+    } else {
+      prodSelect.innerHTML = `<option value="">Tidak ada produk ditemukan</option>`;
+    }
+
+    // 2. Render Daftar Ulasan dengan Proteksi Objek/Array
+    let reviews = result.reviews;
+    if (reviews && !Array.isArray(reviews)) {
+      reviews = [reviews];
+    }
 
     if (!reviews || reviews.length === 0) {
       container.innerHTML = `<div class="empty-box">Belum ada ulasan yang dikirimkan. Jadilah yang pertama memberikan ulasan!</div>`;
@@ -214,8 +224,9 @@ async function fetchReviews() {
     `).join('');
 
   } catch (error) {
-    console.error('Gagal memuat ulasan:', error);
-    container.innerHTML = `<div class="empty-box" style="color:#dc2626">Gagal memuat ulasan dari server database. Silakan muat ulang halaman.</div>`;
+    console.error('Gagal memuat data:', error);
+    container.innerHTML = `<div class="empty-box" style="color:#dc2626">Gagal memuat data dari server database. Silakan muat ulang halaman.</div>`;
+    prodSelect.innerHTML = `<option value="">Gagal memuat produk</option>`;
   }
 }
 
@@ -253,7 +264,7 @@ document.getElementById('testimonialForm').addEventListener('submit', async func
     selectedRating = 5;
     updateStars();
     
-    setTimeout(fetchReviews, 1500);
+    setTimeout(loadData, 1500);
 
   } catch (error) {
     console.error('Error:', error);
@@ -264,8 +275,7 @@ document.getElementById('testimonialForm').addEventListener('submit', async func
   }
 });
 
-// Panggil fungsi saat halaman pertama kali dibuka
-fetchReviews();
+loadData();
 </script>
 </body>
 </html>
