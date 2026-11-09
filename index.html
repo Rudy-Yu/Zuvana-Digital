@@ -72,6 +72,9 @@ section{padding:84px 0}
 .prod-tag{position:absolute;top:18px;right:-35px;background:#10b981;color:#fff;font-size:11px;font-weight:700;letter-spacing:.12em;padding:5px 40px;transform:rotate(45deg)}
 .prod-tag.blue{background:#1F6BFF}
 .prod-tag.purple{background:#7c3aed}
+.prod-tag.promo{background:#e11d48;color:#fff;box-shadow:0 4px 14px rgba(190,18,60,.35)}
+.price-row .save{background:#b91c1c;color:#fff;font-size:11px;font-weight:800;padding:5px 9px;border-radius:8px;letter-spacing:.01em;box-shadow:0 3px 10px rgba(185,28,28,.18)}
+.prod-box.bundle{border-color:#e11d48;background:linear-gradient(180deg,#fff7f8 0%,#fff 100%)}
 .prod-badge{display:inline-block;background:#e0e7ff;color:#3730a3;font-size:11.5px;font-weight:700;letter-spacing:.12em;padding:4px 12px;border-radius:999px;margin-bottom:12px;width:fit-content}
 .prod-badge.green{background:#dcfce7;color:#15803d}
 .prod-badge.purple{background:#f3e8ff;color:#6b21a8}
@@ -201,7 +204,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
 body{overflow-x:hidden} .hero{background:radial-gradient(circle at 78% 24%,rgba(40,104,245,.28),transparent 34%),linear-gradient(135deg,#08152e 0%,#102953 60%,#091936 100%)}
 .logo-symbol{width:66px;height:66px;display:block;object-fit:contain;flex:0 0 66px;background:#fff;padding:3px;border:1px solid rgba(255,255,255,.8);border-radius:17px;box-shadow:0 7px 20px rgba(0,0,0,.28)}
 .logo{gap:12px}.wm b{letter-spacing:.22em}.wm i{letter-spacing:.58em}
-.nav{gap:20px}.nav ul{gap:22px}.nav ul a{transition:color .2s}.nav-cta{white-space:nowrap}.menu-toggle{display:none;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:#fff;border-radius:12px;padding:9px 12px;font-size:20px}
+.nav{gap:20px}.nav ul{gap:22px}.nav ul a{transition:color .2s}.nav-cta{white-space:nowrap}.menu-toggle{display:none;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:#fff;border-radius:12px;padding:99px 12px;font-size:20px}
 .hero:after{content:"";position:absolute;width:360px;height:360px;border:1px solid rgba(141,184,255,.12);border-radius:50%;right:-150px;top:160px;box-shadow:0 0 0 38px rgba(141,184,255,.025),0 0 0 76px rgba(141,184,255,.02);pointer-events:none}
 .mock{border:1px solid #e8efff}.node{transition:transform .2s}.node:hover{transform:translateX(5px)}
 .card,.tier,.exp-card{box-shadow:0 12px 35px rgba(11,31,75,.045)}
@@ -214,6 +217,91 @@ body{overflow-x:hidden} .hero{background:radial-gradient(circle at 78% 24%,rgba(
 @media(max-width:560px){.wrap{padding:0 19px}section{padding:65px 0}.logo-symbol{width:56px;height:56px;flex-basis:56px}.wm b{font-size:18px}.hg{margin-top:38px}.sub{font-size:15px}.cta .btn{width:100%;justify-content:center}.mock{padding:18px}.exp-grid-cards{grid-template-columns:1fr 1fr;gap:10px}.exp-card{padding:16px;min-height:145px}.price-notes{padding:20px}.tier{padding:28px 23px}.wa .no{font-size:25px}.fab{right:14px;bottom:14px;padding:12px 17px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
 
+/* CSS Tambahan untuk Sistem Tab Video Produk Interaktif */
+.product-video-tabs {
+  margin: 18px 0;
+  background: #0b1f4b;
+  border-radius: 16px;
+  padding: 14px;
+  border: 1px solid rgba(255,255,255,.15);
+  box-shadow: 0 10px 25px rgba(0,0,0,.15);
+}
+.video-tab-buttons {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+.video-tab-btn {
+  background: rgba(255,255,255,.1);
+  color: #cfdcf7;
+  border: none;
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 6px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background .2s, color .2s;
+}
+.video-tab-btn:hover {
+  background: rgba(255,255,255,.2);
+  color: #fff;
+}
+.video-tab-btn.active {
+  background: var(--blue);
+  color: #fff;
+}
+.video-tab-pane {
+  display: none;
+}
+.video-tab-pane.active {
+  display: block;
+}
+.video-container-portrait {
+  position: relative;
+  width: 100%;
+  max-width: 280px;
+  margin: 0 auto;
+  padding-bottom: 177.78%; /* Rasio Portrait 9:16 untuk HP */
+  height: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #000;
+}
+.video-container-portrait iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.video-container-landscape {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* Rasio Landscape 16:9 */
+  height: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #000;
+}
+.video-container-landscape iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.video-meta-info {
+  font-size: 10.5px;
+  color: #8DB8FF;
+  margin-top: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 </style>
 </head>
 <body>
@@ -260,7 +348,7 @@ body{overflow-x:hidden} .hero{background:radial-gradient(circle at 78% 24%,rgba(
 </div>
 </header></div>
 
-<!-- FEATURED READY TEMPLATE SECTION (3 KATALOG ASLI + VIDEO PEMUTAR SERAGAM) -->
+<!-- FEATURED READY TEMPLATE SECTION (3 KATALOG ASLI + TAB VIDEO INTERAKTIF) -->
 <section id="produk" class="ready-sec">
 <div class="wrap">
 <div class="eyebrow rv">PRODUK DIGITAL SIAP PAKAI</div>
@@ -303,15 +391,42 @@ body{overflow-x:hidden} .hero{background:radial-gradient(circle at 78% 24%,rgba(
 </div>
 </div>
 
-<!-- EMBEDDED VIDEO: DEMO & TUTORIAL ZUVANA AKUNTANSI -->
-<div class="video-catalog-wrap">
-  <h4>▶ Demo Zuvana Akuntansi</h4>
-  <div class="video-container">
-    <iframe src="https://drive.google.com/file/d/1oiiTABjFyuJZfxQvWHK5VsmK0qYamTKM/preview" allow="autoplay" allowfullscreen></iframe>
+<!-- TABBED VIDEO SYSTEM: ZUVANA AKUNTANSI -->
+<div class="product-video-tabs" data-product-id="zuvana-akuntansi">
+  <div class="video-tab-buttons">
+    <button type="button" class="video-tab-btn active" onclick="switchVideoTab(this, 'intro')">🎬 Penjelasan</button>
+    <button type="button" class="video-tab-btn" onclick="switchVideoTab(this, 'tutorial')">📱 Tutorial (Portrait)</button>
+    <button type="button" class="video-tab-btn" onclick="switchVideoTab(this, 'demo')">⚡ Demo (Landscape)</button>
   </div>
-  <div class="video-sub-links">
-    <a href="https://drive.google.com/file/d/1RcRJPV-zQi_NlJW2thuJqiF0PpX-oMrz/view?usp=sharing" target="_blank">📋 Penjelasan Akuntansi ↗</a>
-    <a href="https://drive.google.com/file/d/1Qhh8FVZERiQBxPV5JELxdxDmHNqsHUXX/view?usp=sharing" target="_blank">📖 Tutorial Akuntansi ↗</a>
+  <!-- 1. Video Penjelasan / Pengenalan (Durasi Paling Lama) -->
+  <div class="video-tab-pane active" data-video-type="explanation">
+    <div class="video-container-landscape">
+      <iframe src="https://drive.google.com/file/d/1RcRJPV-zQi_NlJW2thuJqiF0PpX-oMrz/preview" allow="autoplay" allowfullscreen loading="lazy"></iframe>
+    </div>
+    <div class="video-meta-info">
+      <span><b>Kategori:</b> Penjelasan Konsep & Profil</span>
+      <a href="https://drive.google.com/file/d/1RcRJPV-zQi_NlJW2thuJqiF0PpX-oMrz/view?usp=sharing" target="_blank" style="color:#34E3CB">Buka di Drive ↗</a>
+    </div>
+  </div>
+  <!-- 2. Video Tutorial / Demo (Format Portrait / Vertikal 9:16) -->
+  <div class="video-tab-pane" data-video-type="tutorial-portrait">
+    <div class="video-container-portrait">
+      <iframe src="https://drive.google.com/file/d/1Qhh8FVZERiQBxPV5JELxdxDmHNqsHUXX/preview" allow="autoplay" allowfullscreen loading="lazy"></iframe>
+    </div>
+    <div class="video-meta-info">
+      <span><b>Kategori:</b> Tutorial Langkah-demi-Langkah (Portrait)</span>
+      <a href="https://drive.google.com/file/d/1Qhh8FVZERiQBxPV5JELxdxDmHNqsHUXX/view?usp=sharing" target="_blank" style="color:#34E3CB">Buka di Drive ↗</a>
+    </div>
+  </div>
+  <!-- 3. Video Cara Pakai / Demo (Format Landscape Pendek) -->
+  <div class="video-tab-pane" data-video-type="demo-landscape-short">
+    <div class="video-container-landscape">
+      <iframe src="https://drive.google.com/file/d/1oiiTABjFyuJZfxQvWHK5VsmK0qYamTKM/preview" allow="autoplay" allowfullscreen loading="lazy"></iframe>
+    </div>
+    <div class="video-meta-info">
+      <span><b>Kategori:</b> Demo Ringkas (Landscape)</span>
+      <a href="https://drive.google.com/file/d/1oiiTABjFyuJZfxQvWHK5VsmK0qYamTKM/view?usp=sharing" target="_blank" style="color:#34E3CB">Buka di Drive ↗</a>
+    </div>
   </div>
 </div>
 
@@ -328,8 +443,8 @@ body{overflow-x:hidden} .hero{background:radial-gradient(circle at 78% 24%,rgba(
 <div style="font-size:10px;color:#166534;font-weight:700">HARGA PROMO:</div>
 <span class="now">Rp 149.000</span>
 </div>
-<span class="was">Rp 349.000</span>
-<span class="save">± 100% Margin</span>
+<span class="was">Rp 399.000</span>
+<span class="save">HEMAT 62,7% · Rp 250.000</span>
 </div>
 <a class="btn btn-s" style="width:100%;justify-content:center" href="https://wa.me/62895341189562?text=Halo%20Zuvana%20Digital%2C%20saya%20ingin%20membeli%20Template%20Zuvana%20Akuntansi%20v6.6%20seharga%20Rp%20149.000.">Beli Akuntansi →</a>
 </div>
@@ -369,15 +484,42 @@ body{overflow-x:hidden} .hero{background:radial-gradient(circle at 78% 24%,rgba(
 </div>
 </div>
 
-<!-- EMBEDDED VIDEO: DEMO SMART INVENTORY -->
-<div class="video-catalog-wrap">
-  <h4>▶ Demo Smart Inventory</h4>
-  <div class="video-container">
-    <iframe src="https://drive.google.com/file/d/1lCDGAvdWp4LZ0Y4MgTTkHb-LEJr52B3E/preview" allow="autoplay" allowfullscreen></iframe>
+<!-- TABBED VIDEO SYSTEM: ZUVANA SMART INVENTORY -->
+<div class="product-video-tabs" data-product-id="zuvana-smart-inventory">
+  <div class="video-tab-buttons">
+    <button type="button" class="video-tab-btn active" onclick="switchVideoTab(this, 'intro')">🎬 Penjelasan</button>
+    <button type="button" class="video-tab-btn" onclick="switchVideoTab(this, 'tutorial')">📱 Tutorial (Portrait)</button>
+    <button type="button" class="video-tab-btn" onclick="switchVideoTab(this, 'demo')">⚡ Demo (Landscape)</button>
   </div>
-  <div class="video-sub-links">
-    <a href="https://drive.google.com/file/d/1T9yhgNmS5mNdM3mpl80czROnq9EBj_ca/view?usp=sharing" target="_blank">📖 Tutorial Inventory ↗</a>
-    <a href="https://drive.google.com/file/d/1xQR-z3-UjiErmTZ-2kWWs5CDI663FnEh/view?usp=sharing" target="_blank">📋 Penjelasan Inventory ↗</a>
+  <!-- 1. Video Penjelasan / Pengenalan (Durasi Paling Lama) -->
+  <div class="video-tab-pane active" data-video-type="explanation">
+    <div class="video-container-landscape">
+      <iframe src="https://drive.google.com/file/d/1xQR-z3-UjiErmTZ-2kWWs5CDI663FnEh/preview" allow="autoplay" allowfullscreen loading="lazy"></iframe>
+    </div>
+    <div class="video-meta-info">
+      <span><b>Kategori:</b> Penjelasan Fitur & Modal Gudang</span>
+      <a href="https://drive.google.com/file/d/1xQR-z3-UjiErmTZ-2kWWs5CDI663FnEh/view?usp=sharing" target="_blank" style="color:#34E3CB">Buka di Drive ↗</a>
+    </div>
+  </div>
+  <!-- 2. Video Tutorial / Demo (Format Portrait / Vertikal 9:16) -->
+  <div class="video-tab-pane" data-video-type="tutorial-portrait">
+    <div class="video-container-portrait">
+      <iframe src="https://drive.google.com/file/d/1T9yhgNmS5mNdM3mpl80czROnq9EBj_ca/preview" allow="autoplay" allowfullscreen loading="lazy"></iframe>
+    </div>
+    <div class="video-meta-info">
+      <span><b>Kategori:</b> Panduan Restock & Input (Portrait)</span>
+      <a href="https://drive.google.com/file/d/1T9yhgNmS5mNdM3mpl80czROnq9EBj_ca/view?usp=sharing" target="_blank" style="color:#34E3CB">Buka di Drive ↗</a>
+    </div>
+  </div>
+  <!-- 3. Video Cara Pakai / Demo (Format Landscape Pendek) -->
+  <div class="video-tab-pane" data-video-type="demo-landscape-short">
+    <div class="video-container-landscape">
+      <iframe src="https://drive.google.com/file/d/1lCDGAvdWp4LZ0Y4MgTTkHb-LEJr52B3E/preview" allow="autoplay" allowfullscreen loading="lazy"></iframe>
+    </div>
+    <div class="video-meta-info">
+      <span><b>Kategori:</b> Demo Ringkas Fitur Stok (Landscape)</span>
+      <a href="https://drive.google.com/file/d/1lCDGAvdWp4LZ0Y4MgTTkHb-LEJr52B3E/view?usp=sharing" target="_blank" style="color:#34E3CB">Buka di Drive ↗</a>
+    </div>
   </div>
 </div>
 
@@ -394,8 +536,8 @@ body{overflow-x:hidden} .hero{background:radial-gradient(circle at 78% 24%,rgba(
 <div style="font-size:10px;color:#166534;font-weight:700">HARGA PROMO:</div>
 <span class="now">Rp 119.000</span>
 </div>
-<span class="was">Rp 249.000</span>
-<span class="save">± 100% Margin</span>
+<span class="was">Rp 299.000</span>
+<span class="save">HEMAT 60,2% · Rp 180.000</span>
 </div>
 <a class="btn btn-s" style="width:100%;justify-content:center;background:#059669" href="https://wa.me/62895341189562?text=Halo%20Zuvana%20Digital%2C%20saya%20ingin%20membeli%20Template%20Zuvana%20Smart%20Inventory%20seharga%20Rp%20119.000.">Beli Smart Inventory →</a>
 </div>
@@ -437,14 +579,42 @@ body{overflow-x:hidden} .hero{background:radial-gradient(circle at 78% 24%,rgba(
 Karena kami memanfaatkan infrastruktur Cloud milik Google Sheets dan Apps Script yang sudah gratis dari akun Google Anda. Kami tidak membebankan biaya sewa server bulanan kepada Anda. Anda hanya membayar keahlian koding kami satu kali saja.
 </div>
 
-<!-- EMBEDDED VIDEO: DEMO ZUVANA POS -->
-<div class="video-catalog-wrap">
-  <h4>▶ Demo Zuvana POS Web App</h4>
-  <div class="video-container">
-    <iframe src="https://drive.google.com/file/d/1k9kVSwBEkdaCtYQkAGC2a_LjyCsEdgvm/preview" allow="autoplay" allowfullscreen></iframe>
+<!-- TABBED VIDEO SYSTEM: ZUVANA POS WEB APP -->
+<div class="product-video-tabs" data-product-id="zuvana-pos-app">
+  <div class="video-tab-buttons">
+    <button type="button" class="video-tab-btn active" onclick="switchVideoTab(this, 'intro')">🎬 Penjelasan</button>
+    <button type="button" class="video-tab-btn" onclick="switchVideoTab(this, 'tutorial')">📱 Tutorial (Portrait)</button>
+    <button type="button" class="video-tab-btn" onclick="switchVideoTab(this, 'demo')">⚡ Demo (Landscape)</button>
   </div>
-  <div class="video-sub-links">
-    <a href="https://drive.google.com/file/d/1k9kVSwBEkdaCtYQkAGC2a_LjyCsEdgvm/view?usp=sharing" target="_blank">🎬 Link Video Drive ↗</a>
+  <!-- 1. Video Penjelasan / Pengenalan (Durasi Paling Lama) -->
+  <div class="video-tab-pane active" data-video-type="explanation">
+    <div class="video-container-landscape">
+      <iframe src="https://drive.google.com/file/d/126_1nl1CB7iVSoHeoDcbUT2g-qxZlpy_/preview" allow="autoplay" allowfullscreen loading="lazy"></iframe>
+    </div>
+    <div class="video-meta-info">
+      <span><b>Kategori:</b> Penjelasan Konsep & Potensi POS</span>
+      <a href="https://drive.google.com/file/d/126_1nl1CB7iVSoHeoDcbUT2g-qxZlpy_/view?usp=sharing" target="_blank" style="color:#34E3CB">Buka di Drive ↗</a>
+    </div>
+  </div>
+  <!-- 2. Video Tutorial / Demo (Format Portrait / Vertikal 9:16) -->
+  <div class="video-tab-pane" data-video-type="tutorial-portrait">
+    <div class="video-container-portrait">
+      <iframe src="https://drive.google.com/file/d/1AWVswkdMg9uXnX-pogfWDvkhyApJEX_r/preview" allow="autoplay" allowfullscreen loading="lazy"></iframe>
+    </div>
+    <div class="video-meta-info">
+      <span><b>Kategori:</b> Tutorial Kasir & 3 Pilar (Portrait)</span>
+      <a href="https://drive.google.com/file/d/1AWVswkdMg9uXnX-pogfWDvkhyApJEX_r/view?usp=sharing" target="_blank" style="color:#34E3CB">Buka di Drive ↗</a>
+    </div>
+  </div>
+  <!-- 3. Video Cara Pakai / Demo (Format Landscape Pendek) -->
+  <div class="video-tab-pane" data-video-type="demo-landscape-short">
+    <div class="video-container-landscape">
+      <iframe src="https://drive.google.com/file/d/1k9kVSwBEkdaCtYQkAGC2a_LjyCsEdgvm/preview" allow="autoplay" allowfullscreen loading="lazy"></iframe>
+    </div>
+    <div class="video-meta-info">
+      <span><b>Kategori:</b> Demo Ringkas Transaksi Kasir (Landscape)</span>
+      <a href="https://drive.google.com/file/d/1k9kVSwBEkdaCtYQkAGC2a_LjyCsEdgvm/view?usp=sharing" target="_blank" style="color:#34E3CB">Buka di Drive ↗</a>
+    </div>
   </div>
 </div>
 
@@ -463,9 +633,32 @@ Karena kami memanfaatkan infrastruktur Cloud milik Google Sheets dan Apps Script
 <span class="now">Rp 299.000</span>
 </div>
 <span class="was">Rp 599.000</span>
-<span class="save">Hemat 50%</span>
+<span class="save">HEMAT 50,1% · Rp 300.000</span>
 </div>
 <a class="btn btn-s" style="width:100%;justify-content:center;background:#7c3aed" href="https://wa.me/62895341189562?text=Halo%20Zuvana%20Digital%2C%20saya%20ingin%20membeli%20Aplikasi%20Zuvana%20POS%20Web%20App%20seharga%20Rp%20299.000.">Beli Zuvana POS →</a>
+</div>
+</div>
+
+<!-- KATALOG 4: MEGA BUNDLE UMKM (3-IN-1) -->
+<div class="prod-box bundle rv">
+<div class="prod-tag promo">PROMO BUNDLE</div>
+<div>
+<span class="prod-badge" style="background:#fff1f2;color:#be123c">PAKET LENGKAP UMKM · 3 PRODUK</span>
+<h3 class="prod-title">MEGA BUNDLE UMKM (3-in-1)</h3>
+<p class="prod-desc">Dapatkan tiga produk ZUVANA dalam satu paket: Zuvana Akuntansi v6.6, Zuvana Smart Inventory, dan Zuvana POS Web App.</p>
+<ul class="prod-list">
+<li><b>Zuvana Akuntansi v6.6:</b> Pembukuan dan laporan keuangan.</li>
+<li><b>Zuvana Smart Inventory:</b> Kontrol stok dan restock.</li>
+<li><b>Zuvana POS Web App:</b> Aplikasi kasir berbasis web.</li>
+</ul>
+</div>
+<div>
+<div class="price-row">
+<div><div style="font-size:10px;color:#be123c;font-weight:800">HARGA PROMO BUNDLE:</div><span class="now">Rp 449.000</span></div>
+<span class="was">Rp 1.299.000</span>
+<span class="save">HEMAT 65,4% · Rp 850.000</span>
+</div>
+<a class="btn btn-s" style="width:100%;justify-content:center;background:#be123c" href="https://wa.me/62895341189562?text=Halo%20Zuvana%20Digital%2C%20saya%20ingin%20membeli%20MEGA%20BUNDLE%20UMKM%203-in-1%20seharga%20Rp%20449.000.">Beli MEGA BUNDLE →</a>
 </div>
 </div>
 
@@ -550,8 +743,8 @@ Karena kami memanfaatkan infrastruktur Cloud milik Google Sheets dan Apps Script
 <label>Nomor WhatsApp *<input name="w" required inputmode="tel" autocomplete="tel"></label>
 <label>Nama Bisnis *<input name="b" required></label>
 <label>Jenis Bisnis *<select name="j" required><option value="">Pilih kategori</option><option>Warung / Kuliner</option><option>Toko Retail</option><option>Klinik / Kesehatan</option><option>Salon / Kecantikan</option><option>Otomotif / Bengkel</option><option>Pendidikan / Kursus</option><option>Properti / Kos</option><option>Kontraktor / Proyek</option><option>Rental</option><option>Lainnya</option></select></label>
-<label class="w">Apa yang Anda cari? *<select name="c" required><option value="">Pilih salah satu</option><option>Beli Zuvana Akuntansi v6.6 (Rp 149.000)</option><option>Beli Zuvana Smart Inventory (Rp 119.000)</option><option>Beli Zuvana POS Web App (Rp 299.000)</option><option>Aplikasi custom baru sesuai kebutuhan usaha</option><option>Merapikan alur kerja / menghubungkan sistem</option><option>Memperbaiki atau mengembangkan aplikasi yang sudah ada</option><option>Belum tahu, ingin diskusi dulu</option></select></label>
-<label class="w">Budget yang direncanakan<select name="g"><option value="">Pilih estimasi budget</option><option>Rp 119.000 (Beli Smart Inventory)</option><option>Rp 149.000 (Beli Zuvana Akuntansi)</option><option>Rp 299.000 (Beli Zuvana POS Web App)</option><option>Di bawah Rp 1 juta</option><option>Rp 1 – 2,5 juta</option><option>Rp 2,5 – 5 juta</option><option>Rp 5 – 10 juta</option><option>Di atas Rp 10 juta</option></select></label>
+<label class="w">Apa yang Anda cari? *<select name="c" required><option value="">Pilih salah satu</option><option>Beli Zuvana Akuntansi v6.6 (Rp 149.000)</option><option>Beli Zuvana Smart Inventory (Rp 119.000)</option><option>Beli Zuvana POS Web App (Rp 299.000)</option><option>Beli MEGA BUNDLE UMKM 3-in-1 (Rp 449.000)</option><option>Aplikasi custom baru sesuai kebutuhan usaha</option><option>Merapikan alur kerja / menghubungkan sistem</option><option>Memperbaiki atau mengembangkan aplikasi yang sudah ada</option><option>Belum tahu, ingin diskusi dulu</option></select></label>
+<label class="w">Budget yang direncanakan<select name="g"><option value="">Pilih estimasi budget</option><option>Rp 119.000 (Beli Smart Inventory)</option><option>Rp 149.000 (Beli Zuvana Akuntansi)</option><option>Rp 299.000 (Beli Zuvana POS Web App)</option><option>Rp 449.000 (Beli MEGA BUNDLE UMKM 3-in-1)</option><option>Di bawah Rp 1 juta</option><option>Rp 1 – 2,5 juta</option><option>Rp 2,5 – 5 juta</option><option>Rp 5 – 10 juta</option><option>Di atas Rp 10 juta</option></select></label>
 <label class="w">Kebutuhan / masalah yang ingin diselesaikan<textarea name="k" placeholder="Contoh: Ingin membeli template akuntansi / inventory / POS Web App atau butuh aplikasi custom"></textarea></label>
 <button class="btn btn-s w" type="submit">Kirim via WhatsApp →</button>
 <p class="nt w">Tombol ini membuka WhatsApp dengan pesan yang sudah terisi. Ingin mengisi lebih lengkap? <a href="form.html">Isi form intake lengkap</a>.</p>
@@ -585,6 +778,32 @@ var mt=document.getElementById('menuToggle'),mn=document.getElementById('mainNav
 document.getElementById('bf').addEventListener('submit',function(e){e.preventDefault();var f=e.target,v=function(k){return f.elements[k].value.trim()||'-'};
 var m='Halo Zuvana Digital, saya ingin mengirim brief proyek / membeli template.\n\nNama: '+v('n')+'\nWhatsApp: '+v('w')+'\nNama bisnis: '+v('b')+'\nJenis bisnis: '+v('j')+'\nYang dicari: '+v('c')+'\nBudget: '+v('g')+'\nKebutuhan: '+v('k');
 window.open('https://wa.me/62895341189562?text='+encodeURIComponent(m),'_blank')});
+</script>
+
+<script>
+/* Logika Perpindahan Tab Video Interaktif Produk */
+function switchVideoTab(button, tabName) {
+  var parentTabsWrap = button.closest('.product-video-tabs');
+  var allButtons = parentTabsWrap.querySelectorAll('.video-tab-btn');
+  var allPanes = parentTabsWrap.querySelectorAll('.video-tab-pane');
+
+  allButtons.forEach(function(btn) {
+    btn.classList.remove('active');
+  });
+  allPanes.forEach(function(pane) {
+    pane.classList.remove('active');
+  });
+
+  button.classList.add('active');
+  
+  if(tabName === 'intro') {
+    parentTabsWrap.querySelector('[data-video-type="explanation"]').classList.add('active');
+  } else if(tabName === 'tutorial') {
+    parentTabsWrap.querySelector('[data-video-type="tutorial-portrait"]').classList.add('active');
+  } else if(tabName === 'demo') {
+    parentTabsWrap.querySelector('[data-video-type="demo-landscape-short"]').classList.add('active');
+  }
+}
 </script>
 </body>
 </html>
