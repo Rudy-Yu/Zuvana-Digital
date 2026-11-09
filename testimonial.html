@@ -160,9 +160,6 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
 </footer>
 
 <script>
-// ==========================================
-// MASUKKAN URL WEB APP GOOGLE APPS SCRIPT ANDA DI BAWAH INI:
-// ==========================================
 const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwQzbAeHWPLdKzriWajYa3XJWC-YNjK3pMoNYATjKzmib3zG8bzu9xO8FjxUQ-PJ8k/exec";
 
 // Sistem Interaktif Rating Bintang
@@ -189,11 +186,6 @@ function updateStars() {
 // Fungsi Mengambil Ulasan dari Google Sheets
 async function fetchReviews() {
   const container = document.getElementById('testiGrid');
-  
-  if(SCRIPT_URL.includes("MASUKKAN_URL")) {
-    container.innerHTML = `<div class="empty-box"><b>Konfigurasi Database Belum Selesai:</b> Harap masukkan URL Web App Google Apps Script ke dalam variabel <code>SCRIPT_URL</code> di dalam file script halaman ini.</div>`;
-    return;
-  }
 
   try {
     const response = await fetch(SCRIPT_URL);
@@ -235,11 +227,6 @@ function escapeHtml(str) {
 // Kirim Data Formulir ke Google Sheets
 document.getElementById('testimonialForm').addEventListener('submit', async function(e) {
   e.preventDefault();
-  
-  if(SCRIPT_URL.includes("MASUKKAN_URL")) {
-    alert("URL Google Apps Script belum dikonfigurasi!");
-    return;
-  }
 
   const btn = document.getElementById('submitBtn');
   btn.textContent = "Mengirim ulasan...";
@@ -255,7 +242,7 @@ document.getElementById('testimonialForm').addEventListener('submit', async func
 
   try {
     await fetch(SCRIPT_URL, {
-      method: '`POST`',
+      method: 'POST',
       mode: 'no-cors',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(formData)
